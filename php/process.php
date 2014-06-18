@@ -510,7 +510,7 @@ function mentha_network($session_name,$show_name){
       $mentha_Duration = round($mentha_Duration, 2);      // Round to 2 decimal places
       echo "<br />Mentha took:$mentha_Duration seconds.</br>";
     }
-    echo 'http://mentha.uniroma2.it:8080/server/getInteractions?org=all&ids='.$ACCs;
+    //echo 'http://mentha.uniroma2.it:8080/server/getInteractions?org=all&ids='.$ACCs;
     
     $interaction=$both=$one=$none=array();
     //rank the added prots  
