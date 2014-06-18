@@ -1,0 +1,32 @@
+[Header],,,,,,
+Investigator Name,Scientist,,,,,
+Project Name,DNA Methylation,,,,,
+Experiment Name,Test,,,,,
+Date,8-Dec-10,,,,,
+,,,,,,
+[Data],,,,,,
+Sample_Name,Sample_Well,Sample_Plate,Sample_Group,Pool_ID,Sentrix_ID,Sentrix_Position
+Sample1,,,Group1,,5580892002,R01C01
+Sample2,,,Group1,,5580892002,R01C02
+Sample3,,,Group2,,5580892002,R02C01
+Sample4,,,Group2,,5580892002,R02C02
+Sample5,,,Group3,,5580892002,R03C01
+Sample6,,,Group3,,5580892002,R03C02
+Sample7,,,Group1,,5580892002,R04C01
+Sample8,,,Group1,,5580892002,R04C02
+Sample9,,,Group2,,5580892002,R05C01
+Sample10,,,Group2,,5580892002,R05C02
+Sample11,,,Group3,,5580892002,R06C01
+Sample12,,,Group3,,5580892002,R06C02
+Sample13,,,Group1,,5580892003,R01C01
+Sample14,,,Group1,,5580892003,R01C02
+Sample15,,,Group2,,5580892003,R02C01
+Sample16,,,Group2,,5580892003,R02C02
+Sample17,,,Group3,,5580892003,R03C01
+Sample18,,,Group3,,5580892003,R03C02
+Sample19,,,Group1,,5580892003,R04C01
+Sample20,,,Group1,,5580892003,R04C02
+Sample21,,,Group2,,5580892003,R05C01
+Sample22,,,Group2,,5580892003,R05C02
+Sample23,,,Group3,,5580892003,R06C01
+Sample24,,,Group3,,5580892003,R06C02

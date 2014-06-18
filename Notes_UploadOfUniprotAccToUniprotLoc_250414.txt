@@ -1,0 +1,28 @@
+For copying SQL table from LOCAL phpMyAdmin to OPENSHIFT phpMyAdmin:
+
+In LOCAL phpMyAdmin, copied current map_acc_to_uniprot_loc to map_acc_to_uniprot_locbeta and exported zipped as map_acc_to_uniprot_locbeta.sql.zip
+	Renamed with beta at end so that it would not overwrite current OPENSHIFT map_acc_to_uniprot_loc data table on import
+In OPENSHIFT phpMyAdmin, imported map_acc_to_uniprot_locbeta.sql.zip
+This successfully imported after waiting for a few minutes.
+Dropped current OPENSHIFT map_acc_to_uniprot_loc data table
+Copied map_acc_to_uniprot_locbeta to map_acc_to_uniprot_loc
+Dropped map_acc_to_uniprot_locbeta
+
+
+
+For creating the table in phpMyAdmin LOCAL:
+
+CREATE TABLE cellwhere.map_acc_to_uniprot_loc
+(
+UniprotACC varchar(255),
+UniprotID varchar(255),
+Species varchar(255),
+Localization varchar(255)
+); 
+
+LOAD DATA LOCAL INFILE 'C:/dev/www/cellwhere_dev/UniprotAccToUniprotLoc_240214.txt' 
+INTO TABLE cellwhere.map_acc_to_uniprot_loc 
+FIELDS TERMINATED BY '\t' 
+ENCLOSED BY '' 
+LINES TERMINATED BY '\r\n' 
+(UniprotACC, UniprotID, Species, Localization);
