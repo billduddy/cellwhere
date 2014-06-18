@@ -927,14 +927,14 @@
     
     function without_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg){
         global $file_xml;        
-        $out = fopen($file_xml."_cy3.xml", "w+"); 
+        $fout = fopen($file_xml."_cy3.xml", "w+"); 
         fwrite($out,'<graph xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cy="http://www.cytoscape.org" xmlns="http://www.cs.rpi.edu/XGMML">'."\n");
         //write_xml without compound
-        write_xml($xml,$out,$head,0,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg,0);
+        write_xml($xml,$fout,$head,0,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg,0);
         //write edges
-        write_edge($xml,$out);
-        fwrite($out,"</graph>");
-        fclose($out);
+        write_edge($xml,$fout);
+        fwrite($fout,"</graph>");
+        fclose($fout);
      
         //read the entire string 
         $str=file_get_contents($file_xml."_cy3.xml"); 
