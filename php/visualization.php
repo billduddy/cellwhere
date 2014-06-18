@@ -50,7 +50,8 @@
     include("xml_to_json_with_compd.php");
     xml_to_json($file_xml,"_web.xml",$list_comp,$org_nodes,$ACC_GN);
 
-    //unlink($file_xml."_web.xml");
+    unlink($file_xml."_web.xml");
+    if(file_exists($file_xml."_cy.xml")){echo $file_xml."_cy.xml"; }
    /*----------------------------------------------------End main----------------------------------------------------------*/ 
    
    
@@ -896,7 +897,7 @@
         //write_xml with compound
         with_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg);
         //write xml without compound node
-       without_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg);
+        without_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg);
         
         $e=3;//reduce the size of image
         draw_background($for_draw_bg,$e);
@@ -904,7 +905,6 @@
     
     /* write the output xml file--------------------------------------------------*/
     function with_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg){
-        // delete the old out file
         global $file_xml;
         $out = fopen($file_xml."_web.xml", "w+"); 
         fwrite($out,'<graph xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cy="http://www.cytoscape.org" xmlns="http://www.cs.rpi.edu/XGMML">'."\n");
@@ -927,13 +927,11 @@
     
     function without_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg){
         global $file_xml;        
-        // delete the old out file 
         $out = fopen($file_xml."_cy3.xml", "w+"); 
         fwrite($out,'<graph xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cy="http://www.cytoscape.org" xmlns="http://www.cs.rpi.edu/XGMML">'."\n");
-        
         //write_xml without compound
         write_xml($xml,$out,$head,0,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg,0);
-            //write edges
+        //write edges
         write_edge($xml,$out);
         fwrite($out,"</graph>");
         fclose($out);
