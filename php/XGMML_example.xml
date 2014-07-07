@@ -1,0 +1,2086 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<graph id="38124" label="38134" directed="0" cy:documentVersion="3.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cy="http://www.cytoscape.org" xmlns="http://www.cs.rpi.edu/XGMML">
+  <att name="networkMetadata">
+    <rdf:RDF>
+      <rdf:Description rdf:about="http://www.cytoscape.org/">
+        <dc:type>Protein-Protein Interaction</dc:type>
+        <dc:description>N/A</dc:description>
+        <dc:identifier>N/A</dc:identifier>
+        <dc:date>2014-04-08 10:53:46</dc:date>
+        <dc:title>38134</dc:title>
+        <dc:source>http://www.cytoscape.org/</dc:source>
+        <dc:format>Cytoscape-XGMML</dc:format>
+      </rdf:Description>
+    </rdf:RDF>
+  </att>
+  <att name="shared name" value="2: Cluster 3 (Score: 5.556)" type="string"/>
+  <att name="combining method" type="string"/>
+  <att name="data version" type="string"/>
+  <att name="selected" value="1" type="boolean"/>
+  <att name="search limit" type="integer"/>
+  <att name="source-networks" type="string"/>
+  <att name="attribute search limit" type="integer"/>
+  <att name="name" value="2: Cluster 3 (Score: 5.556)" type="string"/>
+  <att name="organism" type="string"/>
+  <att name="type" type="string"/>
+  <att name="__Annotations" type="list">
+  </att>
+  <att name="annotations" type="string"/>
+  <graphics>
+    <att name="NETWORK_SCALE_FACTOR" value="0.68117552348852" type="string"/>
+    <att name="NETWORK_TITLE" value="" type="string"/>
+    <att name="NETWORK_CENTER_Y_LOCATION" value="-82.8129653930664" type="string"/>
+    <att name="NETWORK_WIDTH" value="550.0" type="string"/>
+    <att name="NETWORK_HEIGHT" value="404.0" type="string"/>
+    <att name="NETWORK_CENTER_Z_LOCATION" value="0.0" type="string"/>
+    <att name="NETWORK_BACKGROUND_PAINT" value="#ffffff" type="string"/>
+    <att name="NETWORK_CENTER_X_LOCATION" value="32.70721435546875" type="string"/>
+    <att name="NETWORK_NODE_SELECTION" value="true" type="string"/>
+    <att name="NETWORK_DEPTH" value="0.0" type="string"/>
+    <att name="NETWORK_EDGE_SELECTION" value="true" type="string"/>
+  </graphics>
+  <node id="23534" label="H__sapiens__1_-Hs:9044627">
+    <att name="Synonym" value="MGC2396" type="string"/>
+    <att name="Ensembl Protein ID" value="ENSP00000443347" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9044627" type="string"/>
+    <att name="MCODE_Node_Status" value="Clustered" type="string"/>
+    <att name="MCODE_Score" value="7.0" type="real"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="node type" value="query" type="string"/>
+    <att name="RefSeq mRNA ID" value="NM_052852" type="string"/>
+    <att name="MCODE_Cluster" type="list">
+      <att name="MCODE_Cluster" value="Cluster 3" type="string"/>
+    </att>
+    <att name="name" value="H__sapiens__1_-Hs:9044627" type="string"/>
+    <att name="score" value="0.7720628659302111" type="real"/>
+    <att name="log score" value="-0.25868929972072424" type="real"/>
+    <att name="xyz" value="Vesicular exosome" type="string"/>
+    <att name="annotation name" type="list">
+      <att name="annotation name" value="" type="string"/>
+    </att>
+    <att name="Ensembl Gene ID" value="ENSG00000256229" type="string"/>
+    <att name="gene name" value="ZNF486" type="string"/>
+    <att name="Entrez Gene ID" value="90649" type="string"/>
+    <att name="annotations" type="list">
+      <att name="annotations" value="" type="string"/>
+    </att>
+    <att name="RefSeq Protein ID" value="NP_443084" type="string"/>
+    <att name="Uniprot ID" value="ZN486_HUMAN" type="string"/>
+    <att name="Fold change" value="2.58152" type="real"/>
+    <graphics outline="#000000" fill="#000000" w="40.0" y="105.57063293457031" x="334.4103698730469" z="0.0" type="ELLIPSE" h="40.0" width="2.0">
+      <att name="NODE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_8" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL_FONT_SIZE" value="12" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_2" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_9" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_8" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_9" value="40.0" type="string"/>
+      <att name="NODE_SELECTED" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_5" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_4" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_LABEL_FONT_FACE" value="SansSerif.plain,plain,12" type="string"/>
+      <att name="NODE_LABEL_WIDTH" value="200.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_1" value="40.0" type="string"/>
+      <att name="NODE_BORDER_STROKE" value="SOLID" type="string"/>
+      <att name="NODE_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="NODE_LABEL_POSITION" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_6" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_7" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_NESTED_NETWORK_IMAGE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_4" value="40.0" type="string"/>
+      <att name="NODE_TOOLTIP" value="" type="string"/>
+      <att name="NODE_DEPTH" value="0.0" type="string"/>
+      <att name="NODE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_3" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_6" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_5" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL" value="ZNF486" type="string"/>
+      <att name="NODE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_7" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_6" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_2" value="40.0" type="string"/>
+      <att name="NODE_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_BORDER_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_8" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_2" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_7" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_5" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_9" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_1" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_1" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_3" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_4" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_3" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+    </graphics>
+  </node>
+  <node id="23499" label="H__sapiens__1_-Hs:9000338">
+    <att name="Synonym" value="MGC19606" type="string"/>
+    <att name="Ensembl Protein ID" value="ENSP00000416756" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9000338" type="string"/>
+    <att name="MCODE_Node_Status" value="Clustered" type="string"/>
+    <att name="MCODE_Score" value="6.25" type="real"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="node type" value="query" type="string"/>
+    <att name="RefSeq mRNA ID" value="NM_033416" type="string"/>
+    <att name="MCODE_Cluster" type="list">
+      <att name="MCODE_Cluster" value="Cluster 3" type="string"/>
+    </att>
+    <att name="name" value="H__sapiens__1_-Hs:9000338" type="string"/>
+    <att name="score" value="0.5359663770932495" type="real"/>
+    <att name="log score" value="-0.6236838491825392" type="real"/>
+    <att name="xyz" value="Lysosome MEMBRANE" type="string"/>
+    <att name="annotation name" type="list">
+      <att name="annotation name" value="" type="string"/>
+    </att>
+    <att name="Ensembl Gene ID" value="ENSG00000136718" type="string"/>
+    <att name="gene name" value="IMP4" type="string"/>
+    <att name="Entrez Gene ID" value="92856" type="string"/>
+    <att name="annotations" type="list">
+      <att name="annotations" value="" type="string"/>
+    </att>
+    <att name="RefSeq Protein ID" value="NP_219484" type="string"/>
+    <att name="Uniprot ID" value="Q96G21" type="string"/>
+    <att name="Fold change" value="-2.26241" type="real"/>
+    <graphics outline="#000000" fill="#000000" w="40.0" y="-202.24571228027344" x="-268.99593353271484" z="0.0" type="ELLIPSE" h="40.0" width="2.0">
+      <att name="NODE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_8" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL_FONT_SIZE" value="12" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_2" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_9" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_8" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_9" value="40.0" type="string"/>
+      <att name="NODE_SELECTED" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_5" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_4" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_LABEL_FONT_FACE" value="SansSerif.plain,plain,12" type="string"/>
+      <att name="NODE_LABEL_WIDTH" value="200.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_1" value="40.0" type="string"/>
+      <att name="NODE_BORDER_STROKE" value="SOLID" type="string"/>
+      <att name="NODE_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="NODE_LABEL_POSITION" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_6" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_7" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_NESTED_NETWORK_IMAGE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_4" value="40.0" type="string"/>
+      <att name="NODE_TOOLTIP" value="" type="string"/>
+      <att name="NODE_DEPTH" value="0.0" type="string"/>
+      <att name="NODE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_3" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_6" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_5" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL" value="IMP4" type="string"/>
+      <att name="NODE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_7" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_6" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_2" value="40.0" type="string"/>
+      <att name="NODE_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_BORDER_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_8" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_2" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_7" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_5" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_9" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_1" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_1" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_3" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_4" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_3" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+    </graphics>
+  </node>
+  <node id="23559" label="H__sapiens__1_-Hs:9016754">
+    <att name="Synonym" value="RRP3" type="string"/>
+    <att name="Ensembl Protein ID" value="ENSP00000444000" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9016754" type="string"/>
+    <att name="MCODE_Node_Status" value="Clustered" type="string"/>
+    <att name="MCODE_Score" value="6.75" type="real"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="node type" value="query" type="string"/>
+    <att name="RefSeq mRNA ID" value="NM_201224" type="string"/>
+    <att name="MCODE_Cluster" type="list">
+      <att name="MCODE_Cluster" value="Cluster 3" type="string"/>
+    </att>
+    <att name="name" value="H__sapiens__1_-Hs:9016754" type="string"/>
+    <att name="score" value="0.5673470803574148" type="real"/>
+    <att name="log score" value="-0.5667840278632273" type="real"/>
+    <att name="xyz" value="Nucleus" type="string"/>
+    <att name="annotation name" type="list">
+      <att name="annotation name" value="" type="string"/>
+    </att>
+    <att name="Ensembl Gene ID" value="ENSG00000213782" type="string"/>
+    <att name="gene name" value="DDX47" type="string"/>
+    <att name="Entrez Gene ID" value="51202" type="string"/>
+    <att name="annotations" type="list">
+      <att name="annotations" value="" type="string"/>
+    </att>
+    <att name="RefSeq Protein ID" value="NP_957518" type="string"/>
+    <att name="Uniprot ID" value="Q9H0S4" type="string"/>
+    <att name="Fold change" value="-1.43333" type="real"/>
+    <graphics outline="#000000" fill="#000000" w="40.0" y="-154.95213317871094" x="-69.39991760253906" z="0.0" type="ELLIPSE" h="40.0" width="2.0">
+      <att name="NODE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_8" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL_FONT_SIZE" value="12" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_2" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_9" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_8" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_9" value="40.0" type="string"/>
+      <att name="NODE_SELECTED" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_5" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_4" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_LABEL_FONT_FACE" value="SansSerif.plain,plain,12" type="string"/>
+      <att name="NODE_LABEL_WIDTH" value="200.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_1" value="40.0" type="string"/>
+      <att name="NODE_BORDER_STROKE" value="SOLID" type="string"/>
+      <att name="NODE_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="NODE_LABEL_POSITION" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_6" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_7" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_NESTED_NETWORK_IMAGE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_4" value="40.0" type="string"/>
+      <att name="NODE_TOOLTIP" value="" type="string"/>
+      <att name="NODE_DEPTH" value="0.0" type="string"/>
+      <att name="NODE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_3" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_6" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_5" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL" value="DDX47" type="string"/>
+      <att name="NODE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_7" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_6" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_2" value="40.0" type="string"/>
+      <att name="NODE_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_BORDER_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_8" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_2" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_7" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_5" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_9" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_1" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_1" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_3" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_4" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_3" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+    </graphics>
+  </node>
+  <node id="23544" label="H__sapiens__1_-Hs:8998153">
+    <att name="Synonym" value="FLJ34917" type="string"/>
+    <att name="Ensembl Protein ID" value="ENSP00000365407" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8998153" type="string"/>
+    <att name="MCODE_Node_Status" value="Clustered" type="string"/>
+    <att name="MCODE_Score" value="7.0" type="real"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="node type" value="query" type="string"/>
+    <att name="RefSeq mRNA ID" value="NM_153263" type="string"/>
+    <att name="MCODE_Cluster" type="list">
+      <att name="MCODE_Cluster" value="Cluster 3" type="string"/>
+    </att>
+    <att name="name" value="H__sapiens__1_-Hs:8998153" type="string"/>
+    <att name="score" value="0.658771695398823" type="real"/>
+    <att name="log score" value="-0.41737824547712193" type="real"/>
+    <att name="xyz" value="Nucleus" type="string"/>
+    <att name="annotation name" type="list">
+      <att name="annotation name" value="" type="string"/>
+    </att>
+    <att name="Ensembl Gene ID" value="ENSG00000121406" type="string"/>
+    <att name="gene name" value="ZNF549" type="string"/>
+    <att name="Entrez Gene ID" value="256051" type="string"/>
+    <att name="annotations" type="list">
+      <att name="annotations" value="" type="string"/>
+    </att>
+    <att name="RefSeq Protein ID" value="NP_694995" type="string"/>
+    <att name="Uniprot ID" value="ZN549_HUMAN" type="string"/>
+    <att name="Fold change" value="2.13537" type="real"/>
+    <graphics outline="#000000" fill="#000000" w="40.0" y="187.8022918701172" x="238.73174285888672" z="0.0" type="ELLIPSE" h="40.0" width="2.0">
+      <att name="NODE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_8" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL_FONT_SIZE" value="12" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_2" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_9" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_8" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_9" value="40.0" type="string"/>
+      <att name="NODE_SELECTED" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_5" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_4" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_LABEL_FONT_FACE" value="SansSerif.plain,plain,12" type="string"/>
+      <att name="NODE_LABEL_WIDTH" value="200.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_1" value="40.0" type="string"/>
+      <att name="NODE_BORDER_STROKE" value="SOLID" type="string"/>
+      <att name="NODE_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="NODE_LABEL_POSITION" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_6" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_7" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_NESTED_NETWORK_IMAGE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_4" value="40.0" type="string"/>
+      <att name="NODE_TOOLTIP" value="" type="string"/>
+      <att name="NODE_DEPTH" value="0.0" type="string"/>
+      <att name="NODE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_3" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_6" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_5" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL" value="ZNF549" type="string"/>
+      <att name="NODE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_7" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_6" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_2" value="40.0" type="string"/>
+      <att name="NODE_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_BORDER_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_8" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_2" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_7" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_5" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_9" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_1" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_1" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_3" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_4" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_3" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+    </graphics>
+  </node>
+  <node id="23666" label="H__sapiens__1_-Hs:9006487">
+    <att name="Synonym" value="" type="string"/>
+    <att name="Ensembl Protein ID" value="ENSP00000370252" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9006487" type="string"/>
+    <att name="MCODE_Node_Status" value="Clustered" type="string"/>
+    <att name="MCODE_Score" value="7.0" type="real"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="node type" value="query" type="string"/>
+    <att name="RefSeq mRNA ID" value="" type="string"/>
+    <att name="MCODE_Cluster" type="list">
+      <att name="MCODE_Cluster" value="Cluster 3" type="string"/>
+    </att>
+    <att name="name" value="H__sapiens__1_-Hs:9006487" type="string"/>
+    <att name="score" value="0.9997792921658262" type="real"/>
+    <att name="log score" value="-2.207321937321568E-4" type="real"/>
+    <att name="xyz" value="Nucleus" type="string"/>
+    <att name="annotation name" type="list">
+      <att name="annotation name" value="" type="string"/>
+    </att>
+    <att name="Ensembl Gene ID" value="ENSG00000172687" type="string"/>
+    <att name="gene name" value="ZNF738" type="string"/>
+    <att name="Entrez Gene ID" value="" type="string"/>
+    <att name="annotations" type="list">
+      <att name="annotations" value="" type="string"/>
+    </att>
+    <att name="RefSeq Protein ID" value="" type="string"/>
+    <att name="Uniprot ID" value="ZN738_HUMAN" type="string"/>
+    <att name="Fold change" value="2.36195" type="real"/>
+    <graphics outline="#000000" fill="#000000" w="40.0" y="149.62075805664062" x="113.90091323852539" z="0.0" type="ELLIPSE" h="40.0" width="2.0">
+      <att name="NODE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_8" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL_FONT_SIZE" value="12" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_2" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_9" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_8" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_9" value="40.0" type="string"/>
+      <att name="NODE_SELECTED" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_5" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_4" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_LABEL_FONT_FACE" value="SansSerif.plain,plain,12" type="string"/>
+      <att name="NODE_LABEL_WIDTH" value="200.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_1" value="40.0" type="string"/>
+      <att name="NODE_BORDER_STROKE" value="SOLID" type="string"/>
+      <att name="NODE_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="NODE_LABEL_POSITION" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_6" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_7" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_NESTED_NETWORK_IMAGE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_4" value="40.0" type="string"/>
+      <att name="NODE_TOOLTIP" value="" type="string"/>
+      <att name="NODE_DEPTH" value="0.0" type="string"/>
+      <att name="NODE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_3" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_6" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_5" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL" value="ZNF738" type="string"/>
+      <att name="NODE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_7" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_6" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_2" value="40.0" type="string"/>
+      <att name="NODE_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_BORDER_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_8" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_2" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_7" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_5" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_9" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_1" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_1" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_3" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_4" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_3" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+    </graphics>
+  </node>
+  <node id="23600" label="H__sapiens__1_-Hs:9010683">
+    <att name="Synonym" value="BC39498_3" type="string"/>
+    <att name="Ensembl Protein ID" value="ENSP00000380351" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9010683" type="string"/>
+    <att name="MCODE_Node_Status" value="Clustered" type="string"/>
+    <att name="MCODE_Score" value="7.0" type="real"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="node type" value="query" type="string"/>
+    <att name="RefSeq mRNA ID" value="NM_033196" type="string"/>
+    <att name="MCODE_Cluster" type="list">
+      <att name="MCODE_Cluster" value="Cluster 3" type="string"/>
+    </att>
+    <att name="name" value="H__sapiens__1_-Hs:9010683" type="string"/>
+    <att name="score" value="0.7528293954441077" type="real"/>
+    <att name="log score" value="-0.28391664332759337" type="real"/>
+    <att name="xyz" value="Nucleus" type="string"/>
+    <att name="annotation name" type="list">
+      <att name="annotation name" value="" type="string"/>
+    </att>
+    <att name="Ensembl Gene ID" value="ENSG00000197124" type="string"/>
+    <att name="gene name" value="ZNF682" type="string"/>
+    <att name="Entrez Gene ID" value="91120" type="string"/>
+    <att name="annotations" type="list">
+      <att name="annotations" value="" type="string"/>
+    </att>
+    <att name="RefSeq Protein ID" value="NP_149973" type="string"/>
+    <att name="Uniprot ID" value="ZNF56_HUMAN" type="string"/>
+    <att name="Fold change" value="2.59042" type="real"/>
+    <graphics outline="#000000" fill="#000000" w="40.0" y="-69.92145538330078" x="238.21073150634766" z="0.0" type="ELLIPSE" h="40.0" width="2.0">
+      <att name="NODE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_8" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL_FONT_SIZE" value="12" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_2" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_9" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_8" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_9" value="40.0" type="string"/>
+      <att name="NODE_SELECTED" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_5" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_4" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_LABEL_FONT_FACE" value="SansSerif.plain,plain,12" type="string"/>
+      <att name="NODE_LABEL_WIDTH" value="200.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_1" value="40.0" type="string"/>
+      <att name="NODE_BORDER_STROKE" value="SOLID" type="string"/>
+      <att name="NODE_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="NODE_LABEL_POSITION" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_6" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_7" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_NESTED_NETWORK_IMAGE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_4" value="40.0" type="string"/>
+      <att name="NODE_TOOLTIP" value="" type="string"/>
+      <att name="NODE_DEPTH" value="0.0" type="string"/>
+      <att name="NODE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_3" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_6" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_5" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL" value="ZNF682" type="string"/>
+      <att name="NODE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_7" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_6" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_2" value="40.0" type="string"/>
+      <att name="NODE_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_BORDER_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_8" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_2" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_7" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_5" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_9" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_1" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_1" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_3" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_4" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_3" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+    </graphics>
+  </node>
+  <node id="23599" label="H__sapiens__1_-Hs:9007651">
+    <att name="Synonym" value="" type="string"/>
+    <att name="Ensembl Protein ID" value="ENSP00000401947" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9007651" type="string"/>
+    <att name="MCODE_Node_Status" value="Clustered" type="string"/>
+    <att name="MCODE_Score" value="7.0" type="real"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="node type" value="query" type="string"/>
+    <att name="RefSeq mRNA ID" value="NM_013361" type="string"/>
+    <att name="MCODE_Cluster" type="list">
+      <att name="MCODE_Cluster" value="Cluster 3" type="string"/>
+    </att>
+    <att name="name" value="H__sapiens__1_-Hs:9007651" type="string"/>
+    <att name="score" value="0.6831723810292337" type="real"/>
+    <att name="log score" value="-0.3810080632189042" type="real"/>
+    <att name="xyz" value="Nucleus" type="string"/>
+    <att name="annotation name" type="list">
+      <att name="annotation name" value="" type="string"/>
+    </att>
+    <att name="Ensembl Gene ID" value="ENSG00000178386" type="string"/>
+    <att name="gene name" value="ZNF223" type="string"/>
+    <att name="Entrez Gene ID" value="7766" type="string"/>
+    <att name="annotations" type="list">
+      <att name="annotations" value="" type="string"/>
+    </att>
+    <att name="RefSeq Protein ID" value="NP_037493" type="string"/>
+    <att name="Uniprot ID" value="" type="string"/>
+    <att name="Fold change" value="2.12242" type="real"/>
+    <graphics outline="#000000" fill="#000000" w="40.0" y="65.8528823852539" x="196.03695678710938" z="0.0" type="ELLIPSE" h="40.0" width="2.0">
+      <att name="NODE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_8" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL_FONT_SIZE" value="12" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_2" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_9" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_8" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_9" value="40.0" type="string"/>
+      <att name="NODE_SELECTED" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_5" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_4" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_LABEL_FONT_FACE" value="SansSerif.plain,plain,12" type="string"/>
+      <att name="NODE_LABEL_WIDTH" value="200.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_1" value="40.0" type="string"/>
+      <att name="NODE_BORDER_STROKE" value="SOLID" type="string"/>
+      <att name="NODE_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="NODE_LABEL_POSITION" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_6" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_7" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_NESTED_NETWORK_IMAGE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_4" value="40.0" type="string"/>
+      <att name="NODE_TOOLTIP" value="" type="string"/>
+      <att name="NODE_DEPTH" value="0.0" type="string"/>
+      <att name="NODE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_3" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_6" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_5" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL" value="ZNF223" type="string"/>
+      <att name="NODE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_7" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_6" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_2" value="40.0" type="string"/>
+      <att name="NODE_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_BORDER_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_8" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_2" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_7" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_5" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_9" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_1" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_1" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_3" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_4" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_3" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+    </graphics>
+  </node>
+  <node id="23604" label="H__sapiens__1_-Hs:8996144">
+    <att name="Synonym" value="KOX6" type="string"/>
+    <att name="Ensembl Protein ID" value="ENSP00000340514" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144" type="string"/>
+    <att name="MCODE_Node_Status" value="Clustered" type="string"/>
+    <att name="MCODE_Score" value="7.0" type="real"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="node type" value="query" type="string"/>
+    <att name="RefSeq mRNA ID" value="NM_021030" type="string"/>
+    <att name="MCODE_Cluster" type="list">
+      <att name="MCODE_Cluster" value="Cluster 3" type="string"/>
+    </att>
+    <att name="name" value="H__sapiens__1_-Hs:8996144" type="string"/>
+    <att name="score" value="0.6402576450081808" type="real"/>
+    <att name="log score" value="-0.4458846133128297" type="real"/>
+    <att name="xyz" value="Nucleus" type="string"/>
+    <att name="annotation name" type="list">
+      <att name="annotation name" value="" type="string"/>
+    </att>
+    <att name="Ensembl Gene ID" value="ENSG00000105708" type="string"/>
+    <att name="gene name" value="ZNF14" type="string"/>
+    <att name="Entrez Gene ID" value="7561" type="string"/>
+    <att name="annotations" type="list">
+      <att name="annotations" value="" type="string"/>
+    </att>
+    <att name="RefSeq Protein ID" value="NP_066358" type="string"/>
+    <att name="Uniprot ID" value="ZNF14_HUMAN" type="string"/>
+    <att name="Fold change" value="2.19117" type="real"/>
+    <graphics outline="#000000" fill="#000000" w="40.0" y="-17.936439514160156" x="97.42140197753906" z="0.0" type="ELLIPSE" h="40.0" width="2.0">
+      <att name="NODE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_8" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL_FONT_SIZE" value="12" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_2" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_9" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_8" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_9" value="40.0" type="string"/>
+      <att name="NODE_SELECTED" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_5" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_4" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_LABEL_FONT_FACE" value="SansSerif.plain,plain,12" type="string"/>
+      <att name="NODE_LABEL_WIDTH" value="200.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_1" value="40.0" type="string"/>
+      <att name="NODE_BORDER_STROKE" value="SOLID" type="string"/>
+      <att name="NODE_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="NODE_LABEL_POSITION" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_6" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_7" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_NESTED_NETWORK_IMAGE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_4" value="40.0" type="string"/>
+      <att name="NODE_TOOLTIP" value="" type="string"/>
+      <att name="NODE_DEPTH" value="0.0" type="string"/>
+      <att name="NODE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_3" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_6" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_5" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL" value="ZNF14" type="string"/>
+      <att name="NODE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_7" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_6" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_2" value="40.0" type="string"/>
+      <att name="NODE_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_BORDER_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_8" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_2" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_7" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_5" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_9" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_1" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_1" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_3" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_4" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_3" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+    </graphics>
+  </node>
+  <node id="23504" label="H__sapiens__1_-Hs:8993264">
+    <att name="Synonym" value="TBP7" type="string"/>
+    <att name="Ensembl Protein ID" value="ENSP00000413869" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8993264" type="string"/>
+    <att name="MCODE_Node_Status" value="Seed" type="string"/>
+    <att name="MCODE_Score" value="7.777777777777778" type="real"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="node type" value="query" type="string"/>
+    <att name="RefSeq mRNA ID" value="NM_153001" type="string"/>
+    <att name="MCODE_Cluster" type="list">
+      <att name="MCODE_Cluster" value="Cluster 3" type="string"/>
+    </att>
+    <att name="name" value="H__sapiens__1_-Hs:8993264" type="string"/>
+    <att name="score" value="0.5321314493919197" type="real"/>
+    <att name="log score" value="-0.6308647348378864" type="real"/>
+    <att name="xyz" value="Mitochondrion" type="string"/>
+    <att name="annotation name" type="list">
+      <att name="annotation name" value="" type="string"/>
+    </att>
+    <att name="Ensembl Gene ID" value="ENSG00000013275" type="string"/>
+    <att name="gene name" value="PSMC4" type="string"/>
+    <att name="Entrez Gene ID" value="5704" type="string"/>
+    <att name="annotations" type="list">
+      <att name="annotations" value="" type="string"/>
+    </att>
+    <att name="RefSeq Protein ID" value="NP_694546" type="string"/>
+    <att name="Uniprot ID" value="PRS6B_HUMAN" type="string"/>
+    <att name="Fold change" value="-2.27755" type="real"/>
+    <graphics outline="#000000" fill="#000000" w="40.0" y="-353.42822265625" x="-140.77182006835938" z="0.0" type="ELLIPSE" h="40.0" width="2.0">
+      <att name="NODE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_8" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL_FONT_SIZE" value="12" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_2" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_9" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_8" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_9" value="40.0" type="string"/>
+      <att name="NODE_SELECTED" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_5" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_4" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_LABEL_FONT_FACE" value="SansSerif.plain,plain,12" type="string"/>
+      <att name="NODE_LABEL_WIDTH" value="200.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_1" value="40.0" type="string"/>
+      <att name="NODE_BORDER_STROKE" value="SOLID" type="string"/>
+      <att name="NODE_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="NODE_LABEL_POSITION" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_6" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_7" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_NESTED_NETWORK_IMAGE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_4" value="40.0" type="string"/>
+      <att name="NODE_TOOLTIP" value="" type="string"/>
+      <att name="NODE_DEPTH" value="0.0" type="string"/>
+      <att name="NODE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_3" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_6" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_5" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL" value="PSMC4" type="string"/>
+      <att name="NODE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_7" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_6" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_2" value="40.0" type="string"/>
+      <att name="NODE_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_BORDER_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_8" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_2" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_7" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_5" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_9" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_1" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_1" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_3" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_4" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_3" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+    </graphics>
+  </node>
+  <node id="23605" label="H__sapiens__1_-Hs:8997819">
+    <att name="Synonym" value="FLJ13659" type="string"/>
+    <att name="Ensembl Protein ID" value="ENSP00000261560" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8997819" type="string"/>
+    <att name="MCODE_Node_Status" value="Clustered" type="string"/>
+    <att name="MCODE_Score" value="7.0" type="real"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="node type" value="query" type="string"/>
+    <att name="RefSeq mRNA ID" value="NM_025189" type="string"/>
+    <att name="MCODE_Cluster" type="list">
+      <att name="MCODE_Cluster" value="Cluster 3" type="string"/>
+    </att>
+    <att name="name" value="H__sapiens__1_-Hs:8997819" type="string"/>
+    <att name="score" value="0.6732036256323591" type="real"/>
+    <att name="log score" value="-0.3957074310110061" type="real"/>
+    <att name="xyz" value="Nucleus" type="string"/>
+    <att name="annotation name" type="list">
+      <att name="annotation name" value="" type="string"/>
+    </att>
+    <att name="Ensembl Gene ID" value="ENSG00000118620" type="string"/>
+    <att name="gene name" value="ZNF430" type="string"/>
+    <att name="Entrez Gene ID" value="80264" type="string"/>
+    <att name="annotations" type="list">
+      <att name="annotations" value="" type="string"/>
+    </att>
+    <att name="RefSeq Protein ID" value="NP_079465" type="string"/>
+    <att name="Uniprot ID" value="ZN430_HUMAN" type="string"/>
+    <att name="Fold change" value="2.32154" type="real"/>
+    <graphics outline="#000000" fill="#000000" w="40.0" y="-11.269241333007812" x="333.3407897949219" z="0.0" type="ELLIPSE" h="40.0" width="2.0">
+      <att name="NODE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_8" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL_FONT_SIZE" value="12" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_2" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_9" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_8" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_9" value="40.0" type="string"/>
+      <att name="NODE_SELECTED" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_5" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_4" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_LABEL_FONT_FACE" value="SansSerif.plain,plain,12" type="string"/>
+      <att name="NODE_LABEL_WIDTH" value="200.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_1" value="40.0" type="string"/>
+      <att name="NODE_BORDER_STROKE" value="SOLID" type="string"/>
+      <att name="NODE_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="NODE_LABEL_POSITION" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_6" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_7" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_NESTED_NETWORK_IMAGE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_4" value="40.0" type="string"/>
+      <att name="NODE_TOOLTIP" value="" type="string"/>
+      <att name="NODE_DEPTH" value="0.0" type="string"/>
+      <att name="NODE_VISIBLE" value="true" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_3" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_6" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_5" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_LABEL" value="ZNF430" type="string"/>
+      <att name="NODE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_7" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_6" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_2" value="40.0" type="string"/>
+      <att name="NODE_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_BORDER_TRANSPARENCY" value="255" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_8" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_2" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_7" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_SIZE_5" value="40.0" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_9" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_1" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_1" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_3" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_POSITION_4" value="C,C,c,0.00,0.00" type="string"/>
+      <att name="NODE_CUSTOMGRAPHICS_3" value="org.cytoscape.ding.customgraphics.NullCustomGraphics,0,[ Remove Graphics ]," type="string"/>
+    </graphics>
+  </node>
+  <edge id="26087" label="H__sapiens__1_-Hs:9044627|H__sapiens__1_-Hs:9006487|Shared protein domains" source="23534" target="23666" cy:directed="0">
+    <att name="normalized max weight" value="6.39929824045064E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9044627|H__sapiens__1_-Hs:9006487|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:9044627|H__sapiens__1_-Hs:9006487|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0023359893821179867" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.00006309027302">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="24968" label="H__sapiens__1_-Hs:9000338|H__sapiens__1_-Hs:9016754|Predicted" source="23499" target="23559" cy:directed="0">
+    <att name="normalized max weight" value="5.858907832062325E-5" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9000338|H__sapiens__1_-Hs:9016754|Predicted" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="I2D-vonMering-Bork-2002-Low-Yeast2Human" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:9000338|H__sapiens__1_-Hs:9016754|Predicted" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.019230321049690247" type="real"/>
+    </att>
+    <att name="data type" value="Predicted" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#f6c384" width="1.0405517886316265">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="26403" label="H__sapiens__1_-Hs:9016754|H__sapiens__1_-Hs:8996144|Co-expression" source="23559" target="23604" cy:directed="0">
+    <att name="normalized max weight" value="2.334075122630505E-4" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9016754|H__sapiens__1_-Hs:8996144|Co-expression" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Burczynski-Dorner-2006" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:9016754|H__sapiens__1_-Hs:8996144|Co-expression" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.004583478905260563" type="real"/>
+    </att>
+    <att name="data type" value="Co-expression" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#d0b7d5" width="1.1626963071112522">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="26157" label="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:9007651|Shared protein domains" source="23544" target="23599" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:9007651|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:9007651|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="26158" label="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:8997819|Shared protein domains" source="23544" target="23605" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:8997819|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:8997819|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="26155" label="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:9044627|Shared protein domains" source="23544" target="23534" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:9044627|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:9044627|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="26156" label="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:9010683|Shared protein domains" source="23544" target="23600" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:9010683|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:9010683|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="26154" label="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:9006487|Shared protein domains" source="23544" target="23666" cy:directed="0">
+    <att name="normalized max weight" value="6.39929824045064E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:9006487|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8998153|H__sapiens__1_-Hs:9006487|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0023359893821179867" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.00006309027302">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27078" label="H__sapiens__1_-Hs:9010683|H__sapiens__1_-Hs:9006487|Shared protein domains" source="23600" target="23666" cy:directed="0">
+    <att name="normalized max weight" value="6.39929824045064E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9010683|H__sapiens__1_-Hs:9006487|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:9010683|H__sapiens__1_-Hs:9006487|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0023359893821179867" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.00006309027302">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27079" label="H__sapiens__1_-Hs:9010683|H__sapiens__1_-Hs:9044627|Shared protein domains" source="23600" target="23534" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9010683|H__sapiens__1_-Hs:9044627|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:9010683|H__sapiens__1_-Hs:9044627|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27076" label="H__sapiens__1_-Hs:9007651|H__sapiens__1_-Hs:9010683|Shared protein domains" source="23599" target="23600" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9007651|H__sapiens__1_-Hs:9010683|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:9007651|H__sapiens__1_-Hs:9010683|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27075" label="H__sapiens__1_-Hs:9007651|H__sapiens__1_-Hs:9044627|Shared protein domains" source="23599" target="23534" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9007651|H__sapiens__1_-Hs:9044627|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:9007651|H__sapiens__1_-Hs:9044627|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27074" label="H__sapiens__1_-Hs:9007651|H__sapiens__1_-Hs:9006487|Shared protein domains" source="23599" target="23666" cy:directed="0">
+    <att name="normalized max weight" value="6.39929824045064E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9007651|H__sapiens__1_-Hs:9006487|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:9007651|H__sapiens__1_-Hs:9006487|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0023359893821179867" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.00006309027302">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27071" label="H__sapiens__1_-Hs:9007651|H__sapiens__1_-Hs:9010683|Co-expression" source="23599" target="23600" cy:directed="0">
+    <att name="normalized max weight" value="5.03421465959509E-4" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:9007651|H__sapiens__1_-Hs:9010683|Co-expression" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Jones-Libermann-2005" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:9007651|H__sapiens__1_-Hs:9010683|Co-expression" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.01638077385723591" type="real"/>
+    </att>
+    <att name="data type" value="Co-expression" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#d0b7d5" width="1.351353324642341">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27107" label="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8997819|Co-localization" source="23604" target="23605" cy:directed="0">
+    <att name="normalized max weight" value="1.881462885119171E-4" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8997819|Co-localization" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Johnson-Shoemaker-2003" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8997819|Co-localization" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.016155803576111794" type="real"/>
+    </att>
+    <att name="data type" value="Co-localization" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#a0b3dc" width="1.1310725803897244">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27104" label="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8997819|Shared protein domains" source="23604" target="23605" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8997819|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8997819|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27103" label="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9007651|Shared protein domains" source="23604" target="23599" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9007651|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9007651|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27106" label="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9044627|Co-localization" source="23604" target="23534" cy:directed="0">
+    <att name="normalized max weight" value="1.648796526730551E-4" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9044627|Co-localization" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Johnson-Shoemaker-2003" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9044627|Co-localization" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.014157936908304691" type="real"/>
+    </att>
+    <att name="data type" value="Co-localization" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#a0b3dc" width="1.1148163311653747">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27105" label="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8998153|Shared protein domains" source="23604" target="23544" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8998153|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8998153|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27093" label="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8997819|Co-expression" source="23604" target="23605" cy:directed="0">
+    <att name="normalized max weight" value="0.0015576858757720261" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8997819|Co-expression" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Jones-Libermann-2005" type="string"/>
+      <att name="networks" value="Gobble-Singer-2011" type="string"/>
+      <att name="networks" value="Radtke-Downing-2009" type="string"/>
+      <att name="networks" value="Hummel-Siebert-2006" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8997819|Co-expression" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.017319651320576668" type="real"/>
+      <att name="raw weights" value="0.018298307433724403" type="real"/>
+      <att name="raw weights" value="0.018042340874671936" type="real"/>
+      <att name="raw weights" value="0.01325288601219654" type="real"/>
+    </att>
+    <att name="data type" value="Co-expression" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#d0b7d5" width="2.0879611055424117">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27094" label="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9044627|Co-expression" source="23604" target="23534" cy:directed="0">
+    <att name="normalized max weight" value="3.2771497343498404E-4" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9044627|Co-expression" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Noble-Diehl-2008" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9044627|Co-expression" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.013801008462905884" type="real"/>
+    </att>
+    <att name="data type" value="Co-expression" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#d0b7d5" width="1.228588325327566">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27100" label="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9006487|Shared protein domains" source="23604" target="23666" cy:directed="0">
+    <att name="normalized max weight" value="6.39929824045064E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9006487|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9006487|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0023359893821179867" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.00006309027302">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27101" label="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9044627|Shared protein domains" source="23604" target="23534" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9044627|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9044627|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27102" label="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9010683|Shared protein domains" source="23604" target="23600" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9010683|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9010683|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27095" label="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8998153|Co-expression" source="23604" target="23544" cy:directed="0">
+    <att name="normalized max weight" value="3.927534380813332E-4" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8998153|Co-expression" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Noble-Diehl-2008" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:8998153|Co-expression" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.016539962962269783" type="real"/>
+    </att>
+    <att name="data type" value="Co-expression" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#d0b7d5" width="1.2740302834079062">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27096" label="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9007651|Co-expression" source="23604" target="23599" cy:directed="0">
+    <att name="normalized max weight" value="7.96658491081856E-4" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9007651|Co-expression" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Radtke-Downing-2009" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9007651|Co-expression" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.011777366511523724" type="real"/>
+    </att>
+    <att name="data type" value="Co-expression" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#d0b7d5" width="1.5562361532218643">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27097" label="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9010683|Co-expression" source="23604" target="23600" cy:directed="0">
+    <att name="normalized max weight" value="0.0010843310295630079" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9010683|Co-expression" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Arijs-Rutgeerts-2009" type="string"/>
+      <att name="networks" value="Hummel-Siebert-2006" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8996144|H__sapiens__1_-Hs:9010683|Co-expression" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.009721350856125355" type="real"/>
+      <att name="raw weights" value="0.023120911791920662" type="real"/>
+    </att>
+    <att name="data type" value="Co-expression" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#d0b7d5" width="1.757231110676773">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="25089" label="H__sapiens__1_-Hs:8993264|H__sapiens__1_-Hs:9000338|Co-expression" source="23504" target="23499" cy:directed="0">
+    <att name="normalized max weight" value="4.2896001518489765E-4" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8993264|H__sapiens__1_-Hs:9000338|Co-expression" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Kang-Willman-2010" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8993264|H__sapiens__1_-Hs:9000338|Co-expression" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0065795909613370895" type="real"/>
+    </att>
+    <att name="data type" value="Co-expression" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#d0b7d5" width="1.2993275865948615">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="25105" label="H__sapiens__1_-Hs:8993264|H__sapiens__1_-Hs:9016754|Co-expression" source="23504" target="23559" cy:directed="0">
+    <att name="normalized max weight" value="1.8235972786143006E-4" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8993264|H__sapiens__1_-Hs:9016754|Co-expression" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Berchtold-Cotman-2008" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8993264|H__sapiens__1_-Hs:9016754|Co-expression" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0063763451762497425" type="real"/>
+    </att>
+    <att name="data type" value="Co-expression" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#d0b7d5" width="1.1270295475792391">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27108" label="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9007651|Co-expression" source="23605" target="23599" cy:directed="0">
+    <att name="normalized max weight" value="3.103327259628674E-4" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9007651|Co-expression" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Noble-Diehl-2008" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9007651|Co-expression" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.013068992644548416" type="real"/>
+    </att>
+    <att name="data type" value="Co-expression" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#d0b7d5" width="1.2164434605115673">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27110" label="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9044627|Co-expression" source="23605" target="23534" cy:directed="0">
+    <att name="normalized max weight" value="0.0021876072363374087" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9044627|Co-expression" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Peng-Katze-2009" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9044627|Co-expression" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.02105165645480156" type="real"/>
+    </att>
+    <att name="data type" value="Co-expression" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#d0b7d5" width="2.5280831197438918">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27115" label="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9007651|Shared protein domains" source="23605" target="23599" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9007651|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9007651|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27112" label="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9006487|Shared protein domains" source="23605" target="23666" cy:directed="0">
+    <att name="normalized max weight" value="6.39929824045064E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9006487|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9006487|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0023359893821179867" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.00006309027302">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27111" label="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9010683|Co-expression" source="23605" target="23600" cy:directed="0">
+    <att name="normalized max weight" value="5.103920201714881E-4" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9010683|Co-expression" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="Hummel-Siebert-2006" type="string"/>
+    </att>
+    <att name="highlight" value="0" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9010683|Co-expression" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.010882957838475704" type="real"/>
+    </att>
+    <att name="data type" value="Co-expression" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#d0b7d5" width="1.3562236061598991">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="64" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27114" label="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9010683|Shared protein domains" source="23605" target="23600" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9010683|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9010683|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+  <edge id="27113" label="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9044627|Shared protein domains" source="23605" target="23534" cy:directed="0">
+    <att name="normalized max weight" value="8.015774820110454E-7" type="real"/>
+    <att name="interaction" value="" type="string"/>
+    <att name="shared name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9044627|Shared protein domains" type="string"/>
+    <att name="selected" value="1" type="boolean"/>
+    <att name="networks" type="list">
+      <att name="networks" value="INTERPRO" type="string"/>
+    </att>
+    <att name="highlight" value="1" type="integer"/>
+    <att name="name" value="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9044627|Shared protein domains" type="string"/>
+    <att name="raw weights" type="list">
+      <att name="raw weights" value="0.0029260653536766768" type="real"/>
+    </att>
+    <att name="data type" value="Shared protein domains" type="string"/>
+    <att name="shared interaction" value="" type="string"/>
+    <graphics fill="#dad4a2" width="1.0001760324548046">
+      <att name="EDGE_SELECTED" value="true" type="string"/>
+      <att name="EDGE_LABEL_TRANSPARENCY" value="255" type="string"/>
+      <att name="EDGE_LINE_TYPE" value="SOLID" type="string"/>
+      <att name="EDGE_LABEL_COLOR" value="#000000" type="string"/>
+      <att name="EDGE_LABEL" value="" type="string"/>
+      <att name="EDGE_STROKE_SELECTED_PAINT" value="#ff0000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_LABEL_FONT_FACE" value="SansSerif.plain,plain,10" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_UNSELECTED_PAINT" value="#000000" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SHAPE" value="NONE" type="string"/>
+      <att name="EDGE_SOURCE_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_LABEL_FONT_SIZE" value="10" type="string"/>
+      <att name="EDGE_TARGET_ARROW_SELECTED_PAINT" value="#ffff00" type="string"/>
+      <att name="EDGE_VISIBLE" value="true" type="string"/>
+      <att name="EDGE_TOOLTIP" value="" type="string"/>
+      <att name="EDGE_CURVED" value="true" type="string"/>
+      <att name="EDGE_TRANSPARENCY" value="255" type="string"/>
+    </graphics>
+  </edge>
+</graph>
