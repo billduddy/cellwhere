@@ -11,7 +11,11 @@
     Contact: zhu.lu@hotmail.com
 */
  
-/*--------------------------------------------------------Main-------------------------------------------------------*/ 
+/*--------------------------------------------------------Main-------------------------------------------------------*/
+    //time
+      $start = microtime(true);
+
+
     /*-read the original xml file ------------------------------------------------*/
    /* $file_xml = $argv[1];
     $xml=simplexml_load_file($file_xml.".xml");*/
@@ -52,6 +56,13 @@
 
     unlink($file_xml."_web.xml");
     if(file_exists($file_xml."_cy.xml")){echo $file_xml."_cy.xml"; }
+    
+    
+    $end = microtime(true);
+    $vis_Duration = $end - $start;
+    $vis_Duration = round($mentha_Duration, 2);      // Round to 2 decimal places
+    echo "<br />Visualization took:$vis_Duration seconds.</br>";
+    
    /*----------------------------------------------------End main----------------------------------------------------------*/ 
    
    
