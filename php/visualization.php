@@ -60,7 +60,7 @@
     
     $end = microtime(true);
     $vis_Duration = $end - $start;
-    $vis_Duration = round($mentha_Duration, 2);      // Round to 2 decimal places
+    $vis_Duration = round($vis_Duration, 2);      // Round to 2 decimal places
     echo "<br />Visualization took:$vis_Duration seconds.</br>";
     
    /*----------------------------------------------------End main----------------------------------------------------------*/ 
