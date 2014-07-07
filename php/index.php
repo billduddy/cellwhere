@@ -227,7 +227,8 @@ if (isset($_REQUEST['uploadedxmlfile'])){
     <!--Box to upload a gxxml file -->
     <br /><b><font color="#1F88A7">Upload a xgmml formated network(genertated by Cytocape 3.02):</font> </b><br/>
     <form enctype="multipart/form-data" action="xml_attributes.php" method="POST" onSubmit="return true">
-    <input name="uploadedxmlfile" type="file" style='background-color:#ffffff; border:solid 1px #1F88A7' /><br/>
+    <input name="uploadedxmlfile" type="file" style='background-color:#ffffff; border:solid 1px #1F88A7' />
+    <a href="download_xml.php">(download xgmml example)</a><br/>
  
     <!--Submit and reset buttons -->
     <br /><br /><input id="butt_2" name="next_2" type="submit" value="Next" /><input type="reset" value="Reset" />
