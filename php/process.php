@@ -512,6 +512,8 @@ function mentha_network($session_name,$show_name){
     }
     //echo 'http://mentha.uniroma2.it:8080/server/getInteractions?org=all&ids='.$ACCs;
     
+    //time for ranking the interaction
+    $start = microtime(true);
     $interaction=$both=$one=$none=array();
     //rank the added prots  
     while(!feof($M_network)){
@@ -554,6 +556,12 @@ function mentha_network($session_name,$show_name){
       $prot_all=array_unique(array_merge($prot_top, $org_uniprot));
     }
     if($prot_all==NULL){ $prot_all= $org_uniprot;}
+    
+    
+    $end = microtime(true);
+    $mentha_rank= $end - $start;
+    $mentha_rank = round($mentha_rank, 2);      // Round to 2 decimal places
+    echo "<br />Mentha ranking took:$mentha_rank seconds.</br>";
     
     $ACC_GN=array();
     if($show_name=="Gene_name"){
