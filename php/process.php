@@ -339,7 +339,9 @@ $ACCfromUniprot = '';               // Initialize array to store all ACCs for al
 $start = microtime(true);
 switch ($ID_type) {                 // Depending on selection on dropdown menu
     case "GeneSymbol":
+	echo "GeneSymbol";
         foreach ( $ID_array as $key => $value ) {
+	    echo $ID_array;
             if (empty($value)) {continue;}      // Ignore empty values
             $TheseACCs = '';                    // Initialize array to store ACCs retrieved for a single query ID
             if ($HumMouseFlag == "HumMouseOverlap") {
