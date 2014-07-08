@@ -212,6 +212,7 @@ if (isset($_REQUEST['uploadedxmlfile'])){
     <!--Dropdown menu for node name display-->
     <b><font color="#1F88A7"><br /><br />Select the name type of gene you want show at network:</font> </b><br />
     <select name="show_name">
+    <option value=""></option>
     <option value="Gene_name">Gene Symbol</option>
     <option value="UniprotACC">Uniprot Accession</option>
     <!--<option value="type_upload">The same type as upload ID</option>-->
