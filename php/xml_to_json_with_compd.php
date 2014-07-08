@@ -149,7 +149,7 @@
 			$fill="red";
 		    }  
 		    fwrite($out,",\n".'{"selector":"node#'.$id.'","css":{');
-		    fwrite($out,'"background-color":"'.$fill.'","background-opacity":"'.$opacity.'","border-width":"'.$graphics["width"].'","border-color":"'.$graphics['outline'].'","width":"'.$graphics["w"].'","height":"'.$graphics["h"].'","shape":"'.$shapes[(string)$graphics['type']].'"');		    
+		    fwrite($out,'"background-color":"'.$fill.'","background-opacity":"'.$opacity.'","border-width":"'.$graphics["width"].'","border-color":"'.$fill.'","width":"'.$graphics["w"].'","height":"'.$graphics["h"].'","shape":"'.$shapes[(string)$graphics['type']].'"');		    
 		    fwrite($out,',"color":"black","content":"data(name)","font-size":"'.$font_size.'","text-valign":"'.$text_valign.'","text-outline-color":"black","text-outline-width":"2px","border-opacity":"'.$opacity.'"}}');          
 		}	
 		if($nodes->attr[0]!=null){
