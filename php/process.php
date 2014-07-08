@@ -350,11 +350,12 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
             } elseif ($HumMouseFlag == "MouseOnly") {
                 $URLquery = "http://www.uniprot.org/uniprot/?query=(gene_exact:" . $value . ")+and+(organism:10090)+and+reviewed:yes&columns=id&format=tab";
             }
+	    echo $URLquery;
             set_time_limit(120);
             $TheseACCs = explode("\n", chop(file_get_contents($URLquery)));
             array_shift($TheseACCs);
             foreach ( $TheseACCs as $key2 => $value2 ) {    // Make table with separate row for the query ID (1st column)
-		echo $value2."\n";
+		echo $value2."<>";
                 $TheseACCs[$key2] = "$value\t$value2";      // and each retrieved ACC (2nd column)
             }
             $ACCfromUniprot .= implode("\n", $TheseACCs);   // Successively combine tables of all Query IDs and their retrieved ACCs
