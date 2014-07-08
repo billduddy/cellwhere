@@ -340,7 +340,7 @@ $start = microtime(true);
 switch ($ID_type) {                 // Depending on selection on dropdown menu
     case "GeneSymbol":
         foreach ( $ID_array as $key => $value ) {
-	    echo $value;
+	    echo $value."/";
             if (empty($value)) {continue;}      // Ignore empty values
             $TheseACCs = '';                    // Initialize array to store ACCs retrieved for a single query ID
             if ($HumMouseFlag == "HumMouseOverlap") {
