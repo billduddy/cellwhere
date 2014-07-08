@@ -421,7 +421,7 @@ echo "<br />You submitted $NoQueryIDs unique query ID(s).";
 echo "<br />Uniprot took: $UniprotDuration seconds.";
 
 file_put_contents("ACCfromUniprot.tsv", $ACCfromUniprot);
-// echo $ACCfromUniprot;
+ echo $ACCfromUniprot;
 
 //rename("QuickGO_tmp.tsv", "uploads/QuickGO_tmp.tsv");  //This can be useful if wanting to move the file
 
