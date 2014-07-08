@@ -354,7 +354,7 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
             array_shift($TheseACCs);
             foreach ( $TheseACCs as $key2 => $value2 ) {    // Make table with separate row for the query ID (1st column)
                 $TheseACCs[$key2] = "$value\t$value2";      // and each retrieved ACC (2nd column)
-		echo "$value\t$value2";
+		echo $value."\t".$value2;
             }
             $ACCfromUniprot .= implode("\n", $TheseACCs);   // Successively combine tables of all Query IDs and their retrieved ACCs
             $ACCfromUniprot .= "\n";
