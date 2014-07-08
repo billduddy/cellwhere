@@ -335,11 +335,10 @@ function UploadIDToUniprotACC($ID_type,$ID_array,$HumMouseFlag){
 // The latter 3 make use of the Uniprot mapping service
 
 $ACCfromUniprot = '';               // Initialize array to store all ACCs for all query IDs
-
+echo $ID_type;
 $start = microtime(true);
 switch ($ID_type) {                 // Depending on selection on dropdown menu
     case "GeneSymbol":
-	echo "GeneSymbol";
         foreach ( $ID_array as $key => $value ) {
 	    echo $ID_array;
             if (empty($value)) {continue;}      // Ignore empty values
