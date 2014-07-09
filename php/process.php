@@ -427,8 +427,9 @@ echo "<br />You submitted $NoQueryIDs unique query ID(s).";
 echo "<br />Uniprot took: $UniprotDuration seconds.";
 
 file_put_contents("ACCfromUniprot.tsv", $ACCfromUniprot);
-    if(file_exists("ACCfromUniprot.tsv")){
-	echo '<br/><a href="ACCfromUniprot.tsv" >download ACCfromUniprot.tsv</a>';
+file_put_contents("ACCfromUniprot_1.tsv", $ACCfromUniprot);
+    if(file_exists("ACCfromUniprot_1.tsv")){
+	echo '<br/><a href="ACCfromUniprot_1.tsv" >download ACCfromUniprot_1.tsv</a>';
     }
 
 //rename("QuickGO_tmp.tsv", "uploads/QuickGO_tmp.tsv");  //This can be useful if wanting to move the file
