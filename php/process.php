@@ -342,7 +342,6 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
         foreach ( $ID_array as $key => $value ) {
             if (empty($value)) {continue;}      // Ignore empty values
             $TheseACCs = '';                    // Initialize array to store ACCs retrieved for a single query ID
-	    $value = str_replace(array('.', ' ', "\n", "\t", "\r"), '', (string)$value);
 	    echo $value."-->";
             if ($HumMouseFlag == "HumMouseOverlap") {
                 $URLquery = "http://www.uniprot.org/uniprot/?query=(gene_exact:". $value .")+and+(organism:9606+OR+organism:10090)+and+reviewed:yes&columns=id&format=tab";
@@ -352,6 +351,7 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
                 $URLquery = "http://www.uniprot.org/uniprot/?query=(gene_exact:" . $value . ")+and+(organism:10090)+and+reviewed:yes&columns=id&format=tab";
             }
 	    echo $URLquery;
+	    $URLquery = str_replace(array('.', ' ', "\n", "\t", "\r"), '', (string)$URLquery);
             set_time_limit(120);
             $TheseACCs = explode("\n", chop(file_get_contents($URLquery)));
             array_shift($TheseACCs);
