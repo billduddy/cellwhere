@@ -364,12 +364,14 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
     case "UniprotACC":
         foreach ( $ID_array as $key => $value ) {
             $TheseACCs = "$value\t$value\n";
+	    $TheseACCs = rtrim($TheseACCs,'\r');		    // important to web version (\r problem)
             $ACCfromUniprot .= $TheseACCs;
         }
         break;
     case "UniprotID":
         $url = 'http://www.uniprot.org/mapping/';           // Next ~10 lines POST to Uniprot mapping service using CURL 
         $TheseIDs = implode(",", $ID_array);
+	$TheseIDs = rtrim($TheseIDs,'\r');		    // important to web version (\r problem)
         $myvars = 'from=' . 'ID' . '&to=' . 'ACC' . '&format=' . 'tab' . '&query=' . $TheseIDs;
         $ch = curl_init( $url );
         curl_setopt( $ch, CURLOPT_POST, 1);
@@ -385,6 +387,7 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
     case "Entrez":
         $url = 'http://www.uniprot.org/mapping/';           // Next ~10 lines POST to Uniprot mapping service using CURL 
         $TheseIDs = implode(",", $ID_array);
+	$TheseIDs = rtrim($TheseIDs,'\r');		    // important to web version (\r problem)
         $myvars = 'from=' . 'P_ENTREZGENEID' . '&to=' . 'ACC' . '&format=' . 'tab' . '&query=' . $TheseIDs;
         $ch = curl_init( $url );
         curl_setopt( $ch, CURLOPT_POST, 1);
@@ -398,14 +401,9 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
         $ACCfromUniprot = $TheseACCs;
         break;
     case "Ensembl":
-	foreach ( $ID_array as $key => $value ) {
-	    $value = rtrim($value,'\r');
-	    echo $value.">>";
-	}
         $url = 'http://www.uniprot.org/mapping/';           // Next ~10 lines POST to Uniprot mapping service using CURL 
         $TheseIDs = implode(",", $ID_array);
-	echo "   TheseIDs".$TheseIDs;
-	$TheseIDs = rtrim($TheseIDs,'\r');
+	$TheseIDs = rtrim($TheseIDs,'\r');		    // important to web version (\r problem)
         $myvars = 'from=' . 'ENSEMBL_ID' . '&to=' . 'ACC' . '&format=' . 'tab' . '&query=' . $TheseIDs;
         $ch = curl_init( $url );
         curl_setopt( $ch, CURLOPT_POST, 1);
