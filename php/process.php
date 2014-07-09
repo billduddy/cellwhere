@@ -496,6 +496,7 @@ function mentha_network($session_name,$show_name){
     $duplicate=array();
         
     $ACCfile=file_get_contents('ACCfromUniprot.tsv');
+    echo "ACCfile".$ACCfile;
     $lines=array_filter(explode("\n",$ACCfile)); 
     foreach($lines as $line){
       list($upload,$uniprot)=explode("\t",$line);
@@ -507,6 +508,7 @@ function mentha_network($session_name,$show_name){
     }
     
     $ACCs  = implode(",",array_keys($org_nodes));
+    echo "ACCs:".$ACCs;
     //$ACCs  = preg_replace("/\n[a-zA-Z0-9_]+\t/",",",$ACCfile);  //string
     $org_uniprot=array_filter(explode(",",$ACCs));                //array
     
