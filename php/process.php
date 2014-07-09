@@ -95,11 +95,12 @@ if (isset($_POST)){
             '\r' => '\n',
             PHP_EOL => '\n',
         ));
-	$theData = rtrim($theData,'\r');   // ----Lu 
-        $ID_array = explode('\n', $theData);
+	
+        $ID_array = explode('\n', $theData);	
         $ID_array = array_filter($ID_array);    // Removes empty elements from array
         $ID_array = array_unique($ID_array);    // Removes duplicate elements from array
         foreach ( $ID_array as $key => $value ) {
+	    $value = rtrim($value,'\r');
             $ID_array[$key] = htmlspecialchars($value);         // Removes links and other html nasties if they are present in the uploaded text and printed later as html
             $ID_array[$key] = mysql_real_escape_string($value); // Removes MySQL injections from the text if it is input to a MySQL database 
         }
