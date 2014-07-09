@@ -545,9 +545,10 @@ function mentha_network($session_name,$show_name){
       if($line){
         list($prot_A,$org_A,$prot_B,$org_B,$score)= array_filter(explode(";",$line));
         if($duplicate){
+	  echo 'duplicate';
           foreach($duplicate as $uplaod=>$uniprots){
-            if(in_array($prot_A,$uniprots)){$prot_A=$uplaod;}
-            if(in_array($prot_B,$uniprots)){$prot_B=$uplaod;}
+            if(in_array($prot_A,$uniprots)){$prot_A=$uplaod;echo $prot_A;}
+            if(in_array($prot_B,$uniprots)){$prot_B=$uplaod;echo $prot_B;}
           }
         }
         $prot_all[]=$prot_A;
