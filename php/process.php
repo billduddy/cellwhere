@@ -496,31 +496,17 @@ function mentha_network($session_name,$show_name){
     $duplicate=array();
         
     $ACCfile=file_get_contents('ACCfromUniprot.tsv');
-    echo "ACCfile".$ACCfile;
     $lines=array_filter(explode("\n",$ACCfile)); 
     foreach($lines as $line){
       list($upload,$uniprot)=explode("\t",$line);
-      if(!in_array($upload,$org_nodes)){ 
+      if(!in_array($upload,$org_nodes)){
         $org_nodes[$uniprot]=$upload;
       }else{
         $duplicate[$upload][]=$uniprot;
       }
-      /*
-      $org_nodes[$uniprot]=$upload;
-      if(in_array($upload,$org_nodes)){ 
-        $duplicate[$upload][]=$uniprot;
-      }
-      */
     }
-/*    
-    foreach($duplicate as $upload=> $uniprots){
-	echo $upload.":";
-	foreach($uniprots as $uniprot) echo $uniprot.",";
-	echo "<br/>";
-    }
-*/    
+    
     $ACCs  = implode(",",array_keys($org_nodes));
-    echo "ACCs:".$ACCs;
     //$ACCs  = preg_replace("/\n[a-zA-Z0-9_]+\t/",",",$ACCfile);  //string
     $org_uniprot=array_filter(explode(",",$ACCs));                //array
     
@@ -537,30 +523,28 @@ function mentha_network($session_name,$show_name){
     
     //time for ranking the interaction
     $start = microtime(true);
-    $interaction=$both=$one=$none=array();  
-    
-    //rank the added prots
+    $interaction=$both=$one=$none=array();
+    //rank the added prots  
     while(!feof($M_network)){
       $line = fgets($M_network);
       if($line){
         list($prot_A,$org_A,$prot_B,$org_B,$score)= array_filter(explode(";",$line));
         if($duplicate){
-	  echo 'duplicate';
           foreach($duplicate as $uplaod=>$uniprots){
             if(in_array($prot_A,$uniprots)){$prot_A=$uplaod;}
             if(in_array($prot_B,$uniprots)){$prot_B=$uplaod;}
           }
         }
         $prot_all[]=$prot_A;
-        $prot_all[]=$prot_B;
+        $prot_all[]=$prot_B;     
         if(in_array($prot_A,$org_uniprot)&&in_array($prot_B,$org_uniprot)){
-	  echo $prot_A."-".$org_uniprot;
           $both[$prot_A.'-'.$prot_B]=(real)chop($score);
         }elseif((in_array($prot_A,$org_uniprot)&&!in_array($prot_B,$org_uniprot))||(!in_array($prot_A,$org_uniprot)&&in_array($prot_B,$org_uniprot))){
           $one[$prot_A.'-'.$prot_B]=(real)chop($score);
         }elseif(!in_array($prot_A,$org_uniprot)&&!in_array($prot_B,$org_uniprot)){
           $none[$prot_A.'-'.$prot_B]=(real)chop($score);
         }
+      }
     }
     
     $prot_all=array_unique($prot_all);
