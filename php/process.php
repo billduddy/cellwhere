@@ -404,7 +404,7 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
 	}
         $url = 'http://www.uniprot.org/mapping/';           // Next ~10 lines POST to Uniprot mapping service using CURL 
         $TheseIDs = implode(",", $ID_array);
-	echo $TheseIDs;
+	echo "   TheseIDs".$TheseIDs;
         $myvars = 'from=' . 'ENSEMBL_ID' . '&to=' . 'ACC' . '&format=' . 'tab' . '&query=' . $TheseIDs;
         $ch = curl_init( $url );
         curl_setopt( $ch, CURLOPT_POST, 1);
