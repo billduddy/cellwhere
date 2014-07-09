@@ -194,6 +194,7 @@ if(!$ID_array){
             '\r' => '\n',
             PHP_EOL => '\n',
         ));
+	$theData = rtrim($theData,'\r');   // ----Lu 
         $loc_array = explode('\n', $theData);
         foreach ( $loc_array as $key => $value ) {
             $loc_array[$key] = htmlspecialchars($value);         // Removes links and other html nasties if they are present in the uploaded text and printed later as html
@@ -342,8 +343,7 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
         foreach ( $ID_array as $key => $value ) {
             if (empty($value)) {continue;}      // Ignore empty values
             $TheseACCs = '';                    // Initialize array to store ACCs retrieved for a single query ID
-            //$value=explode('\r',$value)[0];
-	    $value = rtrim($value,'\r');
+	    //$value = rtrim($value,'\r');
             if ($HumMouseFlag == "HumMouseOverlap") {
                 $URLquery = "http://www.uniprot.org/uniprot/?query=(gene_exact:". $value .")+and+(organism:9606+OR+organism:10090)+and+reviewed:yes&columns=id&format=tab";
             } elseif ($HumMouseFlag == "HumanOnly") {
