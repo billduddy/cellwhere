@@ -343,9 +343,9 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
             if (empty($value)) {continue;}      // Ignore empty values
             $TheseACCs = '';                    // Initialize array to store ACCs retrieved for a single query ID
 	    echo $value."-->";
-	    if (strpos($value,"\r")) {
-		echo 'true'."<br/>";
-	    }
+            $value=explode('\r',$value)[0];
+            echo $value."-->";
+	    
             if ($HumMouseFlag == "HumMouseOverlap") {
                 $URLquery = "http://www.uniprot.org/uniprot/?query=(gene_exact:". $value .")+and+(organism:9606+OR+organism:10090)+and+reviewed:yes&columns=id&format=tab";
             } elseif ($HumMouseFlag == "HumanOnly") {
