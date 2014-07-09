@@ -343,6 +343,9 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
             if (empty($value)) {continue;}      // Ignore empty values
             $TheseACCs = '';                    // Initialize array to store ACCs retrieved for a single query ID
 	    echo $value."-->";
+	    if (strpos($value,"\r") !== false) {
+		echo 'true';
+	    }
             if ($HumMouseFlag == "HumMouseOverlap") {
                 $URLquery = "http://www.uniprot.org/uniprot/?query=(gene_exact:". $value .")+and+(organism:9606+OR+organism:10090)+and+reviewed:yes&columns=id&format=tab";
             } elseif ($HumMouseFlag == "HumanOnly") {
@@ -350,8 +353,7 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
             } elseif ($HumMouseFlag == "MouseOnly") {
                 $URLquery = "http://www.uniprot.org/uniprot/?query=(gene_exact:" . $value . ")+and+(organism:10090)+and+reviewed:yes&columns=id&format=tab";
             }
-	    $URLquery = str_replace("\r", '', (string)$URLquery);
-   	    echo $URLquery;
+   	    echo $URLquery."<\br>";
             set_time_limit(120);
             $TheseACCs = explode("\n", chop(file_get_contents($URLquery)));
             array_shift($TheseACCs);
