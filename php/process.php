@@ -95,6 +95,7 @@ if (isset($_POST)){
             '\r' => '\n',
             PHP_EOL => '\n',
         ));
+	$theData = rtrim($theData,'\r');   // ----Lu 
         $ID_array = explode('\n', $theData);
         $ID_array = array_filter($ID_array);    // Removes empty elements from array
         $ID_array = array_unique($ID_array);    // Removes duplicate elements from array
@@ -194,7 +195,6 @@ if(!$ID_array){
             '\r' => '\n',
             PHP_EOL => '\n',
         ));
-	$theData = rtrim($theData,'\r');   // ----Lu 
         $loc_array = explode('\n', $theData);
         foreach ( $loc_array as $key => $value ) {
             $loc_array[$key] = htmlspecialchars($value);         // Removes links and other html nasties if they are present in the uploaded text and printed later as html
