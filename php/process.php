@@ -554,6 +554,7 @@ function mentha_network($session_name,$show_name){
         $prot_all[]=$prot_A;
         $prot_all[]=$prot_B;
         if(in_array($prot_A,$org_uniprot)&&in_array($prot_B,$org_uniprot)){
+	  echo $prot_A."-".$org_uniprot;
           $both[$prot_A.'-'.$prot_B]=(real)chop($score);
         }elseif((in_array($prot_A,$org_uniprot)&&!in_array($prot_B,$org_uniprot))||(!in_array($prot_A,$org_uniprot)&&in_array($prot_B,$org_uniprot))){
           $one[$prot_A.'-'.$prot_B]=(real)chop($score);
