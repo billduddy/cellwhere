@@ -500,11 +500,23 @@ function mentha_network($session_name,$show_name){
     $lines=array_filter(explode("\n",$ACCfile)); 
     foreach($lines as $line){
       list($upload,$uniprot)=explode("\t",$line);
-      
-      if(in_array($upload,$org_nodes)){
+      /*
+      if(!in_array($upload,$org_nodes)){ 
+        $org_nodes[$uniprot]=$upload;
+      }else{
         $duplicate[$upload][]=$uniprot;
       }
+      */
       $org_nodes[$uniprot]=$upload;
+      if(in_array($upload,$org_nodes)){ 
+        $duplicate[$upload][]=$uniprot;
+      }
+    }
+    
+    foreach($duplicate as $upload=> $uniprots){
+	echo $upload.":";
+	foreach($uniprots as $uniprot) echo $uniprot.",";
+	echo "<br/>";
     }
     
     $ACCs  = implode(",",array_keys($org_nodes));
@@ -525,8 +537,9 @@ function mentha_network($session_name,$show_name){
     
     //time for ranking the interaction
     $start = microtime(true);
-    $interaction=$both=$one=$none=array();
-    //rank the added prots  
+    $interaction=$both=$one=$none=array();  
+    
+    //rank the added prots
     while(!feof($M_network)){
       $line = fgets($M_network);
       if($line){
@@ -538,7 +551,7 @@ function mentha_network($session_name,$show_name){
           }
         }
         $prot_all[]=$prot_A;
-        $prot_all[]=$prot_B;     
+        $prot_all[]=$prot_B;
         if(in_array($prot_A,$org_uniprot)&&in_array($prot_B,$org_uniprot)){
           $both[$prot_A.'-'.$prot_B]=(real)chop($score);
         }elseif((in_array($prot_A,$org_uniprot)&&!in_array($prot_B,$org_uniprot))||(!in_array($prot_A,$org_uniprot)&&in_array($prot_B,$org_uniprot))){
