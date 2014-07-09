@@ -340,12 +340,12 @@ $start = microtime(true);
 switch ($ID_type) {                 // Depending on selection on dropdown menu
     case "GeneSymbol":
         foreach ( $ID_array as $key => $value ) {
-	    $value=chop($value);
+	    $value=chop($value,"\r");
 	    echo $value."->";
             if (empty($value)) {continue;}      // Ignore empty values
             $TheseACCs = '';                    // Initialize array to store ACCs retrieved for a single query ID
             if ($HumMouseFlag == "HumMouseOverlap") {
-                $URLquery = "http://www.uniprot.org/uniprot/?query=(gene_exact:" . $value . ")+and+(organism:9606+OR+organism:10090)+and+reviewed:yes&columns=id&format=tab";
+                $URLquery = "http://www.uniprot.org/uniprot/?query=(gene_exact:". $value .")+and+(organism:9606+OR+organism:10090)+and+reviewed:yes&columns=id&format=tab";
             } elseif ($HumMouseFlag == "HumanOnly") {
                 $URLquery = "http://www.uniprot.org/uniprot/?query=(gene_exact:" . $value . ")+and+(organism:9606)+and+reviewed:yes&columns=id&format=tab";
             } elseif ($HumMouseFlag == "MouseOnly") {
