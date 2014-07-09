@@ -497,15 +497,14 @@ function mentha_network($session_name,$show_name){
         
     $ACCfile=file_get_contents('ACCfromUniprot.tsv');
     echo "ACCfile".$ACCfile;
-    $lines=array_filter(explode("\n",$ACCfile));
-    echo "lines".$lines."<br/>";
+    $lines=array_filter(explode("\n",$ACCfile)); 
     foreach($lines as $line){
       list($upload,$uniprot)=explode("\t",$line);
-      if(!in_array($upload,$org_nodes)){
-        $org_nodes[$uniprot]=$upload;
-      }else{
-        $duplicate[$uniprot][]=$upload;
+      
+      if(in_array($upload,$org_nodes)){
+        $duplicate[$upload][]=$uniprot;
       }
+      $org_nodes[$uniprot]=$upload;
     }
     
     $ACCs  = implode(",",array_keys($org_nodes));
