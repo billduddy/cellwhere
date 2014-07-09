@@ -100,8 +100,6 @@ if (isset($_POST)){
         $ID_array = array_filter($ID_array);    // Removes empty elements from array
         $ID_array = array_unique($ID_array);    // Removes duplicate elements from array
         foreach ( $ID_array as $key => $value ) {
-	    //$value = rtrim($value,'\r');
-	    echo $value."*";
             $ID_array[$key] = htmlspecialchars($value);         // Removes links and other html nasties if they are present in the uploaded text and printed later as html
             $ID_array[$key] = mysql_real_escape_string($value); // Removes MySQL injections from the text if it is input to a MySQL database 
         }
@@ -338,14 +336,13 @@ function UploadIDToUniprotACC($ID_type,$ID_array,$HumMouseFlag){
 // The latter 3 make use of the Uniprot mapping service
 
 $ACCfromUniprot = '';               // Initialize array to store all ACCs for all query IDs
-echo $ID_type;
 $start = microtime(true);
 switch ($ID_type) {                 // Depending on selection on dropdown menu
     case "GeneSymbol":
         foreach ( $ID_array as $key => $value ) {
             if (empty($value)) {continue;}      // Ignore empty values
             $TheseACCs = '';                    // Initialize array to store ACCs retrieved for a single query ID
-	    //$value = rtrim($value,'\r');
+	    $value = rtrim($value,'\r');
             if ($HumMouseFlag == "HumMouseOverlap") {
                 $URLquery = "http://www.uniprot.org/uniprot/?query=(gene_exact:". $value .")+and+(organism:9606+OR+organism:10090)+and+reviewed:yes&columns=id&format=tab";
             } elseif ($HumMouseFlag == "HumanOnly") {
@@ -353,7 +350,7 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
             } elseif ($HumMouseFlag == "MouseOnly") {
                 $URLquery = "http://www.uniprot.org/uniprot/?query=(gene_exact:" . $value . ")+and+(organism:10090)+and+reviewed:yes&columns=id&format=tab";
             }
-   	    echo $URLquery."<br/>";
+   	    //echo $URLquery."<br/>";
             set_time_limit(120);
             $TheseACCs = explode("\n", chop(file_get_contents($URLquery)));
             array_shift($TheseACCs);
@@ -367,6 +364,7 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
         break;
     case "UniprotACC":
         foreach ( $ID_array as $key => $value ) {
+	    $value = rtrim($value,'\r');
             $TheseACCs = "$value\t$value\n";
             $ACCfromUniprot .= $TheseACCs;
         }
