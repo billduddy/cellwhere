@@ -339,8 +339,8 @@ echo $ID_type;
 $start = microtime(true);
 switch ($ID_type) {                 // Depending on selection on dropdown menu
     case "GeneSymbol":
-        foreach ( $ID_array as $key => $value ) {
-	    $value=chop($value,"\r");
+        foreach ( $ID_array as $key => $value1 ) {
+	    $value=chop($value1,"\r");
 	    echo $value."->";
             if (empty($value)) {continue;}      // Ignore empty values
             $TheseACCs = '';                    // Initialize array to store ACCs retrieved for a single query ID
