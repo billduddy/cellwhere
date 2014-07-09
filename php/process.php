@@ -500,25 +500,25 @@ function mentha_network($session_name,$show_name){
     $lines=array_filter(explode("\n",$ACCfile)); 
     foreach($lines as $line){
       list($upload,$uniprot)=explode("\t",$line);
-      /*
       if(!in_array($upload,$org_nodes)){ 
         $org_nodes[$uniprot]=$upload;
       }else{
         $duplicate[$upload][]=$uniprot;
       }
-      */
+      /*
       $org_nodes[$uniprot]=$upload;
       if(in_array($upload,$org_nodes)){ 
         $duplicate[$upload][]=$uniprot;
       }
+      */
     }
-    
+/*    
     foreach($duplicate as $upload=> $uniprots){
 	echo $upload.":";
 	foreach($uniprots as $uniprot) echo $uniprot.",";
 	echo "<br/>";
     }
-    
+*/    
     $ACCs  = implode(",",array_keys($org_nodes));
     echo "ACCs:".$ACCs;
     //$ACCs  = preg_replace("/\n[a-zA-Z0-9_]+\t/",",",$ACCfile);  //string
@@ -547,8 +547,8 @@ function mentha_network($session_name,$show_name){
         if($duplicate){
 	  echo 'duplicate';
           foreach($duplicate as $uplaod=>$uniprots){
-            if(in_array($prot_A,$uniprots)){/*$prot_A=$uplaod;*/$prot_A=$uniprots[0];}
-            if(in_array($prot_B,$uniprots)){/*$prot_B=$uplaod;*/$prot_B=$uniprots[0];}
+            if(in_array($prot_A,$uniprots)){$prot_A=$uplaod;}
+            if(in_array($prot_B,$uniprots)){$prot_B=$uplaod;}
           }
         }
         $prot_all[]=$prot_A;
