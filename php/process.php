@@ -355,7 +355,6 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
             $TheseACCs = explode("\n", chop(file_get_contents($URLquery)));
             array_shift($TheseACCs);
             foreach ( $TheseACCs as $key2 => $value2 ) {    // Make table with separate row for the query ID (1st column)
-		echo $value2."<>";
                 $TheseACCs[$key2] = "$value\t$value2";      // and each retrieved ACC (2nd column)
             }
             $ACCfromUniprot .= implode("\n", $TheseACCs);   // Successively combine tables of all Query IDs and their retrieved ACCs
@@ -364,7 +363,6 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
         break;
     case "UniprotACC":
         foreach ( $ID_array as $key => $value ) {
-	    $value = rtrim($value,'\r');
             $TheseACCs = "$value\t$value\n";
             $ACCfromUniprot .= $TheseACCs;
         }
@@ -400,6 +398,9 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
         $ACCfromUniprot = $TheseACCs;
         break;
     case "Ensembl":
+	foreach ( $ID_array as $key => $value ) {
+	    $value = rtrim($value,'\r');
+	}
         $url = 'http://www.uniprot.org/mapping/';           // Next ~10 lines POST to Uniprot mapping service using CURL 
         $TheseIDs = implode(",", $ID_array);
         $myvars = 'from=' . 'ENSEMBL_ID' . '&to=' . 'ACC' . '&format=' . 'tab' . '&query=' . $TheseIDs;
