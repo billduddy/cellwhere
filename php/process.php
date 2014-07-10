@@ -532,38 +532,7 @@ function mentha_network($session_name,$show_name,$mentha_add){
     
     
     if($mentha_add==0){			// only query proteins
-	while(!feof($M_network)){
-	  $line = fgets($M_network);
-	  if($line){
-	    list($prot_A,$org_A,$prot_B,$org_B,$score)= array_filter(explode(";",$line));
-	    if($duplicate){
-	      foreach($duplicate as $uplaod=>$uniprots){
-		if(in_array($prot_A,$uniprots)){$prot_A=$uplaod;}
-		if(in_array($prot_B,$uniprots)){$prot_B=$uplaod;}
-	      }
-	    }
-	    //$prot_all[]=$prot_A;
-	    //$prot_all[]=$prot_B;     
-	    if(in_array($prot_A,$org_uniprot)&&in_array($prot_B,$org_uniprot)){
-	      $both[$prot_A.'-'.$prot_B]=(real)chop($score);
-	      $prot_all[]=$prot_A;
-	      $prot_all[]=$prot_B;
-	    }
-	    $prot_all=array_unique($prot_all);
-	    if($both){        arsort($both); $interaction=array_merge($interaction,$both);	}
-	  }
-	}
-	$top=50;
-	if(count($prot_all)>$top){ 
-	  $interaction=array_slice($interaction,0,$top);
-	  foreach($interaction as $protAB=>$score){
-	    $prot=explode('-',$protAB);
-	    $prot_top[]=$prot[0];
-	    $prot_top[]=$prot[1];
-	  }
-	  $prot_all=array_unique(array_merge($prot_top, $org_uniprot));
-	}
-	if($prot_all==NULL){ $prot_all= $org_uniprot;}
+	$prot_all= $org_uniprot;
     }else{
 	//time for ranking the interaction
 	$start = microtime(true);
