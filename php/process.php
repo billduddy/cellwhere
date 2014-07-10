@@ -287,6 +287,7 @@ if(!$ID_array){
 	
 	$mentha_add=0;
 	if(isset($_POST["mentha_add"])&&$_POST["mentha_add"]=="checked"){$mentha_add=1;}
+	echo $_POST["mentha_add"]."->".$mentha_add;
 	list($org_nodes,$ID_array,$ACC_GN)=mentha_network($session_name,$show_name,$mentha_add);
 	$ID_type = "UniprotACC";
 	$ACCfromUniprot=NULL;
