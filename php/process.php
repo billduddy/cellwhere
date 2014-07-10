@@ -574,7 +574,9 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	    $prot_top[]=$prot[0];
 	    $prot_top[]=$prot[1];
 	  }
-	  $prot_all=array_unique(array_merge($prot_top, $org_uniprot));
+	  $prot_all[]=$prot_top;
+	  $prot_all[]=$org_uniprot;
+	  $prot_all=array_unique($prot_all);
 	}
 	if($prot_all==NULL || $mentha_add==0 ){ $prot_all= $org_uniprot;}
 	$end = microtime(true);
