@@ -581,6 +581,7 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	$mentha_rank= $end - $start;
 	$mentha_rank = round($mentha_rank, 2);      // Round to 2 decimal places
 	echo "<br />Mentha ranking took:$mentha_rank seconds.</br>";
+	fclose($M_network);
     }
     
     $ACC_GN=array();
@@ -622,30 +623,31 @@ function mentha_network($session_name,$show_name,$mentha_add){
       $graphics->addAttribute("type","ELLIPSE");
     }
 
-    
-    //edges
-    // <edge id="27113" label="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9044627|Shared protein domains" source="23605" target="23534" cy:directed="0">
-   //    <graphics fill="#dad4a2" width="1.0001760324548046">
-    $id=1;
-    foreach($interaction as $protAB=>$score){
-      $prot=explode('-',$protAB);
-      //echo $prot[0].'+'.$prot[1]."</br>";
-      $edge = $graph->addChild("edge");
-      $edge->addAttribute("id",$id);
-      $edge->addAttribute("label",$prot[0]."|".$prot[1]);
-      $edge->addAttribute("source",$prot[0]);
-      $edge->addAttribute("target",$prot[1]);
-        
-      $att=$edge->addChild("att");
-      $att->addAttribute("name","score");
-      $att->addAttribute("value",(string)$score);
-      $att->addAttribute("type","real");
-      
-      $graphics=$edge->addChild("graphics");
-      $att->addAttribute("fill","#dad4a2");
-      $att->addAttribute("width","3");
-      
-      $id++;
+    if($mentha_add==1){	
+	//edges
+	// <edge id="27113" label="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9044627|Shared protein domains" source="23605" target="23534" cy:directed="0">
+       //    <graphics fill="#dad4a2" width="1.0001760324548046">
+	$id=1;
+	foreach($interaction as $protAB=>$score){
+	  $prot=explode('-',$protAB);
+	  //echo $prot[0].'+'.$prot[1]."</br>";
+	  $edge = $graph->addChild("edge");
+	  $edge->addAttribute("id",$id);
+	  $edge->addAttribute("label",$prot[0]."|".$prot[1]);
+	  $edge->addAttribute("source",$prot[0]);
+	  $edge->addAttribute("target",$prot[1]);
+	    
+	  $att=$edge->addChild("att");
+	  $att->addAttribute("name","score");
+	  $att->addAttribute("value",(string)$score);
+	  $att->addAttribute("type","real");
+	  
+	  $graphics=$edge->addChild("graphics");
+	  $att->addAttribute("fill","#dad4a2");
+	  $att->addAttribute("width","3");
+	  
+	  $id++;
+	}
     }
     
     $str=$xml->asXML();
@@ -654,7 +656,7 @@ function mentha_network($session_name,$show_name,$mentha_add){
     $str=str_replace("</delete>","",$str); 
     file_put_contents($session_name.".xml",$str);
     
-    fclose($M_network);
+    
 
     return array($org_nodes,$prot_all,$ACC_GN);
   }
