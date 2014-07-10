@@ -553,8 +553,8 @@ function mentha_network($session_name,$show_name,$mentha_add){
 		if(in_array($prot_B,$uniprots)){$prot_B=$uplaod;}
 	      }
 	    }
-	    $prot_all[]=$prot_A;
-	    $prot_all[]=$prot_B;     
+	    $prot_network[]=$prot_A;
+	    $prot_network[]=$prot_B;     
 	    if(in_array($prot_A,$org_uniprot)&&in_array($prot_B,$org_uniprot)){
 	      $both[$prot_A.'-'.$prot_B]=(real)chop($score);
 	    }elseif((in_array($prot_A,$org_uniprot)&&!in_array($prot_B,$org_uniprot))||(!in_array($prot_A,$org_uniprot)&&in_array($prot_B,$org_uniprot))){
@@ -565,14 +565,14 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	  }
 	}
 	
-	$prot_all=array_unique($prot_all);
+	$prot_network=array_unique($prot_network);
 	if($both){        arsort($both); $interaction=array_merge($interaction,$both);      }
 	if($mentha_add==1){ 
 	    if($one) {        arsort($one); $interaction=array_merge($interaction,$one);        } 
 	    if($none){        arsort($none); $interaction=array_merge($interaction,$none);      }
 	}
 	$top=50;
-	if(count($prot_all)>$top){ 
+	if(count($prot_network)>$top){ 
 	  $interaction=array_slice($interaction,0,$top);
 	  foreach($interaction as $protAB=>$score){
 	    $prot=explode('-',$protAB);
@@ -580,9 +580,9 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	    $prot_top[]=$prot[1];
 	  }
 	  $prot_all[]=$prot_top;
-	  $prot_all=array_unique($prot_all);
 	}
-	if($prot_all==NULL || $mentha_add==0 ){ $prot_all= $org_uniprot;}
+        $prot_all=array_unique($prot_all);
+	//if($prot_all==NULL || $mentha_add==0 ){ $prot_all= $org_uniprot;}
 	$end = microtime(true);
 	$mentha_rank= $end - $start;
 	$mentha_rank = round($mentha_rank, 2);      // Round to 2 decimal places
