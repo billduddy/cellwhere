@@ -533,7 +533,7 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	  echo "<br />Mentha took:$mentha_Duration seconds.</br>";
 	}
 	echo 'http://mentha.uniroma2.it:8080/server/getInteractions?org=all&ids='.$ACCs;
-	
+	$prot_all[]=$org_uniprot;
 	//time for ranking the interaction
 	$start = microtime(true);
 	$interaction=$both=$one=$none=array();
@@ -575,7 +575,6 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	    $prot_top[]=$prot[1];
 	  }
 	  $prot_all[]=$prot_top;
-	  $prot_all[]=$org_uniprot;
 	  $prot_all=array_unique($prot_all);
 	}
 	if($prot_all==NULL || $mentha_add==0 ){ $prot_all= $org_uniprot;}
