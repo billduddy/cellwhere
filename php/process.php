@@ -540,12 +540,12 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	  echo "<br />Mentha took:$mentha_Duration seconds.</br>";
 	}
 	echo 'http://mentha.uniroma2.it:8080/server/getInteractions?org=all&ids='.$ACCs;
-	$prot_all[]=$org_uniprot;
 	
 	show_org_uniprot($prot_all);
 	//time for ranking the interaction
 	$start = microtime(true);
 	$interaction=$both=$one=$none=array();
+        $prot_all = $org_uniprot;
 	//rank the added prots  
 	while(!feof($M_network)){
 	  $line = fgets($M_network);
