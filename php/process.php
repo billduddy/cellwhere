@@ -551,8 +551,8 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	  $line = fgets($M_network);
 	  if($line){
 	    list($prot_A,$org_A,$prot_B,$org_B,$score)= array_filter(explode(";",$line));
-    	    $prot_all[]=$prot_A;
-	    $prot_all[]=$prot_B;  
+    	    $prot_mentha[]=$prot_A;
+	    $prot_mentha[]=$prot_B;  
 
 	    if($duplicate){
 	      foreach($duplicate as $uplaod=>$uniprots){
@@ -570,23 +570,25 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	  }
 	}
 	
-	$prot_all=array_unique($prot_all);
+	$prot_mentha=array_unique($prot_mentha);
 	if($both){        arsort($both); $interaction=array_merge($interaction,$both);      }
 	if($mentha_add==1){ 
 	    if($one) {        arsort($one); $interaction=array_merge($interaction,$one);        } 
 	    if($none){        arsort($none); $interaction=array_merge($interaction,$none);      }
 	}
+	
 	$top=50;
-	if(count($prot_all)>$top){ 
+	if(count($prot_mentha)>$top){ 
 	  $interaction=array_slice($interaction,0,$top);
 	  foreach($interaction as $protAB=>$score){
 	    $prot=explode('-',$protAB);
 	    $prot_top[]=$prot[0];
 	    $prot_top[]=$prot[1];
 	  }
-	  $prot_all[]=$prot_top;
-	  $prot_all=array_unique($prot_all);
+    
+	  $prot_all=array_unique(array_merge($prot_all,$prot_top));
 	}
+	
 	if($prot_all==NULL || $mentha_add==0 ){ $prot_all= $org_uniprot;}
 	$end = microtime(true);
 	$mentha_rank= $end - $start;
