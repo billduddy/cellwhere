@@ -218,6 +218,10 @@ if (isset($_REQUEST['uploadedxmlfile'])){
     <!--<option value="type_upload">The same type as upload ID</option>-->
     </select>    
  
+     <!--check box for mentha network-->
+    <br /><input type="checkbox" name="mentha_add" id="mentha_add" checked="checked" />
+    <font color="#1F88A7">Add relatives proteins in network</font>
+ 
     <!--Submit and reset buttons -->
     <br /><br /><input id="butt" name="sub" type="submit" value="Submit" /><input type="reset" value="Reset" />
     </form>
