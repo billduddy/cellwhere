@@ -517,12 +517,12 @@ function mentha_network($session_name,$show_name,$mentha_add){
     
     $ACCs  = implode(",",array_keys($org_nodes));
     //$ACCs  = preg_replace("/\n[a-zA-Z0-9_]+\t/",",",$ACCfile);  //string
-    $org_uniprot=array_filter(explode(",",$ACCs));                //array
+	$org_uniprot=array_filter(explode(",",$ACCs));                //array
     
-    if($mentha_add==0){			// only query proteins
+/*    if($mentha_add==0){			// only query proteins
 	echo "mentha_add-0";
 	$prot_all= $org_uniprot;
-    }else{
+    }else{*/
 	//query to mentha sever
 	if(@fopen('http://mentha.uniroma2.it:8080/server/getInteractions?org=all&ids='.$ACCs,"rb")){
 	  $start = microtime(true);
@@ -562,9 +562,10 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	
 	$prot_all=array_unique($prot_all);
 	if($both){        arsort($both); $interaction=array_merge($interaction,$both);      }
-	if($one) {        arsort($one); $interaction=array_merge($interaction,$one);        } 
-	if($none){        arsort($none); $interaction=array_merge($interaction,$none);      }
-	
+	if($mentha_add==1){ 
+	    if($one) {        arsort($one); $interaction=array_merge($interaction,$one);        } 
+	    if($none){        arsort($none); $interaction=array_merge($interaction,$none);      }
+	}
 	$top=50;
 	if(count($prot_all)>$top){ 
 	  $interaction=array_slice($interaction,0,$top);
@@ -575,14 +576,13 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	  }
 	  $prot_all=array_unique(array_merge($prot_top, $org_uniprot));
 	}
-	if($prot_all==NULL){ $prot_all= $org_uniprot;}
-	
+	if($prot_all==NULL || $mentha_add==0 ){ $prot_all= $org_uniprot;}
 	$end = microtime(true);
 	$mentha_rank= $end - $start;
 	$mentha_rank = round($mentha_rank, 2);      // Round to 2 decimal places
 	echo "<br />Mentha ranking took:$mentha_rank seconds.</br>";
 	fclose($M_network);
-    }
+//    }
     
     $ACC_GN=array();
     if($show_name=="Gene_name"){
