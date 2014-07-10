@@ -335,6 +335,11 @@ function UploadIDToUniprotACC($ID_type,$ID_array,$HumMouseFlag){
 // As of 170214, extended this to take Uniprot ACCs, Uniprot IDs, Entrez IDS, and Ensembl IDs
 // The latter 3 make use of the Uniprot mapping service
 
+for ($i = 0; $i <count($ID_array); $i++) {
+    $ID_array[$i]=rtrim($ID_array[$i],'\r');
+}
+
+
 $ACCfromUniprot = '';               // Initialize array to store all ACCs for all query IDs
 $start = microtime(true);
 switch ($ID_type) {                 // Depending on selection on dropdown menu
