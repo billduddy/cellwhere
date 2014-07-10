@@ -518,6 +518,11 @@ function mentha_network($session_name,$show_name,$mentha_add){
     $ACCs  = implode(",",array_keys($org_nodes));
     //$ACCs  = preg_replace("/\n[a-zA-Z0-9_]+\t/",",",$ACCfile);  //string
 	$org_uniprot=array_filter(explode(",",$ACCs));                //array
+	echo "org_uniprot:";
+	foreach($org_uniprot as $pr){
+	    echo $pr."_";
+	}
+	echo "<br/>";
     
 /*    if($mentha_add==0){			// only query proteins
 	echo "mentha_add-0";
