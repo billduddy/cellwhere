@@ -551,14 +551,15 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	  $line = fgets($M_network);
 	  if($line){
 	    list($prot_A,$org_A,$prot_B,$org_B,$score)= array_filter(explode(";",$line));
+    	    $prot_all[]=$prot_A;
+	    $prot_all[]=$prot_B;  
+
 	    if($duplicate){
 	      foreach($duplicate as $uplaod=>$uniprots){
 		if(in_array($prot_A,$uniprots)){$prot_A=$uplaod;}
 		if(in_array($prot_B,$uniprots)){$prot_B=$uplaod;}
 	      }
-	    }
-	    $prot_all[]=$prot_A;
-	    $prot_all[]=$prot_B;     
+	    }   
 	    if(in_array($prot_A,$org_uniprot)&&in_array($prot_B,$org_uniprot)){
 	      $both[$prot_A.'-'.$prot_B]=(real)chop($score);
 	    }elseif((in_array($prot_A,$org_uniprot)&&!in_array($prot_B,$org_uniprot))||(!in_array($prot_A,$org_uniprot)&&in_array($prot_B,$org_uniprot))){
