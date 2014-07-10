@@ -516,6 +516,7 @@ function mentha_network($session_name,$show_name,$mentha_add){
     } 
     
     if($mentha_add==0){			// only query proteins
+	echo "mentha_add-0";
 	$prot_all= $org_uniprot;
     }else{
 	
