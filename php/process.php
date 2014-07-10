@@ -593,7 +593,6 @@ function mentha_network($session_name,$show_name,$mentha_add){
  
    // convert to xml format
     $xml = new SimpleXMLElement('<delete/>');
-    
     $graph=$xml->addChild("graph");
     $graph->addAttribute("id","mentha");
     $graph->addAttribute("label","mentha_network");
@@ -606,6 +605,7 @@ function mentha_network($session_name,$show_name,$mentha_add){
     
     //nodes
     foreach($prot_all as $prot){
+      echo $prot.'-';
       $node = $graph->addChild("node");
       $node->addAttribute("id",$prot);
       $node->addAttribute("label",$prot);
