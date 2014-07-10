@@ -103,6 +103,13 @@ if (isset($_POST)){
             $ID_array[$key] = htmlspecialchars($value);         // Removes links and other html nasties if they are present in the uploaded text and printed later as html
             $ID_array[$key] = mysql_real_escape_string($value); // Removes MySQL injections from the text if it is input to a MySQL database 
         }
+	
+	for ($i = 0; $i <count($ID_array); $i++) {	// this is important to web version
+							// the '\r' problem
+	    $ID_array[$i]=rtrim($ID_array[$i],'\r');
+	}
+	
+	
      //////////////////////////Lu///////////////////////////////   
     }else if(isset($_POST["uploadedxmlfile"])&&isset($_POST["att_ID_type"])&&$_POST["att_FC"]&&isset($_POST['ID_type'])){         // if a gene list generated in local according to a uploaded xml (Lu)
 
@@ -335,10 +342,6 @@ function UploadIDToUniprotACC($ID_type,$ID_array,$HumMouseFlag){
 // As of 170214, extended this to take Uniprot ACCs, Uniprot IDs, Entrez IDS, and Ensembl IDs
 // The latter 3 make use of the Uniprot mapping service
 
-for ($i = 0; $i <count($ID_array); $i++) {
-    $ID_array[$i]=rtrim($ID_array[$i],'\r');
-}
-
 
 $ACCfromUniprot = '';               // Initialize array to store all ACCs for all query IDs
 $start = microtime(true);
@@ -347,7 +350,6 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
         foreach ( $ID_array as $key => $value ) {
             if (empty($value)) {continue;}      // Ignore empty values
             $TheseACCs = '';                    // Initialize array to store ACCs retrieved for a single query ID
-	    $value = rtrim($value,'\r');
             if ($HumMouseFlag == "HumMouseOverlap") {
                 $URLquery = "http://www.uniprot.org/uniprot/?query=(gene_exact:". $value .")+and+(organism:9606+OR+organism:10090)+and+reviewed:yes&columns=id&format=tab";
             } elseif ($HumMouseFlag == "HumanOnly") {
@@ -376,7 +378,6 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
     case "UniprotID":
         $url = 'http://www.uniprot.org/mapping/';           // Next ~10 lines POST to Uniprot mapping service using CURL 
         $TheseIDs = implode(",", $ID_array);
-	$TheseIDs = rtrim($TheseIDs,'\r');		    // important to web version (\r problem)
         $myvars = 'from=' . 'ID' . '&to=' . 'ACC' . '&format=' . 'tab' . '&query=' . $TheseIDs;
         $ch = curl_init( $url );
         curl_setopt( $ch, CURLOPT_POST, 1);
@@ -392,7 +393,6 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
     case "Entrez":
         $url = 'http://www.uniprot.org/mapping/';           // Next ~10 lines POST to Uniprot mapping service using CURL 
         $TheseIDs = implode(",", $ID_array);
-	$TheseIDs = rtrim($TheseIDs,'\r');		    // important to web version (\r problem)
         $myvars = 'from=' . 'P_ENTREZGENEID' . '&to=' . 'ACC' . '&format=' . 'tab' . '&query=' . $TheseIDs;
         $ch = curl_init( $url );
         curl_setopt( $ch, CURLOPT_POST, 1);
@@ -408,7 +408,6 @@ switch ($ID_type) {                 // Depending on selection on dropdown menu
     case "Ensembl":
         $url = 'http://www.uniprot.org/mapping/';           // Next ~10 lines POST to Uniprot mapping service using CURL 
         $TheseIDs = implode(",", $ID_array);
-	$TheseIDs = rtrim($TheseIDs,'\r');		    // important to web version (\r problem)
         echo $TheseIDs;
 	$myvars = 'from=' . 'ENSEMBL_ID' . '&to=' . 'ACC' . '&format=' . 'tab' . '&query=' . $TheseIDs;
         $ch = curl_init( $url );
