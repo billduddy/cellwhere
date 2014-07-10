@@ -515,15 +515,14 @@ function mentha_network($session_name,$show_name,$mentha_add){
       }
     } 
     
+    $ACCs  = implode(",",array_keys($org_nodes));
+    //$ACCs  = preg_replace("/\n[a-zA-Z0-9_]+\t/",",",$ACCfile);  //string
+    $org_uniprot=array_filter(explode(",",$ACCs));                //array
+    
     if($mentha_add==0){			// only query proteins
 	echo "mentha_add-0";
 	$prot_all= $org_uniprot;
     }else{
-	
-	$ACCs  = implode(",",array_keys($org_nodes));
-	//$ACCs  = preg_replace("/\n[a-zA-Z0-9_]+\t/",",",$ACCfile);  //string
-	$org_uniprot=array_filter(explode(",",$ACCs));                //array
-	
 	//query to mentha sever
 	if(@fopen('http://mentha.uniroma2.it:8080/server/getInteractions?org=all&ids='.$ACCs,"rb")){
 	  $start = microtime(true);
