@@ -501,7 +501,7 @@ function QueriesAndUniprotToTempTable(){
     function show_org_uniprot($org_uniprot){
 	print($org_uniprot);
 	foreach($org_uniprot as $pr){
-	    echo $pr."_";
+	    echo ":".$pr."_";
 	}
 	echo "<br/>";
     }
@@ -525,7 +525,7 @@ function mentha_network($session_name,$show_name,$mentha_add){
     $ACCs  = implode(",",array_keys($org_nodes));
     //$ACCs  = preg_replace("/\n[a-zA-Z0-9_]+\t/",",",$ACCfile);  //string
 	$org_uniprot=array_filter(explode(",",$ACCs));                //array
-    
+	show_org_uniprot($org_uniprot);
 /*    if($mentha_add==0){			// only query proteins
 	echo "mentha_add-0";
 	$prot_all= $org_uniprot;
@@ -541,6 +541,7 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	}
 	echo 'http://mentha.uniroma2.it:8080/server/getInteractions?org=all&ids='.$ACCs;
 	$prot_all[]=$org_uniprot;
+	
 	show_org_uniprot($prot_all);
 	//time for ranking the interaction
 	$start = microtime(true);
