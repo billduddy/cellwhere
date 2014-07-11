@@ -362,12 +362,15 @@ if(!$ID_array){
 	echo "MENTHA ok!<br/>";
 	$ID_type = "UniprotACC";
 	$ACCfromUniprot=NULL;
-	foreach ( $prot_add as $key => $value ) {
+	foreach ( $prot_add as $value ) {
+	    echo $value;
 	    $TheseACCs = "$value\t$value\n";
 	    $ACCfromUniprot .= $TheseACCs;
 	}
 	file_put_contents("ACCfromUniprot.tsv", $ACCfromUniprot);
-	
+	if(file_exists("ACCfromUniprot.tsv")){
+	    echo '<br/><a href="ACCfromUniprot.tsv" >download ACCfromUniprot.tsv</a>';
+	}
 	/////////////////////////////////////////////////////////
 	//DROP TABLES
 	$sql="DROP TEMPORARY TABLE query_ids";
@@ -386,10 +389,6 @@ if(!$ID_array){
 	/////////////////////////////////////////////////////////
 	//contruct new database
 	$ID_array=$prot_add;
-	foreach($ID_array as $pr){
-	    echo ":".$pr."_";
-	}
-	echo "<br/>";
 	///////////////////////////////////////////////////////////
 	// Put Query IDs into temporary MySQL table
 	$sql="CREATE TEMPORARY TABLE query_ids (QueryID VARCHAR (255))";
