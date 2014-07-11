@@ -345,8 +345,10 @@ if(!$ID_array){
 	$ID_type = $_POST['ID_type'];                   // Sets $ID_type according to value from dropdown menu
 	$Source_Loc_Term = $_POST['Source_Loc_Term'];   // Sets $Source_Loc_Term according to value from dropdown menu  
     
-    	require 'UploadIDToUniprotACC.php';             // Converts uploaded $ID_array into Uniprot IDs
-	require 'QueriesAndUniprotToTempTable.php';     // Puts query IDs and Uniprot IDs into temporary MySQL table called listofids
+    	//require 'UploadIDToUniprotACC.php';             // Converts uploaded $ID_array into Uniprot IDs
+	UploadIDToUniprotACC($ID_type,$ID_array,$HumMouseFlag);
+	//require 'QueriesAndUniprotToTempTable.php';     // Puts query IDs and Uniprot IDs into temporary MySQL table called listofids
+	QueriesAndUniprotToTempTable();
 	require 'ACCtoGO.php';                          // Queries QuickGO with IDs, downloads a tsv file with GO terms
 	require 'JOINSandOutput.php';
 	echo "ok!<br/>";
@@ -395,7 +397,8 @@ if(!$ID_array){
 	$sql = "CREATE TEMPORARY TABLE query_ids2 AS SELECT * FROM query_ids";
 	$result = mysql_query($sql) or die(mysql_error());
 	///////////////////////////////////////////////////////
-	require 'QueriesAndUniprotToTempTable.php';     // Puts query IDs and Uniprot IDs into temporary MySQL table called listofids
+	//require 'QueriesAndUniprotToTempTable.php';     // Puts query IDs and Uniprot IDs into temporary MySQL table called listofids
+	QueriesAndUniprotToTempTable();
 	require 'ACCtoGO.php';                          // Queries QuickGO with IDs, downloads a tsv file with GO terms
 	require 'JOINSandOutput.php';                   // Puts contents of TSV file into MySQL table, queries it against mapping file, and prints out the results
 	$QueryID_2=$QueryID;
