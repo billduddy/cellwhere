@@ -357,6 +357,7 @@ if(!$ID_array){
 	$ACCs_1=$ACCs;
 	$OurLocalization_1=$OurLocalization;
 	require 'mentha_network.php';
+	echo "MENTHA ok!<br/>";
 	list($prot_add,$ACC_GN)=mentha_network($session_name,$show_name,$ACCs_1);
 	$ID_type = "UniprotACC";
 	$ACCfromUniprot=NULL;
