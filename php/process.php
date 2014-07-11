@@ -275,7 +275,7 @@ if(!$ID_array){
     
     }
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////   
-    //if a gene list generated in local according to a uploaded gene list 
+/*    //if a gene list generated in local according to a uploaded gene list 
     elseif($ID_array&&!isset($_POST["uploadedxmlfile"])){
 	$show_name = $_POST['show_name'];
 	$ID_type = (string)$_POST['ID_type'];                   // Sets $ID_type according to value from dropdown menu
@@ -321,7 +321,100 @@ if(!$ID_array){
 	require 'visualization.php';
 	require "create_package.php";                   // create Zip to download
 	
+    }*/
+//if a gene list generated in local according to a uploaded gene list 
+    elseif($ID_array&&!isset($_POST["uploadedxmlfile"])){
+	$show_name = $_POST['show_name'];
+	$ID_type = (string)$_POST['ID_type'];                   // Sets $ID_type according to value from dropdown menu
+	
+	/////////////////////////////////////////////////////////
+	// Put Query IDs into temporary MySQL table
+	$sql="CREATE TEMPORARY TABLE query_ids (QueryID VARCHAR (255))";
+	$result = mysql_query($sql) or die(mysql_error());
+	$sql="INSERT INTO query_ids VALUES ";
+	foreach ($ID_array as $item) {
+	    $sql .= "('".$item."'),";
+	}
+	$sql = rtrim($sql, ',');
+	$result = mysql_query($sql) or die(mysql_error());
+	// Create a copy of this temporary table for use in queries where these same values need to be queried twice
+	$sql = "CREATE TEMPORARY TABLE query_ids2 AS SELECT * FROM query_ids";
+	$result = mysql_query($sql) or die(mysql_error());
+	/////////////////////////////////////////////////////////
+	
+	$ID_type = $_POST['ID_type'];                   // Sets $ID_type according to value from dropdown menu
+	$Source_Loc_Term = $_POST['Source_Loc_Term'];   // Sets $Source_Loc_Term according to value from dropdown menu  
+    
+    	require 'UploadIDToUniprotACC.php';             // Converts uploaded $ID_array into Uniprot IDs
+	require 'QueriesAndUniprotToTempTable.php';     // Puts query IDs and Uniprot IDs into temporary MySQL table called listofids
+	require 'ACCtoGO.php';                          // Queries QuickGO with IDs, downloads a tsv file with GO terms
+	require 'JOINSandOutput.php';
+	echo "ok!<br/>";
+//	$QueryID,$ACCs,$OurLocalization
+	$QueryID_1=$QueryID;
+	$ACCs_1=$ACCs;
+	$OurLocalization_1=$OurLocalization;
+	require 'mentha_network.php';
+	list($prot_add,$ACC_GN)=mentha_network($session_name,$show_name,$ACCs_1);
+	$ID_type = "UniprotACC";
+	$ACCfromUniprot=NULL;
+	foreach ( $prot_add as $key => $value ) {
+	    $TheseACCs = "$value\t$value\n";
+	    $ACCfromUniprot .= $TheseACCs;
+	}
+	file_put_contents("ACCfromUniprot.tsv", $ACCfromUniprot);
+	
+	/////////////////////////////////////////////////////////
+	//DROP TABLES
+	$sql="DROP TEMPORARY TABLE query_ids";
+        $result = mysql_query($sql) or die(mysql_error());
+	$sql = "DROP TEMPORARY TABLE query_ids2";
+	$result = mysql_query($sql) or die(mysql_error());
+	$sql = "DROP TEMPORARY TABLE listofids";
+	$result = mysql_query($sql) or die(mysql_error());
+	$sql = "DROP TEMPORARY TABLE listofids2";
+	$result = mysql_query($sql) or die(mysql_error());
+	$sql = "DROP TEMPORARY TABLE results";
+	$result = mysql_query($sql) or die(mysql_error());
+	$sql = "DROP TEMPORARY TABLE allresults";
+	$result = mysql_query($sql) or die(mysql_error());
+	/////////////////////////////////////////////////////////
+	//contruct new database
+	$ID_array=$prot_add;
+	///////////////////////////////////////////////////////////
+	// Put Query IDs into temporary MySQL table
+	$sql="CREATE TEMPORARY TABLE query_ids (QueryID VARCHAR (255))";
+	$result = mysql_query($sql) or die(mysql_error());
+	$sql="INSERT INTO query_ids VALUES ";
+	foreach ($ID_array as $item) {
+	    $sql .= "('".$item."'),";
+	}
+	$sql = rtrim($sql, ',');
+	$result = mysql_query($sql) or die(mysql_error());
+	// Create a copy of this temporary table for use in queries where these same values need to be queried twice
+	$sql = "CREATE TEMPORARY TABLE query_ids2 AS SELECT * FROM query_ids";
+	$result = mysql_query($sql) or die(mysql_error());
+	///////////////////////////////////////////////////////
+	require 'QueriesAndUniprotToTempTable.php';     // Puts query IDs and Uniprot IDs into temporary MySQL table called listofids
+	require 'ACCtoGO.php';                          // Queries QuickGO with IDs, downloads a tsv file with GO terms
+	require 'JOINSandOutput.php';                   // Puts contents of TSV file into MySQL table, queries it against mapping file, and prints out the results
+	$QueryID_2=$QueryID;
+	$ACCs_2=$ACCs;
+	$OurLocalization_2=$OurLocalization;
+	
+	$QueryID = array_merge($QueryID_1,$QueryID_2);
+	$ACCs = array_merge($ACCs_1,$ACCs_2);
+	$OurLocalization=array_merge($OurLocalization_1,$OurLocalization_2);
+	
+	require 'add_location_xml.php';
+	$xml_file_name="uploads/".$session_name.".xml";
+	$xml =  add_location_to_xml($ACCs,"Uniprot ID",$xml_file_name,$OurLocalization);
+	
+	echo "visualization<br/>"; 
+	require 'visualization.php';
+	require "create_package.php";                   // create Zip to download
     }
+    
     	    echo '<br/><a href="'.$xml_file_name.'_web.html" target="_blank">Show the localized network!</a>';
 	    if(file_exists($xml_file_name.'_cy3.zip')){
 		 echo '<br/><a href="'.$xml_file_name.'_cy3.zip" >download localized network (cy3)</a>';
@@ -506,30 +599,12 @@ function QueriesAndUniprotToTempTable(){
 	echo "<br/>";
     }
     
-function mentha_network($session_name,$show_name,$mentha_add){
-// prot in the list
-    $org_nodes=array();
-    $duplicate=array();
-        
-    $ACCfile=file_get_contents('ACCfromUniprot.tsv');
-    $lines=array_filter(explode("\n",$ACCfile)); 
-    foreach($lines as $line){
-      list($upload,$uniprot)=explode("\t",$line);
-      if(!in_array($upload,$org_nodes)){
-        $org_nodes[$uniprot]=$upload;
-      }else{
-        $duplicate[$upload][]=$uniprot;
-      }
-    } 
-    
-    $ACCs  = implode(",",array_keys($org_nodes));
+    function mentha_network($session_name,$show_name,$org_uniprot){
+    // prot in the list
+    $ACCs  = implode(",",$org_uniprot);
     //$ACCs  = preg_replace("/\n[a-zA-Z0-9_]+\t/",",",$ACCfile);  //string
 	$org_uniprot=array_filter(explode(",",$ACCs));                //array
-	show_org_uniprot($org_uniprot);
-/*    if($mentha_add==0){			// only query proteins
-	echo "mentha_add-0";
-	$prot_all= $org_uniprot;
-    }else{*/
+
 	//query to mentha sever
 	if(@fopen('http://mentha.uniroma2.it:8080/server/getInteractions?org=all&ids='.$ACCs,"rb")){
 	  $start = microtime(true);
@@ -541,25 +616,17 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	}
 	echo 'http://mentha.uniroma2.it:8080/server/getInteractions?org=all&ids='.$ACCs;
 	
-	show_org_uniprot($prot_all);
 	//time for ranking the interaction
 	$start = microtime(true);
 	$interaction=$both=$one=$none=array();
-        $prot_all = $org_uniprot;
 	//rank the added prots  
 	while(!feof($M_network)){
 	  $line = fgets($M_network);
 	  if($line){
 	    list($prot_A,$org_A,$prot_B,$org_B,$score)= array_filter(explode(";",$line));
     	    $prot_mentha[]=$prot_A;
-	    $prot_mentha[]=$prot_B;  
-
-	    if($duplicate){
-	      foreach($duplicate as $uplaod=>$uniprots){
-		if(in_array($prot_A,$uniprots)){$prot_A=$uplaod;}
-		if(in_array($prot_B,$uniprots)){$prot_B=$uplaod;}
-	      }
-	    }   
+	    $prot_mentha[]=$prot_B;
+	    
 	    if(in_array($prot_A,$org_uniprot)&&in_array($prot_B,$org_uniprot)){
 	      $both[$prot_A.'-'.$prot_B]=(real)chop($score);
 	    }elseif((in_array($prot_A,$org_uniprot)&&!in_array($prot_B,$org_uniprot))||(!in_array($prot_A,$org_uniprot)&&in_array($prot_B,$org_uniprot))){
@@ -569,6 +636,7 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	    }
 	  }
 	}
+        fclose($M_network);
 	
 	$prot_mentha=array_unique($prot_mentha);
 	if($both){        arsort($both); $interaction=array_merge($interaction,$both);      }
@@ -585,17 +653,16 @@ function mentha_network($session_name,$show_name,$mentha_add){
 	    $prot_top[]=$prot[0];
 	    $prot_top[]=$prot[1];
 	  }
-    
-	  $prot_all=array_unique(array_merge($prot_all,$prot_top));
+	  $prot_add = array_diff($prot_top,$org_uniprot);
+	  $prot_all=array_merge($org_uniprot,$prot_add);
 	}
-	
-	if($prot_all==NULL || $mentha_add==0 ){ $prot_all= $org_uniprot;}
+
 	$end = microtime(true);
 	$mentha_rank= $end - $start;
 	$mentha_rank = round($mentha_rank, 2);      // Round to 2 decimal places
 	echo "<br />Mentha ranking took:$mentha_rank seconds.</br>";
 	fclose($M_network);
-//    }
+
     
     $ACC_GN=array();
     if($show_name=="Gene_name"){
@@ -669,9 +736,7 @@ function mentha_network($session_name,$show_name,$mentha_add){
     $str=str_replace("</delete>","",$str); 
     file_put_contents($session_name.".xml",$str);
     
-    
-
-    return array($org_nodes,$prot_all,$ACC_GN);
+    return array($prot_add,$ACC_GN);
   }
 
 ?>
