@@ -357,8 +357,10 @@ if(!$ID_array){
 	$ACCs_1=$ACCs;
 	$OurLocalization_1=$OurLocalization;
 	//require 'mentha_network.php';
-	
-	list($prot_add,$ACC_GN)=mentha_network($session_name,$show_name,$ACCs_1);
+	$mentha_add=0;
+	if(isset($_POST["mentha_add"])&&$_POST["mentha_add"]=="1"){$mentha_add=1;}
+	echo $_POST["mentha_add"]."->".$mentha_add;
+	list($prot_add,$ACC_GN)=mentha_network($session_name,$show_name,$ACCs_1,$mentha_add);
 	echo "MENTHA ok!<br/>";
 	$ID_type = "UniprotACC";
 	$ACCfromUniprot=NULL;
@@ -611,7 +613,7 @@ function QueriesAndUniprotToTempTable(){
 	echo "<br/>";
     }
     
-    function mentha_network($session_name,$show_name,$org_uniprot){
+    function mentha_network($session_name,$show_name,$org_uniprot,$mentha_add){
     // prot in the list
     $ACCs  = implode(",",$org_uniprot);
     //$ACCs  = preg_replace("/\n[a-zA-Z0-9_]+\t/",",",$ACCfile);  //string
