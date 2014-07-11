@@ -660,7 +660,7 @@ function QueriesAndUniprotToTempTable(){
 	    if($none){        arsort($none); $interaction=array_merge($interaction,$none);      }
 	}
 	
-	$top=50;
+	$top=40;
 	if(count($prot_mentha)>$top){ 
 	  $interaction=array_slice($interaction,0,$top);
 	  foreach($interaction as $protAB=>$score){
@@ -671,7 +671,8 @@ function QueriesAndUniprotToTempTable(){
 	  $prot_add = array_diff($prot_top,$org_uniprot);
 	  $prot_all=array_merge($org_uniprot,$prot_add);
 	}
-
+	echo "prot_all ".count($prot_all);
+	echo "prot_add ".count($prot_add);
 	$end = microtime(true);
 	$mentha_rank= $end - $start;
 	$mentha_rank = round($mentha_rank, 2);      // Round to 2 decimal places
