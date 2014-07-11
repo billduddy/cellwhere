@@ -52,7 +52,7 @@
     layout($xml,$loca_table,$list_comp);
    //cytoscape js
     include("xml_to_json_with_compd.php");
-    xml_to_json($file_xml,"_web.xml",$list_comp,$org_nodes,$ACC_GN);
+    xml_to_json($file_xml,"_web.xml",$list_comp,$ACCs_1,$ACC_GN);
 
     unlink($file_xml."_web.xml");
     if(file_exists($file_xml."_cy.xml")){echo $file_xml."_cy.xml"; }

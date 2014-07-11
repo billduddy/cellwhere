@@ -145,7 +145,7 @@
 		}
 		foreach($nodes->graphics as $graphics){
 		    $fill=$graphics['fill'];
-		    if($org_nodes&&in_array($label,array_keys($org_nodes))){
+		    if($org_nodes&&in_array($label,$org_nodes)){
 			$fill="red";
 		    }  
 		    fwrite($out,",\n".'{"selector":"node#'.$id.'","css":{');
