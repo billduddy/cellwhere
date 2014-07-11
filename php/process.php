@@ -421,8 +421,9 @@ if(!$ID_array){
 	$OurLocalization=array_merge($OurLocalization_1,$OurLocalization_2);
 	
 	require 'add_location_xml.php';
-	$xml_file_name="uploads/".$session_name.".xml";
-	$xml =  add_location_to_xml($ACCs,"Uniprot ID",$xml_file_name,$OurLocalization);
+	$xml_file_name=$session_name.".xml";
+	$xml =  add_location_to_xml($QueryID,"Uniprot ID",$xml_file_name,$OurLocalization);
+	
 	
 	echo "visualization<br/>"; 
 	require 'visualization.php';
