@@ -386,6 +386,10 @@ if(!$ID_array){
 	/////////////////////////////////////////////////////////
 	//contruct new database
 	$ID_array=$prot_add;
+	foreach($ID_array as $pr){
+	    echo ":".$pr."_";
+	}
+	echo "<br/>";
 	///////////////////////////////////////////////////////////
 	// Put Query IDs into temporary MySQL table
 	$sql="CREATE TEMPORARY TABLE query_ids (QueryID VARCHAR (255))";
@@ -400,6 +404,7 @@ if(!$ID_array){
 	$sql = "CREATE TEMPORARY TABLE query_ids2 AS SELECT * FROM query_ids";
 	$result = mysql_query($sql) or die(mysql_error());
 	///////////////////////////////////////////////////////
+	echo "CREATE TABLE ok!<br/>";
 	//require 'QueriesAndUniprotToTempTable.php';     // Puts query IDs and Uniprot IDs into temporary MySQL table called listofids
 	QueriesAndUniprotToTempTable();
 	echo "TempTable ok!<br/>";
