@@ -222,6 +222,12 @@ while($row = mysql_fetch_array($result6)) {
     $QueryID[] = $row[0];
 }
 
+$result6= mysql_query("SELECT ACC FROM results") or die(mysql_error());		// Selects all from results table ,OurLocalization 
+$ACCs = array();								// Loop through and make a string
+while($row = mysql_fetch_array($result6)) {
+    $ACCs[] = $row[0];
+}
+
 $result6= mysql_query("SELECT OurLocalization FROM results") or die(mysql_error());	// Selects OurLocalization from results table 
 $OurLocalization = array();								// Loop through and make a string
 while($row = mysql_fetch_array($result6)) {
