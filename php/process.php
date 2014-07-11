@@ -382,6 +382,7 @@ if(!$ID_array){
 	$result = mysql_query($sql) or die(mysql_error());
 	$sql = "DROP TEMPORARY TABLE allresults";
 	$result = mysql_query($sql) or die(mysql_error());
+	echo "DROP TABLE ok!<br/>";
 	/////////////////////////////////////////////////////////
 	//contruct new database
 	$ID_array=$prot_add;
@@ -401,7 +402,9 @@ if(!$ID_array){
 	///////////////////////////////////////////////////////
 	//require 'QueriesAndUniprotToTempTable.php';     // Puts query IDs and Uniprot IDs into temporary MySQL table called listofids
 	QueriesAndUniprotToTempTable();
+	echo "TempTable ok!<br/>";
 	require 'ACCtoGO.php';                          // Queries QuickGO with IDs, downloads a tsv file with GO terms
+	echo "ACCtoGO ok!<br/>";
 	require 'JOINSandOutput.php';                   // Puts contents of TSV file into MySQL table, queries it against mapping file, and prints out the results
 	$QueryID_2=$QueryID;
 	$ACCs_2=$ACCs;
