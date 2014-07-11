@@ -356,9 +356,10 @@ if(!$ID_array){
 	$QueryID_1=$QueryID;
 	$ACCs_1=$ACCs;
 	$OurLocalization_1=$OurLocalization;
-	require 'mentha_network.php';
-	echo "MENTHA ok!<br/>";
+	//require 'mentha_network.php';
+	
 	list($prot_add,$ACC_GN)=mentha_network($session_name,$show_name,$ACCs_1);
+	echo "MENTHA ok!<br/>";
 	$ID_type = "UniprotACC";
 	$ACCfromUniprot=NULL;
 	foreach ( $prot_add as $key => $value ) {
