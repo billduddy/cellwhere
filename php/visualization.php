@@ -52,7 +52,7 @@
     layout($xml,$loca_table,$list_comp);
    //cytoscape js
     include("xml_to_json_with_compd.php");
-    xml_to_json($file_xml,"_web.xml",$list_comp,$ACCs_1,$ACC_GN);
+    xml_to_json($file_xml,"_web.xml",$list_comp,$QueryID_1,$ACC_GN);
 
     unlink($file_xml."_web.xml");
     if(file_exists($file_xml."_cy.xml")){echo $file_xml."_cy.xml"; }
@@ -953,10 +953,6 @@
         $str=str_replace(" nodeLabelFont="," cy:nodeLabelFont=",$str);
         $str=str_replace(" nodeTransparency="," cy:nodeTransparency=",$str);
         file_put_contents($file_xml."_cy3.xml", $str);
-        
-        if(file_exists($xml_file_name.'_cy3.xml')){
-	  echo '<br/><a href="'.$xml_file_name.'_cy3.xml" >cy3 xml</a>';
-	}
     }
     
     /*------------------------------------------------------*/
