@@ -221,6 +221,7 @@ echo "</tbody></table><br />\n";
 
 ///////////////Lu//////////////////////
 // Code to put results in temporary table file, and allow download
+
 $result6= mysql_query("SELECT QueryID FROM results") or die(mysql_error());		// Selects all from results table ,OurLocalization 
 $QueryID = array();									// Loop through and make a string
 while($row = mysql_fetch_array($result6)) {
@@ -233,11 +234,19 @@ while($row = mysql_fetch_array($result6)) {
     $ACCs[] = $row[0];
 }
 
+$result6= mysql_query("SELECT QueryID,ACC FROM results") or die(mysql_error());		// Selects all from results table ,OurLocalization 
+$QueryID = array();									// Loop through and make a string
+while($row = mysql_fetch_array($result6)) {
+    $QueryID_ACC[$row[0]] = $row[1];
+}
+
+//
 $result6= mysql_query("SELECT OurLocalization FROM results") or die(mysql_error());	// Selects OurLocalization from results table 
 $OurLocalization = array();								// Loop through and make a string
 while($row = mysql_fetch_array($result6)) {
     $OurLocalization[]= $row[0];
 }
+
 ///////////////Lu End//////////////////////
 
 
