@@ -11,7 +11,7 @@
         } else {
             echo 'html file compress failed';
         }
-    }
+    }else{echo "no found ".$xml_file_name."_web.html";}
     
     
     // network xml + background

@@ -673,7 +673,7 @@ function QueriesAndUniprotToTempTable(){
 	$mentha_rank= $end - $start;
 	$mentha_rank = round($mentha_rank, 2);      // Round to 2 decimal places
 	echo "<br />Mentha ranking took:$mentha_rank seconds.</br>";
-	fclose($M_network);
+
 
     
     $ACC_GN=array();
