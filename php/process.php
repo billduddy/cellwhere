@@ -108,7 +108,7 @@ if (isset($_POST)){
 							// the '\r' problem
 	    $ID_array[$i]=rtrim($ID_array[$i],'\r');
 	}
-*/	
+ */	
 	
      //////////////////////////Lu///////////////////////////////   
     }else if(isset($_POST["uploadedxmlfile"])&&isset($_POST["att_ID_type"])&&$_POST["att_FC"]&&isset($_POST['ID_type'])){         // if a gene list generated in local according to a uploaded xml (Lu)
