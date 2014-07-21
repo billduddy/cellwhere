@@ -363,36 +363,25 @@ if(!$ID_array){
 	list($prot_add,$ACC_GN)=mentha_network($session_name,$show_name,$ACCs_1,$mentha_add);
 	echo "MENTHA ok!<br/>";
 	$ID_type = "UniprotACC";
-	$ACCfromUniprot=NULL;
-	foreach ( $prot_add as $value ) {
-	    echo $value;
-	    $TheseACCs = "$value\t$value\n";
-	    $ACCfromUniprot .= $TheseACCs;
+	if($mentha_add){
+	    $ACCfromUniprot=NULL;
+	    foreach ( $prot_add as $value ) {
+		echo $value;
+		$TheseACCs = "$value\t$value\n";
+		$ACCfromUniprot .= $TheseACCs;
+	    }
+	    file_put_contents("ACCfromUniprot.tsv", $ACCfromUniprot);
 	}
-	file_put_contents("ACCfromUniprot.tsv", $ACCfromUniprot);
 	if(file_exists("ACCfromUniprot.tsv")){
 	    echo '<br/><a href="ACCfromUniprot.tsv" >download ACCfromUniprot.tsv</a>';
 	}
-	/////////////////////////////////////////////////////////
-	//DROP TABLES
-	$sql="DROP TEMPORARY TABLE query_ids";
-        $result = mysql_query($sql) or die(mysql_error());
-	$sql = "DROP TEMPORARY TABLE query_ids2";
-	$result = mysql_query($sql) or die(mysql_error());
-	$sql = "DROP TEMPORARY TABLE listofids";
-	$result = mysql_query($sql) or die(mysql_error());
-	$sql = "DROP TEMPORARY TABLE listofids2";
-	$result = mysql_query($sql) or die(mysql_error());
-	$sql = "DROP TEMPORARY TABLE results";
-	$result = mysql_query($sql) or die(mysql_error());
-	$sql = "DROP TEMPORARY TABLE allresults";
-	$result = mysql_query($sql) or die(mysql_error());
-	echo "DROP TABLE ok!<br/>";
 	/////////////////////////////////////////////////////////
 	//contruct new database
 	$ID_array=$prot_add;
 	///////////////////////////////////////////////////////////
 	// Put Query IDs into temporary MySQL table
+	$sql="DROP TEMPORARY TABLE IF EXISTS query_ids CASCADE";
+        $result = mysql_query($sql) or die(mysql_error());
 	$sql="CREATE TEMPORARY TABLE query_ids (QueryID VARCHAR (255))";
 	$result = mysql_query($sql) or die(mysql_error());
 	$sql="INSERT INTO query_ids VALUES ";
@@ -402,6 +391,8 @@ if(!$ID_array){
 	$sql = rtrim($sql, ',');
 	$result = mysql_query($sql) or die(mysql_error());
 	// Create a copy of this temporary table for use in queries where these same values need to be queried twice
+	$sql = "DROP TEMPORARY TABLE IF EXISTS query_ids2 CASCADE";
+	$result = mysql_query($sql) or die(mysql_error());
 	$sql = "CREATE TEMPORARY TABLE query_ids2 AS SELECT * FROM query_ids";
 	$result = mysql_query($sql) or die(mysql_error());
 	///////////////////////////////////////////////////////
@@ -563,6 +554,9 @@ function QueriesAndUniprotToTempTable(){
     ////////  Originally 'QueriesAndUniprotToTempTable.php': Puts query IDs and Uniprot IDs into temporary MySQL table called listofids /////////
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Create a temporary MySQL table to store the uploaded IDs
+    
+    $sql = "DROP TEMPORARY TABLE IF EXISTS listofids CASCADE";
+    $result = mysql_query($sql) or die(mysql_error());
     $sql="CREATE TEMPORARY TABLE listofids (QueryID VARCHAR (50), ACC VARCHAR (50))";
     $result = mysql_query($sql) or die(mysql_error());
     
@@ -574,6 +568,8 @@ function QueriesAndUniprotToTempTable(){
     $result2 = mysql_query($sql2) or die(mysql_error());
     
     // Create a copy of this temporary table for use in queries where these same values need to be queried twice
+    $sql = "DROP TEMPORARY TABLE IF EXISTS listofids2 CASCADE";
+    $result = mysql_query($sql) or die(mysql_error());
     $sql9 = "CREATE TEMPORARY TABLE listofids2 AS SELECT * FROM listofids";
     $result9 = mysql_query($sql9) or die(mysql_error());
     

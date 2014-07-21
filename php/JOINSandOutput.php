@@ -18,6 +18,11 @@
 // Update 080114: This seems fine: by deleting some localizations from map_go_to_loc_muscle I was able to generate
 // some hits that returned GO terms but not localizations.
 
+$sql = "DROP TEMPORARY TABLE IF EXISTS results CASCADE";
+$result = mysql_query($sql) or die(mysql_error());
+$sql = "DROP TEMPORARY TABLE IF EXISTS allresults CASCADE";
+$result = mysql_query($sql) or die(mysql_error());
+	
 switch ($Source_Loc_Term) {                 // Depending on selection on dropdown menu
      case "GOonly":
 	  // To map using only the Gene Ontology (works 240214)
