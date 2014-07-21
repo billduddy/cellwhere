@@ -348,30 +348,40 @@ if(!$ID_array){
     	//require 'UploadIDToUniprotACC.php';             // Converts uploaded $ID_array into Uniprot IDs
 	UploadIDToUniprotACC($ID_type,$ID_array,$HumMouseFlag);
 	//require 'QueriesAndUniprotToTempTable.php';     // Puts query IDs and Uniprot IDs into temporary MySQL table called listofids
-	QueriesAndUniprotToTempTable();
+	QueriesAndUniprotToTempTable($ID_array);
 	require 'ACCtoGO.php';                          // Queries QuickGO with IDs, downloads a tsv file with GO terms
 	require 'JOINSandOutput.php';
+	foreach($QueryID_ACC as $qu=>$acc){
+	    echo $qu."=>".$acc."<br/>";
+	}
+
 	echo "ok!<br/>";
 //	$QueryID,$ACCs,$OurLocalization
 	$QueryID_1=$QueryID;
 	$ACCs_1=$ACCs;
 	$OurLocalization_1=$OurLocalization;
+	    
+	$QueryID=array_keys($QueryID_ACC);
+	$QueryID_1=$QueryID;
 	//require 'mentha_network.php';
 	$mentha_add=0;
 	if(isset($_POST["mentha_add"])&&$_POST["mentha_add"]=="1"){$mentha_add=1;}
 	echo $_POST["mentha_add"]."->".$mentha_add;
-	list($prot_add,$ACC_GN)=mentha_network($session_name,$show_name,$ACCs_1,$mentha_add);
+	//list($prot_add,$ACC_GN)=mentha_network($session_name,$show_name,$ACCs_1,$mentha_add);
+	list($prot_add,$ACC_GN)=mentha_network($session_name,$show_name,$QueryID_ACC,$mentha_add);
 	echo "MENTHA ok!<br/>";
 	$ID_type = "UniprotACC";
-	if($mentha_add){
+
+	
+	if($mentha_add==1){
 	    $ACCfromUniprot=NULL;
 	    foreach ( $prot_add as $value ) {
-		echo $value;
+		//echo $value;
 		$TheseACCs = "$value\t$value\n";
 		$ACCfromUniprot .= $TheseACCs;
 	    }
 	    file_put_contents("ACCfromUniprot.tsv", $ACCfromUniprot);
-	}
+	
 	if(file_exists("ACCfromUniprot.tsv")){
 	    echo '<br/><a href="ACCfromUniprot.tsv" >download ACCfromUniprot.tsv</a>';
 	}
@@ -398,11 +408,12 @@ if(!$ID_array){
 	///////////////////////////////////////////////////////
 	echo "CREATE TABLE ok!<br/>";
 	//require 'QueriesAndUniprotToTempTable.php';     // Puts query IDs and Uniprot IDs into temporary MySQL table called listofids
-	QueriesAndUniprotToTempTable();
+	QueriesAndUniprotToTempTable($ID_array);
 	echo "TempTable ok!<br/>";
 	require 'ACCtoGO.php';                          // Queries QuickGO with IDs, downloads a tsv file with GO terms
 	echo "ACCtoGO ok!<br/>";
 	require 'JOINSandOutput.php';                   // Puts contents of TSV file into MySQL table, queries it against mapping file, and prints out the results
+	
 	$QueryID_2=$QueryID;
 	$ACCs_2=$ACCs;
 	$OurLocalization_2=$OurLocalization;
@@ -410,11 +421,19 @@ if(!$ID_array){
 	$QueryID = array_merge($QueryID_1,$QueryID_2);
 	$ACCs = array_merge($ACCs_1,$ACCs_2);
 	$OurLocalization=array_merge($OurLocalization_1,$OurLocalization_2);
-	
-	require 'add_location_xml.php';
+	}
+	$QueryID=array_keys($QueryID_ACC);
+/*	
+	if($QueryID){
+	    foreach($QueryID as $loc){echo $loc;}
+	}else{echo "no id!!";}
+	if($OurLocalization){
+	    foreach($OurLocalization as $loc){echo $loc;}
+	}else{echo "no loc!!";}
+*/
+	require 'add_location_xml_mentha.php';
 	$xml_file_name=$session_name.".xml";
-	$xml =  add_location_to_xml($QueryID,"Uniprot ID",$xml_file_name,$OurLocalization);
-	
+	$xml =  add_location_to_xml_mentha($QueryID,$xml_file_name,$OurLocalization);
 	
 	echo "visualization<br/>"; 
 	require 'visualization.php';
@@ -610,12 +629,16 @@ function QueriesAndUniprotToTempTable(){
 	echo "<br/>";
     }
     
-    function mentha_network($session_name,$show_name,$org_uniprot,$mentha_add){
+    function mentha_network($session_name,$show_name,$QueryID_ACC,$mentha_add){
+    //$QueryID_ACC[QueryID] = ACC;
     // prot in the list
+    $org_uniprot = array_values($QueryID_ACC);
+    $org_queryID = array_keys($QueryID_ACC);
+    foreach($org_queryID as $id){echo $id."<br/>";}
     $ACCs  = implode(",",$org_uniprot);
     //$ACCs  = preg_replace("/\n[a-zA-Z0-9_]+\t/",",",$ACCfile);  //string
 	$org_uniprot=array_filter(explode(",",$ACCs));                //array
-
+	
 	//query to mentha sever
 	if(@fopen('http://mentha.uniroma2.it:8080/server/getInteractions?org=all&ids='.$ACCs,"rb")){
 	  $start = microtime(true);
@@ -651,13 +674,14 @@ function QueriesAndUniprotToTempTable(){
 	
 	$prot_mentha=array_unique($prot_mentha);
 	if($both){        arsort($both); $interaction=array_merge($interaction,$both);      }
-	if($mentha_add==1){ 
+	if($mentha_add==1){ // if allow mentha added protein
 	    if($one) {        arsort($one); $interaction=array_merge($interaction,$one);        } 
 	    if($none){        arsort($none); $interaction=array_merge($interaction,$none);      }
 	}
 	
 	$top=40;
-	if(count($prot_mentha)>$top){ 
+	if(count($prot_mentha)>$top){
+	    $prot_top=array();
 	  $interaction=array_slice($interaction,0,$top);
 	  foreach($interaction as $protAB=>$score){
 	    $prot=explode('-',$protAB);
@@ -665,15 +689,15 @@ function QueriesAndUniprotToTempTable(){
 	    $prot_top[]=$prot[1];
 	  }
 	  $prot_add = array_diff($prot_top,$org_uniprot);
-	  $prot_all=array_merge($org_uniprot,$prot_add);
+	  //$prot_all=array_merge($org_uniprot,$prot_add);
+	  $prot_all=array_merge($org_queryID,$prot_add);
 	}
-	echo "prot_all ".count($prot_all);
-	echo "prot_add ".count($prot_add);
+	echo "prot_all contains".count($prot_all)."nodes";
+	echo "prot_add contains".count($prot_add)."nodes";
 	$end = microtime(true);
 	$mentha_rank= $end - $start;
 	$mentha_rank = round($mentha_rank, 2);      // Round to 2 decimal places
 	echo "<br />Mentha ranking took:$mentha_rank seconds.</br>";
-
 
     
     $ACC_GN=array();
@@ -696,13 +720,18 @@ function QueriesAndUniprotToTempTable(){
     //nodes
     foreach($prot_all as $prot){
       echo $prot.'-';
+      $prot2=$prot;
       $node = $graph->addChild("node");
-      $node->addAttribute("id",$prot);
       $node->addAttribute("label",$prot);
+      if(array_key_exists($prot,$QueryID_ACC)){
+	$prot = $QueryID_ACC[$prot];   //if $prot is in query IDs , then get the acc number
+      }
       $att=$node->addChild("att");
       $att->addAttribute("name","Uniprot ID");
       $att->addAttribute("value",$prot);
       $att->addAttribute("type","string");
+      if($prot==""){$prot = $prot2;}
+      $node->addAttribute("id",$prot);
       $graphics=$node->addChild("graphics");
       $graphics->addAttribute("outline","#000000");
       $graphics->addAttribute("fill","#000000");
@@ -715,32 +744,33 @@ function QueriesAndUniprotToTempTable(){
       $graphics->addAttribute("type","ELLIPSE");
     }
 
-    if($mentha_add==1){	
+
 	//edges
 	// <edge id="27113" label="H__sapiens__1_-Hs:8997819|H__sapiens__1_-Hs:9044627|Shared protein domains" source="23605" target="23534" cy:directed="0">
        //    <graphics fill="#dad4a2" width="1.0001760324548046">
-	$id=1;
-	foreach($interaction as $protAB=>$score){
-	  $prot=explode('-',$protAB);
-	  //echo $prot[0].'+'.$prot[1]."</br>";
-	  $edge = $graph->addChild("edge");
-	  $edge->addAttribute("id",$id);
-	  $edge->addAttribute("label",$prot[0]."|".$prot[1]);
-	  $edge->addAttribute("source",$prot[0]);
-	  $edge->addAttribute("target",$prot[1]);
-	    
-	  $att=$edge->addChild("att");
-	  $att->addAttribute("name","score");
-	  $att->addAttribute("value",(string)$score);
-	  $att->addAttribute("type","real");
+    $id=1;
+    echo 'interact:'.count($interaction);
+    foreach($interaction as $protAB=>$score){
+	$prot=explode('-',$protAB);
+	echo $prot[0].'+'.$prot[1]."</br>";
+	$edge = $graph->addChild("edge");
+	$edge->addAttribute("id",$id);
+	$edge->addAttribute("label",$prot[0]."|".$prot[1]);
+	$edge->addAttribute("source",$prot[0]);
+	$edge->addAttribute("target",$prot[1]);
 	  
-	  $graphics=$edge->addChild("graphics");
-	  $att->addAttribute("fill","#dad4a2");
-	  $att->addAttribute("width","3");
+	$att=$edge->addChild("att");
+	$att->addAttribute("name","score");
+	$att->addAttribute("value",(string)$score);
+	$att->addAttribute("type","real");
 	  
-	  $id++;
-	}
+	$graphics=$edge->addChild("graphics");
+	$att->addAttribute("fill","#dad4a2");
+	$att->addAttribute("width","3");
+	  
+	$id++;
     }
+
     
     $str=$xml->asXML();
     $str=str_replace("-colon-",":",$str);
@@ -748,6 +778,9 @@ function QueriesAndUniprotToTempTable(){
     $str=str_replace("</delete>","",$str); 
     file_put_contents($session_name.".xml",$str);
     
+    if(file_exists($session_name.".xml")){
+	    echo '<br/><a href='.$session_name.'.xml >download 1_'.$session_name.'xml</a>';
+    }
     return array($prot_add,$ACC_GN);
   }
 
