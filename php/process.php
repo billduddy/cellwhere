@@ -269,6 +269,7 @@ if(!$ID_array){
 	    require 'add_location_xml.php';
 	    $xml =  add_location_to_xml($QueryID,$att_ID_type,$xml_file_name,$OurLocalization);
 	    $org_nodes=NULL;
+      	    $ACCs_1=NULL;
 	    require 'visualization.php';
 	    $xml_file_name=basename($xml_file_name);
 	    require "create_package.php";  

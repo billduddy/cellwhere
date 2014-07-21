@@ -27,4 +27,5 @@
         }
         //unlink($xml_file_name.'_cy3.xml');
     }
+    else{echo "no found ".$xml_file_name."_cy3.xml";}
 ?>
