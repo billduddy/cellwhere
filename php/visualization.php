@@ -953,6 +953,10 @@
         $str=str_replace(" nodeLabelFont="," cy:nodeLabelFont=",$str);
         $str=str_replace(" nodeTransparency="," cy:nodeTransparency=",$str);
         file_put_contents($file_xml."_cy3.xml", $str);
+        
+        if(file_exists($xml_file_name.'_cy3.xml')){
+		 echo '<br/><a href="'.$xml_file_name.'_cy3.xml" >cy3 xml</a>';
+	}
     }
     
     /*------------------------------------------------------*/

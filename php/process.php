@@ -273,7 +273,6 @@ if(!$ID_array){
 	    require 'visualization.php';
 	    $xml_file_name=basename($xml_file_name);
 	    require "create_package.php";  
-    
     }
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////   
 /*    //if a gene list generated in local according to a uploaded gene list 
