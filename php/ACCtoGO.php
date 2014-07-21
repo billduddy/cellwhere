@@ -40,6 +40,9 @@ if (($Source_Loc_Term == "UniprotAndGO") || ($Source_Loc_Term == "GOonly")) {  /
     // I had to create the table first before importing from the tsv file (below)
     // LOAD DATA INFILE INTO TABLE doesn't seem able to create a table on the fly
     
+    $sql = "DROP TEMPORARY TABLE quickgotmp";
+    $result = mysql_query($sql) or die(mysql_error());
+    
     $sql="CREATE TEMPORARY TABLE quickgotmp (ID VARCHAR (255), Symbol VARCHAR (255), GO_ID VARCHAR (255), GO_name VARCHAR (255), Aspect VARCHAR (255), Evidence VARCHAR (255), Taxon VARCHAR (255), Date VARCHAR (255))";
     $result = mysql_query($sql) or die(mysql_error());
     
