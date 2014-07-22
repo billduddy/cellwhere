@@ -22,6 +22,9 @@ $sql = "DROP TEMPORARY TABLE IF EXISTS results CASCADE";
 $result = mysql_query($sql) or die(mysql_error());
 $sql = "DROP TEMPORARY TABLE IF EXISTS allresults CASCADE";
 $result = mysql_query($sql) or die(mysql_error());
+
+
+$start = microtime(true);
 	
 switch ($Source_Loc_Term) {                 // Depending on selection on dropdown menu
      case "GOonly":
@@ -102,9 +105,17 @@ switch ($Source_Loc_Term) {                 // Depending on selection on dropdow
 }
 $result3 = mysql_query($sql3) or die(mysql_error());				// Puts results of joins into a new temporary table called results
 
+$end = microtime(true);
+$time= $end - $start;
+$time = round($time, 2);      // Round to 2 decimal places
+echo "<br />--------result3 took:$time seconds.</br>";
+	
 //////////////////////////////////////////////////////////////////
 // Code to download all results, not just max priority number
 // It is important to use DISTINCT here, especially for GOonly, as the QuickGO_tmp.tsv has many duplicates (UNION probably makes DISTINCT redundant in the UniprotAndGO query)
+
+$start = microtime(true);
+
 switch ($Source_Loc_Term) {                 // Depending on selection on dropdown menu
      case "GOonly":
 	  // To map using only the Gene Ontology (works 240214)
@@ -167,15 +178,26 @@ switch ($Source_Loc_Term) {                 // Depending on selection on dropdow
 	  break;
 }		  
 $result = mysql_query($sql) or die(mysql_error());				// Puts results of joins into a new temporary table called results
-/////////////////////////////////////////////////////////////////////
+$end = microtime(true);
+$time= $end - $start;
+$time = round($time, 2);      // Round to 2 decimal places
+echo "<br />--------result took:$time seconds.</br>";
 
+/////////////////////////////////////////////////////////////////////
+$start = microtime(true);
 // Construct output to display
 echo "<br />Here are your CellWhere localization predictions:<br />";
 $Column_names_array = array('Query ID', 'Uniprot ACC', 'Top priority symbol', 'Top priority localization term', 'Priority score', 'CellWhere localization');
 $Column_names_array_all_results = array('Query ID', 'Uniprot ACC', 'Symbol', 'Localization term', 'Priority score', 'CellWhere localization');
 
+$end = microtime(true);
+$time= $end - $start;
+$time = round($time, 2);      // Round to 2 decimal places
+echo "<br />--------output to display took:$time seconds.</br>";
+
 ////////////////////////////////////////////////////////////////////
 // Code to put results in temporary table file, and allow download
+$start = microtime(true);
 $result4 = mysql_query("SELECT * FROM results") or die(mysql_error());				// Selects all from results table
 $str = implode("\t", $Column_names_array)."\n";							// Loop through and make a string
 while($row = mysql_fetch_assoc($result4)) {
@@ -183,8 +205,13 @@ while($row = mysql_fetch_assoc($result4)) {
 }
 $_SESSION['results'] = $str;
 
+$end = microtime(true);
+$time= $end - $start;
+$time = round($time, 2);      // Round to 2 decimal places
+echo "<br />--------result4 took:$time seconds.</br>";
 
 // Create a shared session variable storing results variable
+$start = microtime(true);
 echo '<br /><a href="download.php?' . SID . '">Download this table (tab-delimited)</a>';	// Link to a new page that will show results
 echo ' or ';
 $result10 = mysql_query("SELECT * FROM allresults") or die(mysql_error());			// Selects all from allresults table (not selecting max priority number)
@@ -194,9 +221,15 @@ while($row = mysql_fetch_assoc($result10)) {
 }
 $_SESSION['allresults'] = $str_allresults;							// Create a shared session variable storing allresults variable
 echo '<a href="download_all.php?' . SID . '">Download all results (unfiltered by priority score)</a>';	// Link to a new page that will show all results
+$end = microtime(true);
+$time= $end - $start;
+$time = round($time, 2);      // Round to 2 decimal places
+echo "<br />--------result10 took:$time seconds.</br>";
+
+
 /////////////////////////////////////////////////////////////////////
 
-
+$start = microtime(true);
 // Code to display results in sortable table
 $result5 = mysql_query("SELECT * FROM results") or die(mysql_error());		// Selects all from results table
 //echo "<table id=\"sortedtable\" border=\"1\" align=\"left\" class=\"tablesorter\" cellspacing=\"2\">\n";
@@ -217,11 +250,15 @@ if (($Source_Loc_Term == "UniprotOnly") || ($Source_Loc_Term == "UniprotAndGO"))
      } 
 }
 echo "</tbody></table><br />\n";
+$end = microtime(true);
+$time= $end - $start;
+$time = round($time, 2);      // Round to 2 decimal places
+echo "<br />--------result5 took:$time seconds.</br>";
 
 
 ///////////////Lu//////////////////////
 // Code to put results in temporary table file, and allow download
-
+/*
 $result6= mysql_query("SELECT QueryID FROM results") or die(mysql_error());		// Selects all from results table ,OurLocalization 
 $QueryID = array();									// Loop through and make a string
 while($row = mysql_fetch_array($result6)) {
@@ -233,19 +270,30 @@ $ACCs = array();								// Loop through and make a string
 while($row = mysql_fetch_array($result6)) {
     $ACCs[] = $row[0];
 }
-
+*/
+$start = microtime(true);
+//ACC and query
 $result6= mysql_query("SELECT QueryID,ACC FROM results") or die(mysql_error());		// Selects all from results table ,OurLocalization 
 $QueryID = array();									// Loop through and make a string
 while($row = mysql_fetch_array($result6)) {
     $QueryID_ACC[$row[0]] = $row[1];
 }
+$end = microtime(true);
+$time= $end - $start;
+$time = round($time, 2);      // Round to 2 decimal places
+echo "<br />--------result6 took:$time seconds.</br>";
 
-//
-$result6= mysql_query("SELECT OurLocalization FROM results") or die(mysql_error());	// Selects OurLocalization from results table 
+$start = microtime(true);
+//localization
+$result7= mysql_query("SELECT OurLocalization FROM results") or die(mysql_error());	// Selects OurLocalization from results table 
 $OurLocalization = array();								// Loop through and make a string
-while($row = mysql_fetch_array($result6)) {
+while($row = mysql_fetch_array($result7)) {
     $OurLocalization[]= $row[0];
 }
+$end = microtime(true);
+$time= $end - $start;
+$time = round($time, 2);      // Round to 2 decimal places
+echo "<br />--------result7 took:$time seconds.</br>";
 
 ///////////////Lu End//////////////////////
 

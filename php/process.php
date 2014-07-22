@@ -383,7 +383,7 @@ if(!$ID_array){
 	$time = round($time, 2);      // Round to 2 decimal places
 	echo "<br />----ACCtoGO took:$time seconds.</br>";
 	
-	$start = microtime(true);	
+	$start_tab = microtime(true);	
 	require 'JOINSandOutput.php';
 /*	
 	foreach($QueryID_ACC as $qu=>$acc){
@@ -398,10 +398,10 @@ if(!$ID_array){
 	$QueryID=array_keys($QueryID_ACC);
 	$QueryID_1=$QueryID;
 	
-	$end = microtime(true);
-	$time= $end - $start;
-	$time = round($time, 2);      // Round to 2 decimal places
-	echo "<br />----JOINSandOutput 1 took:$time seconds.</br>";
+	$end_tab = microtime(true);
+	$time_tab= $end_tab - $start_tab;
+	$time_tab = round($time_tab, 2);      // Round to 2 decimal places
+	echo "<br />----JOINSandOutput 1 took:$time_tab seconds.</br>";
 	
 	$end_1 = microtime(true);
 	$time_1= $end_1 - $start_1;
@@ -479,12 +479,12 @@ if(!$ID_array){
 	$time = round($time, 2);      // Round to 2 decimal places
 	echo "<br />----ACCtoGO 2 took:$time seconds.</br>";
 	
-	$start = microtime(true);
+	$start_tab = microtime(true);
 	require 'JOINSandOutput.php';                   // Puts contents of TSV file into MySQL table, queries it against mapping file, and prints out the results
-	$end = microtime(true);
-	$time= $end - $start;
-	$time = round($time, 2);      // Round to 2 decimal places
-	echo "<br />----JOINSandOutput 2 took:$time seconds.</br>";
+	$end_tab = microtime(true);
+	$time_tab= $end_tab - $start_tab;
+	$time_tab = round($time_tab, 2);      // Round to 2 decimal places
+	echo "<br />----JOINSandOutput 2 took:$time_tab seconds.</br>";
 	
 	$end_2 = microtime(true);
 	$time_2= $end_2 - $start_2;
