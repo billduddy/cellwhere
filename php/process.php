@@ -375,7 +375,7 @@ if(!$ID_array){
 	$ID_type = "UniprotACC";
 
 	
-	if($mentha_add==1){
+	if($mentha_add==1&&$prot_add!=null){
 	    $ACCfromUniprot=NULL;
 	    foreach ( $prot_add as $value ) {
 		//echo $value;
