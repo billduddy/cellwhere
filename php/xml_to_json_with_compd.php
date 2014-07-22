@@ -71,6 +71,7 @@
 		for($i=0;$i<count($root_node);$i++){
 		    $nodes=$root_node[$i];
 		    $label=$nodes["label"];
+		    $id=$nodes['id'];
 		    //show gene symbol as node name 
 		    if(isset($ACC_GN)&&key_exists((string)$label,$ACC_GN)){
 			$label = $ACC_GN[(string)$label];
@@ -80,8 +81,8 @@
 			fwrite($out,'{"id":"'.$nodes["id"].'"');
 			fwrite($out,', "name":"'.$label.'"');
 			//link to uniprot - href: 'http://cytoscape.org'
-			if($nodes['label']!=""){
-			    $uniprotACC = $nodes['id'];
+			if($label!=""&&!strstr($id,'local')){
+			    $uniprotACC = $id;
 			    if($uniprotACC!=""){
 				fwrite($out,', "href":"http://www.uniprot.org/uniprot/'.$uniprotACC.'"');
 			    }
