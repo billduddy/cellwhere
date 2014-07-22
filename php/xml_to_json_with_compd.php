@@ -244,6 +244,7 @@
 	$str=file_get_contents($new_xml_file."_web.html"); 
 	$str=str_replace('{"nodes":['."\n,",'{"nodes":['."",$str);
 	$str=str_replace('"style":['."\n,",'"style":['."",$str);
+	$str=str_replace('\n",','",',$str);
 	file_put_contents($new_xml_file."_web.html", $str);
     }
 ?>
