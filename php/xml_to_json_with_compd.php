@@ -79,6 +79,13 @@
 			fwrite($out,",\n".'{"data":');
 			fwrite($out,'{"id":"'.$nodes["id"].'"');
 			fwrite($out,', "name":"'.$label.'"');
+			//link to uniprot - href: 'http://cytoscape.org'
+			if($nodes['label']!=""){
+			    $uniprotACC = $nodes['id'];
+			    if($uniprotACC!=""){
+				fwrite($out,', "href":"http://www.uniprot.org/uniprot/'.$uniprotACC.'"');
+			    }
+			}
 			if($parent&&$nodes["id"]!=$parent){
 			    fwrite($out,', "parent":"'.$parent.'"');
 			}
@@ -222,7 +229,9 @@
 	    //node position 
 	    json_position($out,$xml->node);
 	    //place the graph in the middle of the window
-	    fwrite($out,'cy.fit();'."\n");	
+	    fwrite($out,'cy.fit();'."\n");
+	    // node link to uniprot page
+	    fwrite($out,"cy.on('tap', 'node', function(){window.open( this.data('href') );});");
 	    fwrite($out,'}'); 	//end of ready function 
 	    fwrite($out,'});'."\n");	// end of #cy
 	    fwrite($out,'});'."\n");	//end of function  
@@ -244,7 +253,6 @@
 	$str=file_get_contents($new_xml_file."_web.html"); 
 	$str=str_replace('{"nodes":['."\n,",'{"nodes":['."",$str);
 	$str=str_replace('"style":['."\n,",'"style":['."",$str);
-	$str=str_replace("\n".'",','",',$str);				// be careful!!  some return causes display errors
 	file_put_contents($new_xml_file."_web.html", $str);
     }
 ?>
