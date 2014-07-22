@@ -681,21 +681,28 @@ function QueriesAndUniprotToTempTable(){
 	    if($none){        arsort($none); $interaction=array_merge($interaction,$none);      }
 	}
 	
-	$top=40;
-	if(count($prot_mentha)>$top){
-	    $prot_top=array();
-	  $interaction=array_slice($interaction,0,$top);
-	  foreach($interaction as $protAB=>$score){
-	    $prot=explode('-',$protAB);
-	    $prot_top[]=$prot[0];
-	    $prot_top[]=$prot[1];
-	  }
-	  $prot_add = array_diff($prot_top,$org_uniprot);
-	  //$prot_all=array_merge($org_uniprot,$prot_add);
-	  $prot_all=array_merge($org_queryID,$prot_add);
+	$prot_add=null;		// other proteins added by mentha ACC
+	$prot_all=$org_queryID;	// original query proteins queryID
+	    
+	if($interaction!=null){
+	    $top=40;
+	    if(count($prot_mentha)>$top){
+		$prot_top=array();
+	      $interaction=array_slice($interaction,0,$top);
+	      foreach($interaction as $protAB=>$score){
+		$prot=explode('-',$protAB);
+		$prot_top[]=$prot[0];
+		$prot_top[]=$prot[1];
+	      }
+	      $prot_add = array_diff($prot_top,$org_uniprot);
+	      //$prot_all=array_merge($org_uniprot,$prot_add);
+	      $prot_all=array_merge($org_queryID,$prot_add);
+	    }
 	}
-	echo "prot_all contains".count($prot_all)."nodes";
 	echo "prot_add contains".count($prot_add)."nodes";
+        echo "prot_all contains".count($prot_all)."nodes";
+
+	
 	$end = microtime(true);
 	$mentha_rank= $end - $start;
 	$mentha_rank = round($mentha_rank, 2);      // Round to 2 decimal places
@@ -785,6 +792,7 @@ function QueriesAndUniprotToTempTable(){
     }
     return array($prot_add,$ACC_GN);
   }
+
 
 ?>
 </body></html>
