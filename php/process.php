@@ -654,11 +654,12 @@ echo "<br />You submitted $NoQueryIDs unique query ID(s).";
 echo "<br />Uniprot took: $UniprotDuration seconds.";
 
 file_put_contents("ACCfromUniprot.tsv", $ACCfromUniprot);
+/*
 file_put_contents("ACCfromUniprot_1.tsv", $ACCfromUniprot);
     if(file_exists("ACCfromUniprot_1.tsv")){
 	echo '<br/><a href="ACCfromUniprot_1.tsv" >download ACCfromUniprot_1.tsv</a>';
     }
-
+*/
 //rename("QuickGO_tmp.tsv", "uploads/QuickGO_tmp.tsv");  //This can be useful if wanting to move the file
 
 // Code to read the data out
@@ -884,10 +885,11 @@ function QueriesAndUniprotToTempTable(){
     $str=str_replace("<delete>","",$str);
     $str=str_replace("</delete>","",$str); 
     file_put_contents($session_name.".xml",$str);
-    
+  /*  
     if(file_exists($session_name.".xml")){
 	    echo '<br/><a href='.$session_name.'.xml >download 1_'.$session_name.'xml</a>';
-    }
+    }  
+    */
     return array($prot_add,$ACC_GN);
   }
 
