@@ -12,10 +12,6 @@
 */
  
 /*--------------------------------------------------------Main-------------------------------------------------------*/
-    //time
-      $start = microtime(true);
-
-
     /*-read the original xml file ------------------------------------------------*/
    /* $file_xml = $argv[1];
     $xml=simplexml_load_file($file_xml.".xml");*/
@@ -52,16 +48,10 @@
     layout($xml,$loca_table,$list_comp);
    //cytoscape js
     include("xml_to_json_with_compd.php");
-    xml_to_json($file_xml,"_web.xml",$list_comp,$QueryID_1,$ACC_GN);
+    xml_to_json($file_xml,"_web.xml",$list_comp,$QueryID_1);
 
     unlink($file_xml."_web.xml");
-    if(file_exists($file_xml."_cy.xml")){echo $file_xml."_cy.xml"; }
-    
-    
-    $end = microtime(true);
-    $vis_Duration = $end - $start;
-    $vis_Duration = round($vis_Duration, 2);      // Round to 2 decimal places
-    echo "<br />Visualization took:$vis_Duration seconds.</br>";
+    //if(file_exists($file_xml."_cy.xml")){echo $file_xml."_cy.xml"; }
     
    /*----------------------------------------------------End main----------------------------------------------------------*/ 
    

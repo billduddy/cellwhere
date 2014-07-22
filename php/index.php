@@ -207,15 +207,7 @@ if (isset($_REQUEST['uploadedxmlfile'])){
     <!--Box to upload a gene list file -->
     <!--<input type="hidden" name="MAX_FILE_SIZE" value="10000" />  <!--This is probably redundant with the $maxsize check in process.php, but I've left it just to be safe-->
     <br /><br /><b><font color="#1F88A7">Or upload (plain text, one ID per line):</font> </b><br />
-    <input name="uploadedfile" type="file" style='background-color:#ffffff; border:solid 1px #1F88A7'/>
-    
-    <!--Dropdown menu for node name display-->
-    <b><font color="#1F88A7"><br /><br />Select the name type of gene you want show at network:</font> </b><br />
-    <select name="show_name">
-    <option value="">The same type as upload ID</option>
-    <option value="Gene_name">Gene Symbol</option>
-    <option value="UniprotACC">Uniprot Accession</option>
-    </select>    
+    <input name="uploadedfile" type="file" style='background-color:#ffffff; border:solid 1px #1F88A7'/>  
  
      <!--Dropdown menu for mentha network-->
     <b><font color="#1F88A7"><br /><br />Mentha network:</font> </b><br />

@@ -328,12 +328,15 @@ if(!$ID_array){
     elseif($ID_array&&!isset($_POST["uploadedxmlfile"])){
 	//time for all
 	$all_start = microtime(true);
-	
-	$show_name = $_POST['show_name'];
+    
 	$ID_type = (string)$_POST['ID_type'];                   // Sets $ID_type according to value from dropdown menu
 	
+	//localization for queries
+	$start_1 = microtime(true);
 	/////////////////////////////////////////////////////////
 	// Put Query IDs into temporary MySQL table
+	$start = microtime(true);
+	
 	$sql="CREATE TEMPORARY TABLE query_ids (QueryID VARCHAR (255))";
 	$result = mysql_query($sql) or die(mysql_error());
 	$sql="INSERT INTO query_ids VALUES ";
@@ -345,40 +348,88 @@ if(!$ID_array){
 	// Create a copy of this temporary table for use in queries where these same values need to be queried twice
 	$sql = "CREATE TEMPORARY TABLE query_ids2 AS SELECT * FROM query_ids";
 	$result = mysql_query($sql) or die(mysql_error());
+	
+	$end = microtime(true);
+	$time= $end - $start;
+	$time = round($time, 2);      // Round to 2 decimal places
+	echo "<br />----Put Query IDs into temporary MySQL table took:$time seconds.</br>";
 	/////////////////////////////////////////////////////////
 	
 	$ID_type = $_POST['ID_type'];                   // Sets $ID_type according to value from dropdown menu
 	$Source_Loc_Term = $_POST['Source_Loc_Term'];   // Sets $Source_Loc_Term according to value from dropdown menu  
     
     	//require 'UploadIDToUniprotACC.php';             // Converts uploaded $ID_array into Uniprot IDs
+	$start = microtime(true);
 	UploadIDToUniprotACC($ID_type,$ID_array,$HumMouseFlag);
+	$end = microtime(true);
+	$time= $end - $start;
+	$time = round($time, 2);      // Round to 2 decimal places
+	echo "<br />----UploadIDToUniprotACC took:$time seconds.</br>";
+	
+	
+
 	//require 'QueriesAndUniprotToTempTable.php';     // Puts query IDs and Uniprot IDs into temporary MySQL table called listofids
+	$start = microtime(true);
 	QueriesAndUniprotToTempTable($ID_array);
+	$end = microtime(true);
+	$time= $end - $start;
+	$time = round($time, 2);      // Round to 2 decimal places
+	echo "<br />----QueriesAndUniprotToTempTable took:$time seconds.</br>";
+	
+	$start = microtime(true);
 	require 'ACCtoGO.php';                          // Queries QuickGO with IDs, downloads a tsv file with GO terms
+	$end = microtime(true);
+	$time= $end - $start;
+	$time = round($time, 2);      // Round to 2 decimal places
+	echo "<br />----ACCtoGO took:$time seconds.</br>";
+	
+	$start = microtime(true);	
 	require 'JOINSandOutput.php';
+/*	
 	foreach($QueryID_ACC as $qu=>$acc){
 	    echo $qu."=>".$acc."<br/>";
 	}
-
 	echo "ok!<br/>";
+*/
 //	$QueryID,$ACCs,$OurLocalization
-	$QueryID_1=$QueryID;
-	$ACCs_1=$ACCs;
-	$OurLocalization_1=$OurLocalization;
-	    
+//	$QueryID_1=$QueryID;
+//	$ACCs_1=$ACCs;
+	$OurLocalization_1=$OurLocalization;    
 	$QueryID=array_keys($QueryID_ACC);
 	$QueryID_1=$QueryID;
-	//require 'mentha_network.php';
-	$mentha_add=0;
-	if(isset($_POST["mentha_add"])&&$_POST["mentha_add"]=="1"){$mentha_add=1;}
-	echo $_POST["mentha_add"]."->".$mentha_add;
-	//list($prot_add,$ACC_GN)=mentha_network($session_name,$show_name,$ACCs_1,$mentha_add);
-	list($prot_add,$ACC_GN)=mentha_network($session_name,$show_name,$QueryID_ACC,$mentha_add);
-	echo "MENTHA ok!<br/>";
-	$ID_type = "UniprotACC";
-
 	
-	if($mentha_add==1&&$prot_add!=null){
+	$end = microtime(true);
+	$time= $end - $start;
+	$time = round($time, 2);      // Round to 2 decimal places
+	echo "<br />----JOINSandOutput 1 took:$time seconds.</br>";
+	
+	$end_1 = microtime(true);
+	$time_1= $end_1 - $start_1;
+	$time_1 = round($time_1, 2);      // Round to 2 decimal places
+	echo "<br />Localization 1 took:$time_1 seconds.</br>";
+	
+	
+	
+	
+	//require 'mentha_network.php';
+	$start = microtime(true);
+	
+	$mentha_add=0;	// no relative protein added
+	if(isset($_POST["mentha_add"])&&$_POST["mentha_add"]=="1"){$mentha_add=1;}
+	//echo $_POST["mentha_add"]."->".$mentha_add;
+	//list($prot_add,$ACC_GN)=mentha_network($session_name,$show_name,$ACCs_1,$mentha_add);
+	list($prot_add)=mentha_network($session_name,$QueryID_ACC,$mentha_add);
+	//echo "MENTHA ok!<br/>";
+	$ID_type = "UniprotACC";
+	
+	$end = microtime(true);
+	$time= $end - $start;
+	$time = round($time, 2);      // Round to 2 decimal places
+	echo "<br />mentha_network took:$time seconds.</br>";
+
+    //  localization for added proteins
+    $start_2 = microtime(true);
+    if($mentha_add==1&&$prot_add!=null){
 	    $ACCfromUniprot=NULL;
 	    foreach ( $prot_add as $value ) {
 		//echo $value;
@@ -393,7 +444,6 @@ if(!$ID_array){
 	/////////////////////////////////////////////////////////
 	//contruct new database
 	$ID_array=$prot_add;
-	///////////////////////////////////////////////////////////
 	// Put Query IDs into temporary MySQL table
 	$sql="DROP TEMPORARY TABLE IF EXISTS query_ids CASCADE";
         $result = mysql_query($sql) or die(mysql_error());
@@ -413,21 +463,44 @@ if(!$ID_array){
 	///////////////////////////////////////////////////////
 	echo "CREATE TABLE ok!<br/>";
 	//require 'QueriesAndUniprotToTempTable.php';     // Puts query IDs and Uniprot IDs into temporary MySQL table called listofids
+	$start = microtime(true);
 	QueriesAndUniprotToTempTable($ID_array);
+	$end = microtime(true);
+	$time= $end - $start;
+	$time = round($time, 2);      // Round to 2 decimal places
+	echo "<br />----QueriesAndUniprotToTempTable 2 took:$time seconds.</br>";
+	
 	echo "TempTable ok!<br/>";
+	$start = microtime(true);
 	require 'ACCtoGO.php';                          // Queries QuickGO with IDs, downloads a tsv file with GO terms
 	echo "ACCtoGO ok!<br/>";
-	require 'JOINSandOutput.php';                   // Puts contents of TSV file into MySQL table, queries it against mapping file, and prints out the results
+	$end = microtime(true);
+	$time= $end - $start;
+	$time = round($time, 2);      // Round to 2 decimal places
+	echo "<br />----ACCtoGO 2 took:$time seconds.</br>";
 	
+	$start = microtime(true);
+	require 'JOINSandOutput.php';                   // Puts contents of TSV file into MySQL table, queries it against mapping file, and prints out the results
+	$end = microtime(true);
+	$time= $end - $start;
+	$time = round($time, 2);      // Round to 2 decimal places
+	echo "<br />----JOINSandOutput 2 took:$time seconds.</br>";
+	
+	$end_2 = microtime(true);
+	$time_2= $end_2 - $start_2;
+	$time_2 = round($time_2, 2);      // Round to 2 decimal places
+	echo "<br />Localization for added proteins took:$time_2 seconds.</br>";
+
 	$QueryID_2=$QueryID;
-	$ACCs_2=$ACCs;
+//	$ACCs_2=$ACCs;
 	$OurLocalization_2=$OurLocalization;
 	
 	$QueryID = array_merge($QueryID_1,$QueryID_2);
-	$ACCs = array_merge($ACCs_1,$ACCs_2);
+//	$ACCs = array_merge($ACCs_1,$ACCs_2);
 	$OurLocalization=array_merge($OurLocalization_1,$OurLocalization_2);
-	}
+    }
 	$QueryID=array_keys($QueryID_ACC);
+
 /*	
 	if($QueryID){
 	    foreach($QueryID as $loc){echo $loc;}
@@ -436,15 +509,31 @@ if(!$ID_array){
 	    foreach($OurLocalization as $loc){echo $loc;}
 	}else{echo "no loc!!";}
 */
-	require 'add_location_xml_mentha.php';
+	$start = microtime(true);
+	require 'add_location_xml_mentha.php';	
 	$xml_file_name=$session_name.".xml";
 	$xml =  add_location_to_xml_mentha($QueryID,$xml_file_name,$OurLocalization);
+	$end = microtime(true);
+	$time= $end - $start;
+	$time = round($time, 2);      // Round to 2 decimal places
+	echo "<br />add_location_xml_mentha took:$time seconds.</br>";
 	
-	echo "visualization<br/>"; 
+	//time
+	$start = microtime(true);	
+	//echo "visualization<br/>"; 
 	require 'visualization.php';
+	$end = microtime(true);
+	$vis_Duration = $end - $start;
+	$vis_Duration = round($vis_Duration, 2);      // Round to 2 decimal places
+	echo "<br />Visualization took:$vis_Duration seconds.</br>";
+	
+	$start = microtime(true);
 	require "create_package.php";                   // create Zip to download
-	
-	
+	$end = microtime(true);
+	$time= $end - $start;
+	$time = round($time, 2);      // Round to 2 decimal places
+	echo "<br />create_package took:$time seconds.</br>";
+		
 	$all_end = microtime(true);
 	$all_time= $all_end - $all_start;
 	$all_time = round($all_time, 2);      // Round to 2 decimal places

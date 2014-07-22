@@ -14,7 +14,7 @@
      * Contact: zhu.lu@hotmail.com
     */
 
-    function xml_to_json($new_xml_file,$suffix,$list_comp,$org_nodes,$ACC_GN){
+    function xml_to_json($new_xml_file,$suffix,$list_comp,$org_nodes){
 	if(!file_exists($new_xml_file.$suffix)) {
 	    die("File <".$new_xml_file.$suffix."> not found");
 	} else {
@@ -67,15 +67,11 @@
 	');
 	
 	/*------------------------------ php functions --------------------------------------*/
-	    function json_node($out,$root_node,$parent,$next,$org_nodes,$ACC_GN){
+	    function json_node($out,$root_node,$parent,$next,$org_nodes){
 		for($i=0;$i<count($root_node);$i++){
 		    $nodes=$root_node[$i];
 		    $label=$nodes["label"];
 		    $id=$nodes['id'];
-		    //show gene symbol as node name 
-		    if(isset($ACC_GN)&&key_exists((string)$label,$ACC_GN)){
-			$label = $ACC_GN[(string)$label];
-		    }
 		    //data
 			fwrite($out,",\n".'{"data":');
 			fwrite($out,'{"id":"'.$nodes["id"].'"');
@@ -111,7 +107,7 @@
 			if($root_node[$i+1]!=null){
 			    $next=1;
 			}
-			json_node($out,$child,$parent,$next,$org_nodes,$ACC_GN);
+			json_node($out,$child,$parent,$next,$org_nodes);
 			$parent=null;
 		    }
 		}
@@ -180,7 +176,7 @@
 		fwrite($out,'{"nodes":['."\n");
 		$root_node = $xml->node;
 		$parent=null;
-		json_node($out,$root_node,$parent,1,$org_nodes,$ACC_GN);
+		json_node($out,$root_node,$parent,1,$org_nodes);
 		//end of node
 		fwrite($out,"]");
 	    }
