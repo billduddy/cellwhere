@@ -326,6 +326,9 @@ if(!$ID_array){
     }*/
 //if a gene list generated in local according to a uploaded gene list 
     elseif($ID_array&&!isset($_POST["uploadedxmlfile"])){
+	//time for all
+	$all_start = microtime(true);
+	
 	$show_name = $_POST['show_name'];
 	$ID_type = (string)$_POST['ID_type'];                   // Sets $ID_type according to value from dropdown menu
 	
@@ -440,16 +443,22 @@ if(!$ID_array){
 	echo "visualization<br/>"; 
 	require 'visualization.php';
 	require "create_package.php";                   // create Zip to download
+	
+	
+	$all_end = microtime(true);
+	$all_time= $all_end - $all_start;
+	$all_time = round($all_time, 2);      // Round to 2 decimal places
+	echo "<br />all process took:$all_time seconds.</br>";
     }
     
-    	    echo '<br/><a href="'.$xml_file_name.'_web.html" target="_blank">Show the localized network!</a>';
-	    if(file_exists($xml_file_name.'_cy3.zip')){
-		 echo '<br/><a href="'.$xml_file_name.'_cy3.zip" >download localized network (cy3)</a>';
-	    }
+    echo '<br/><a href="'.$xml_file_name.'_web.html" target="_blank">Show the localized network!</a>';
+    if(file_exists($xml_file_name.'_cy3.zip')){
+	echo '<br/><a href="'.$xml_file_name.'_cy3.zip" >download localized network (cy3)</a>';
+    }
 	    
-	    if(file_exists($xml_file_name.'_web.zip')){
-		 echo '<br/><a href="'.$xml_file_name.'_web.zip" >download localized network (web)</a>';
-	    }
+    if(file_exists($xml_file_name.'_web.zip')){
+	echo '<br/><a href="'.$xml_file_name.'_web.zip" >download localized network (web)</a>';
+    }
 }
 
 //===================================================Functions===============================================
