@@ -106,6 +106,7 @@ if (isset($_POST)){
 	
 	for ($i = 0; $i <count($ID_array); $i++) {	// this is important to web version
 	    $id_tmp = rtrim($ID_array[$i],'\r');	// the '\r' problem
+	    $id_tmp = rtrim($ID_array[$i],'\n');
 	    if($id_tmp!=""){
 	        $ID_array[$i]=$id_tmp;
 	    }

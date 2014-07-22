@@ -1,0 +1,253 @@
+
+	    <!DOCTYPE html>
+	    <html>
+	    <head>
+	    <meta name="description" content="[An example of getting started with Cytoscape.js]" />
+		<style type="text/css">
+		    body { 
+		      font: 14px helvetica neue, helvetica, arial, sans-serif;
+		      background-color:white;
+		    }
+		    
+		    #cy {
+		      height: 100%;
+		      width: 100%;
+		      position: absolute;
+		      left: 0;
+		      top: 0;
+		    }
+		    
+		    .bgimg {		
+			background-image:url("z.xml_background.png");
+			background-color:white;
+			background-repeat:no-repeat;
+			background-position:center center;
+			background-size: contain;
+			-webkit-background-size: contain;
+			-moz-background-size: contain;
+			-o-background-size: contain;
+			margin: 0;
+			padding: 0;
+		    }
+		</style>
+		
+	    <!-- javascript part  --> 
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	    <script>
+		//function 
+		$(function(){
+		    //#cy network construction 
+		    $('#cy').cytoscape(
+	{"elements":
+{"nodes":[
+{"data":{"id":"invisi_extra_1", "name":""},"group":"nodes"},
+{"data":{"id":"invisi_extra_2", "name":""},"group":"nodes"},
+{"data":{"id":"invisi_memb_1", "name":""},"group":"nodes"},
+{"data":{"id":"invisi_memb_2", "name":""},"group":"nodes"},
+{"data":{"id":"invisi_Cytoplasm_1", "name":""},"group":"nodes"},
+{"data":{"id":"invisi_Cytoplasm_2", "name":""},"group":"nodes"},
+{"data":{"id":"local_1", "name":"Nucleus"},"group":"nodes"},
+{"data":{"id":"in_Nucleus0", "name":"", "parent":"local_1","CellWhere localization":"Nucleus"},"group":"nodes"},
+{"data":{"id":"in_Nucleus1", "name":"", "parent":"local_1","CellWhere localization":"Nucleus"},"group":"nodes"},
+{"data":{"id":"in_Nucleus2", "name":"", "parent":"local_1","CellWhere localization":"Nucleus"},"group":"nodes"},
+{"data":{"id":"in_Nucleus3", "name":"", "parent":"local_1","CellWhere localization":"Nucleus"},"group":"nodes"},
+{"data":{"id":"local_3", "name":"Mitochondrion"},"group":"nodes"},
+{"data":{"id":"Q8R2R6", "name":"MTG1", "parent":"local_3","Uniprot ID":"Q8R2R6","CellWhere localization":"Mitochondrion"},"group":"nodes"},
+{"data":{"id":"Q16719", "name":"KYNU", "parent":"local_3","Uniprot ID":"Q16719","CellWhere localization":"Mitochondrion"},"group":"nodes"},
+{"data":{"id":"in_Mitochondrion0", "name":"", "parent":"local_3","CellWhere localization":"Mitochondrion"},"group":"nodes"},
+{"data":{"id":"in_Mitochondrion1", "name":"", "parent":"local_3","CellWhere localization":"Mitochondrion"},"group":"nodes"},
+{"data":{"id":"in_Mitochondrion2", "name":"", "parent":"local_3","CellWhere localization":"Mitochondrion"},"group":"nodes"},
+{"data":{"id":"in_Mitochondrion3", "name":"", "parent":"local_3","CellWhere localization":"Mitochondrion"},"group":"nodes"},
+{"data":{"id":"local_5", "name":"Endoplasmic reticulum"},"group":"nodes"},
+{"data":{"id":"Q6H3X3", "name":"RAET1G", "parent":"local_5","Uniprot ID":"Q6H3X3","CellWhere localization":"Endoplasmic reticulum"},"group":"nodes"},
+{"data":{"id":"in_Endoplasmic_reticulum0", "name":"", "parent":"local_5","CellWhere localization":"Endoplasmic reticulum"},"group":"nodes"},
+{"data":{"id":"in_Endoplasmic_reticulum1", "name":"", "parent":"local_5","CellWhere localization":"Endoplasmic reticulum"},"group":"nodes"},
+{"data":{"id":"in_Endoplasmic_reticulum2", "name":"", "parent":"local_5","CellWhere localization":"Endoplasmic reticulum"},"group":"nodes"},
+{"data":{"id":"in_Endoplasmic_reticulum3", "name":"", "parent":"local_5","CellWhere localization":"Endoplasmic reticulum"},"group":"nodes"},
+{"data":{"id":"A1L317", "name":"KRT24","Uniprot ID":"A1L317","CellWhere localization":"Cytoplasm"},"group":"nodes"},
+{"data":{"id":"in_Cytoplasm0", "name":"","CellWhere localization":"Cytoplasm"},"group":"nodes"},
+{"data":{"id":"in_Cytoplasm1", "name":"","CellWhere localization":"Cytoplasm"},"group":"nodes"},
+{"data":{"id":"in_Cytoplasm2", "name":"","CellWhere localization":"Cytoplasm"},"group":"nodes"},
+{"data":{"id":"in_Cytoplasm3", "name":"","CellWhere localization":"Cytoplasm"},"group":"nodes"},
+{"data":{"id":"O75051", "name":"PLXNA2","Uniprot ID":"O75051","CellWhere localization":"Membrane"},"group":"nodes"},
+{"data":{"id":"P49798", "name":"RGS4","Uniprot ID":"P49798","CellWhere localization":"Membrane"},"group":"nodes"},
+{"data":{"id":"local_9", "name":"Cell junction"},"group":"nodes"},
+{"data":{"id":"invisi_across_1_1", "name":" ", "parent":"local_9"},"group":"nodes"},
+{"data":{"id":"invisi_across_2_1", "name":" ", "parent":"local_9"},"group":"nodes"},
+{"data":{"id":"Q8VI47", "name":"ABCC2", "parent":"local_9","Uniprot ID":"Q8VI47","CellWhere localization":"Cell junction"},"group":"nodes"},
+{"data":{"id":"in_Cell_junction0", "name":"", "parent":"local_9","CellWhere localization":"Cell junction"},"group":"nodes"},
+{"data":{"id":"in_Cell_junction1", "name":"", "parent":"local_9","CellWhere localization":"Cell junction"},"group":"nodes"},
+{"data":{"id":"in_Cell_junction2", "name":"", "parent":"local_9","CellWhere localization":"Cell junction"},"group":"nodes"},
+{"data":{"id":"in_Cell_junction3", "name":"", "parent":"local_9","CellWhere localization":"Cell junction"},"group":"nodes"},
+{"data":{"id":"local_11", "name":"Vesicular exosome"},"group":"nodes"},
+{"data":{"id":"Q641Q3", "name":"METRNL", "parent":"local_11","Uniprot ID":"Q641Q3","CellWhere localization":"Vesicular exosome"},"group":"nodes"},
+{"data":{"id":"in_Vesicular_exosome0", "name":"", "parent":"local_11","CellWhere localization":"Vesicular exosome"},"group":"nodes"},
+{"data":{"id":"in_Vesicular_exosome1", "name":"", "parent":"local_11","CellWhere localization":"Vesicular exosome"},"group":"nodes"},
+{"data":{"id":"in_Vesicular_exosome2", "name":"", "parent":"local_11","CellWhere localization":"Vesicular exosome"},"group":"nodes"},
+{"data":{"id":"in_Vesicular_exosome3", "name":"", "parent":"local_11","CellWhere localization":"Vesicular exosome"},"group":"nodes"},
+{"data":{"id":"local_13", "name":"Extracellular matrix"},"group":"nodes"},
+{"data":{"id":"Q8K482", "name":"EMILIN2", "parent":"local_13","Uniprot ID":"Q8K482","CellWhere localization":"Extracellular matrix"},"group":"nodes"},
+{"data":{"id":"in_Extracellular_matrix0", "name":"", "parent":"local_13","CellWhere localization":"Extracellular matrix"},"group":"nodes"},
+{"data":{"id":"in_Extracellular_matrix1", "name":"", "parent":"local_13","CellWhere localization":"Extracellular matrix"},"group":"nodes"},
+{"data":{"id":"in_Extracellular_matrix2", "name":"", "parent":"local_13","CellWhere localization":"Extracellular matrix"},"group":"nodes"},
+{"data":{"id":"in_Extracellular_matrix3", "name":"", "parent":"local_13","CellWhere localization":"Extracellular matrix"},"group":"nodes"},
+{"data":{"id":"local_15", "name":"Unknown"},"group":"nodes"},
+{"data":{"id":"MIR133B", "name":"MIR133B", "parent":"local_15","Uniprot ID":"","CellWhere localization":"Unknown"},"group":"nodes"},
+{"data":{"id":"FLJ31813", "name":"FLJ31813", "parent":"local_15","Uniprot ID":"","CellWhere localization":"Unknown"},"group":"nodes"},
+{"data":{"id":"Q9NX04", "name":"C1orf109", "parent":"local_15","Uniprot ID":"Q9NX04","CellWhere localization":"Unknown"},"group":"nodes"},
+{"data":{"id":"in_Unknown0", "name":"", "parent":"local_15","CellWhere localization":"Unknown"},"group":"nodes"},
+{"data":{"id":"in_Unknown1", "name":"", "parent":"local_15","CellWhere localization":"Unknown"},"group":"nodes"},
+{"data":{"id":"in_Unknown2", "name":"", "parent":"local_15","CellWhere localization":"Unknown"},"group":"nodes"},
+{"data":{"id":"in_Unknown3", "name":"", "parent":"local_15","CellWhere localization":"Unknown"},"group":"nodes"},
+{"data":{"id":"Q6UXX9", "name":"RSPO2","Uniprot ID":"Q6UXX9","CellWhere localization":"Extracellular"},"group":"nodes"},
+{"data":{"id":"in_Extracellular0", "name":"","CellWhere localization":"Extracellular"},"group":"nodes"},
+{"data":{"id":"in_Extracellular1", "name":"","CellWhere localization":"Extracellular"},"group":"nodes"},
+{"data":{"id":"in_Extracellular2", "name":"","CellWhere localization":"Extracellular"},"group":"nodes"},
+{"data":{"id":"in_Extracellular3", "name":"","CellWhere localization":"Extracellular"},"group":"nodes"}],
+"edges":[
+]
+},
+"style":[
+{"selector":"node#invisi_extra_1","css":{"background-color":"#0101DF","background-opacity":"1","border-width":"","border-color":"#0101DF","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#invisi_extra_2","css":{"background-color":"#0101DF","background-opacity":"1","border-width":"","border-color":"#0101DF","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#invisi_memb_1","css":{"background-color":"#0101DF","background-opacity":"1","border-width":"","border-color":"#0101DF","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#invisi_memb_2","css":{"background-color":"#0101DF","background-opacity":"1","border-width":"","border-color":"#0101DF","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#invisi_Cytoplasm_1","css":{"background-color":"#0101DF","background-opacity":"1","border-width":"","border-color":"#0101DF","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#invisi_Cytoplasm_2","css":{"background-color":"#0101DF","background-opacity":"1","border-width":"","border-color":"#0101DF","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#local_1","css":{"background-color":"#FAAC58","background-opacity":"0.7","border-width":"0","border-color":"#FAAC58","width":"","height":"","shape":"roundrectangle","color":"black","content":"data(name)","font-size":"70","text-valign":"bottom","text-outline-color":"black","text-outline-width":"2px","border-opacity":"0.7"}},
+{"selector":"node#in_Nucleus0","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Nucleus1","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Nucleus2","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Nucleus3","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#local_3","css":{"background-color":"#FAAC58","background-opacity":"0.7","border-width":"0","border-color":"#FAAC58","width":"","height":"","shape":"roundrectangle","color":"black","content":"data(name)","font-size":"70","text-valign":"bottom","text-outline-color":"black","text-outline-width":"2px","border-opacity":"0.7"}},
+{"selector":"node#Q8R2R6","css":{"background-color":"red","background-opacity":"1","border-width":"2.0","border-color":"red","width":"80","height":"80","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#Q16719","css":{"background-color":"red","background-opacity":"1","border-width":"2.0","border-color":"red","width":"80","height":"80","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Mitochondrion0","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Mitochondrion1","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Mitochondrion2","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Mitochondrion3","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#local_5","css":{"background-color":"#FAAC58","background-opacity":"0.7","border-width":"0","border-color":"#FAAC58","width":"","height":"","shape":"roundrectangle","color":"black","content":"data(name)","font-size":"70","text-valign":"bottom","text-outline-color":"black","text-outline-width":"2px","border-opacity":"0.7"}},
+{"selector":"node#Q6H3X3","css":{"background-color":"red","background-opacity":"1","border-width":"2.0","border-color":"red","width":"80","height":"80","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Endoplasmic_reticulum0","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Endoplasmic_reticulum1","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Endoplasmic_reticulum2","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Endoplasmic_reticulum3","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#A1L317","css":{"background-color":"red","background-opacity":"1","border-width":"2.0","border-color":"red","width":"80","height":"80","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Cytoplasm0","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Cytoplasm1","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Cytoplasm2","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Cytoplasm3","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#O75051","css":{"background-color":"red","background-opacity":"1","border-width":"2.0","border-color":"red","width":"80","height":"80","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#P49798","css":{"background-color":"red","background-opacity":"1","border-width":"2.0","border-color":"red","width":"80","height":"80","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#local_9","css":{"background-color":"#FAAC58","background-opacity":"0.7","border-width":"0","border-color":"#FAAC58","width":"","height":"","shape":"roundrectangle","color":"black","content":"data(name)","font-size":"70","text-valign":"bottom","text-outline-color":"black","text-outline-width":"2px","border-opacity":"0.7"}},
+{"selector":"node#invisi_across_1_1","css":{"background-color":"#0101DF","background-opacity":"1","border-width":"","border-color":"#0101DF","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#invisi_across_2_1","css":{"background-color":"#0101DF","background-opacity":"1","border-width":"","border-color":"#0101DF","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#Q8VI47","css":{"background-color":"red","background-opacity":"1","border-width":"2.0","border-color":"red","width":"80","height":"80","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Cell_junction0","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Cell_junction1","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Cell_junction2","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Cell_junction3","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#local_11","css":{"background-color":"#FAAC58","background-opacity":"0.7","border-width":"0","border-color":"#FAAC58","width":"","height":"","shape":"roundrectangle","color":"black","content":"data(name)","font-size":"70","text-valign":"bottom","text-outline-color":"black","text-outline-width":"2px","border-opacity":"0.7"}},
+{"selector":"node#Q641Q3","css":{"background-color":"red","background-opacity":"1","border-width":"2.0","border-color":"red","width":"80","height":"80","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Vesicular_exosome0","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Vesicular_exosome1","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Vesicular_exosome2","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Vesicular_exosome3","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#local_13","css":{"background-color":"#FAAC58","background-opacity":"0.7","border-width":"0","border-color":"#FAAC58","width":"","height":"","shape":"roundrectangle","color":"black","content":"data(name)","font-size":"70","text-valign":"bottom","text-outline-color":"black","text-outline-width":"2px","border-opacity":"0.7"}},
+{"selector":"node#Q8K482","css":{"background-color":"red","background-opacity":"1","border-width":"2.0","border-color":"red","width":"80","height":"80","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Extracellular_matrix0","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Extracellular_matrix1","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Extracellular_matrix2","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Extracellular_matrix3","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#local_15","css":{"background-color":"#FAAC58","background-opacity":"0.7","border-width":"0","border-color":"#FAAC58","width":"","height":"","shape":"roundrectangle","color":"black","content":"data(name)","font-size":"70","text-valign":"bottom","text-outline-color":"black","text-outline-width":"2px","border-opacity":"0.7"}},
+{"selector":"node#MIR133B","css":{"background-color":"red","background-opacity":"1","border-width":"2.0","border-color":"red","width":"80","height":"80","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#FLJ31813","css":{"background-color":"red","background-opacity":"1","border-width":"2.0","border-color":"red","width":"80","height":"80","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#Q9NX04","css":{"background-color":"red","background-opacity":"1","border-width":"2.0","border-color":"red","width":"80","height":"80","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Unknown0","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Unknown1","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Unknown2","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Unknown3","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#Q6UXX9","css":{"background-color":"red","background-opacity":"1","border-width":"2.0","border-color":"red","width":"80","height":"80","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Extracellular0","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Extracellular1","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Extracellular2","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"node#in_Extracellular3","css":{"background-color":"","background-opacity":"1","border-width":"","border-color":"","width":"0.1","height":"0.1","shape":"ellipse","color":"black","content":"data(name)","font-size":"60","text-valign":"center","text-outline-color":"black","text-outline-width":"2px","border-opacity":"1"}},
+{"selector":"edge","css":{"curve-style":"haystack","line-style":"solid","line-color":"#A4A4A4","width":"4" }},
+{"selector":":selected","css":{"text-outline-color":"#000","background-color":"#FFFF00","border-width":"10","target-arrow-color":"#000","line-color":"#000"}}
+],
+"scratch":{},
+"zoomingEnabled":true,
+"userZoomingEnabled":false,"zoom":0.5,
+  ready: function(){
+   window.cy = this;cy.nodes("#invisi_extra_1").position({x: -900,  y:-2074});
+cy.nodes("#invisi_extra_2").position({x: 2871,  y:1348});
+cy.nodes("#invisi_memb_1").position({x: -600,  y:-600});
+cy.nodes("#invisi_memb_2").position({x: 2571,  y:1048});
+cy.nodes("#invisi_Cytoplasm_1").position({x: -300,  y:-300});
+cy.nodes("#invisi_Cytoplasm_2").position({x: 2271,  y:748});
+cy.nodes("#in_Nucleus0").position({x: 1470,  y:53});
+cy.nodes("#in_Nucleus1").position({x: 1417,  y:70});
+cy.nodes("#in_Nucleus2").position({x: 1400,  y:17});
+cy.nodes("#in_Nucleus3").position({x: 1453,  y:0});
+cy.nodes("#Q8R2R6").position({x: 508,  y:378});
+cy.nodes("#Q16719").position({x: 391,  y:217});
+cy.nodes("#in_Mitochondrion0").position({x: 600,  y:298});
+cy.nodes("#in_Mitochondrion1").position({x: 450,  y:448});
+cy.nodes("#in_Mitochondrion2").position({x: 300,  y:298});
+cy.nodes("#in_Mitochondrion3").position({x: 450,  y:148});
+cy.nodes("#Q6H3X3").position({x: 999,  y:99});
+cy.nodes("#in_Endoplasmic_reticulum0").position({x: 1099,  y:99});
+cy.nodes("#in_Endoplasmic_reticulum1").position({x: 999,  y:199});
+cy.nodes("#in_Endoplasmic_reticulum2").position({x: 900,  y:99});
+cy.nodes("#in_Endoplasmic_reticulum3").position({x: 999,  y:0});
+cy.nodes("#A1L317").position({x: 1870,  y:35});
+cy.nodes("#in_Cytoplasm0").position({x: 1970,  y:35});
+cy.nodes("#in_Cytoplasm1").position({x: 1870,  y:135});
+cy.nodes("#in_Cytoplasm2").position({x: 1771,  y:35});
+cy.nodes("#in_Cytoplasm3").position({x: 1870,  y:-64});
+cy.nodes("#O75051").position({x: 100,  y:-599});
+cy.nodes("#P49798").position({x: 500,  y:-594});
+cy.nodes("#invisi_across_1_1").position({x: 800,  y:-1000});
+cy.nodes("#invisi_across_2_1").position({x: 800,  y:-200});
+cy.nodes("#Q8VI47").position({x: 899,  y:-590});
+cy.nodes("#in_Cell_junction0").position({x: 999,  y:-590});
+cy.nodes("#in_Cell_junction1").position({x: 899,  y:-490});
+cy.nodes("#in_Cell_junction2").position({x: 800,  y:-590});
+cy.nodes("#in_Cell_junction3").position({x: 899,  y:-690});
+cy.nodes("#Q641Q3").position({x: 99,  y:-1732});
+cy.nodes("#in_Vesicular_exosome0").position({x: 199,  y:-1732});
+cy.nodes("#in_Vesicular_exosome1").position({x: 99,  y:-1632});
+cy.nodes("#in_Vesicular_exosome2").position({x: 0,  y:-1732});
+cy.nodes("#in_Vesicular_exosome3").position({x: 99,  y:-1832});
+cy.nodes("#Q8K482").position({x: 599,  y:-1761});
+cy.nodes("#in_Extracellular_matrix0").position({x: 699,  y:-1761});
+cy.nodes("#in_Extracellular_matrix1").position({x: 599,  y:-1661});
+cy.nodes("#in_Extracellular_matrix2").position({x: 500,  y:-1761});
+cy.nodes("#in_Extracellular_matrix3").position({x: 599,  y:-1861});
+cy.nodes("#MIR133B").position({x: 1321,  y:-1736});
+cy.nodes("#FLJ31813").position({x: 1063,  y:-1763});
+cy.nodes("#Q9NX04").position({x: 1215,  y:-1973});
+cy.nodes("#in_Unknown0").position({x: 1400,  y:-1824});
+cy.nodes("#in_Unknown1").position({x: 1200,  y:-1624});
+cy.nodes("#in_Unknown2").position({x: 1000,  y:-1824});
+cy.nodes("#in_Unknown3").position({x: 1200,  y:-2024});
+cy.nodes("#Q6UXX9").position({x: 1799,  y:-1696});
+cy.nodes("#in_Extracellular0").position({x: 1899,  y:-1696});
+cy.nodes("#in_Extracellular1").position({x: 1799,  y:-1596});
+cy.nodes("#in_Extracellular2").position({x: 1700,  y:-1696});
+cy.nodes("#in_Extracellular3").position({x: 1799,  y:-1796});
+cy.fit();
+}});
+});
+ window.onresize=function(){
+window.location.reload(true);
+ window.location.replace('z.xml_web.html');}; 
+ </script>
+ <meta charset=utf-8 />
+	<title>Cytoscape.js initialisation</title>
+	  <script src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
+	</head>
+	<body>
+	  <div id="cy" class="bgimg" ></div>
+	</body>
+	</html>
