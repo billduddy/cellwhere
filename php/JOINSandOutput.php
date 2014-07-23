@@ -19,9 +19,11 @@
 // some hits that returned GO terms but not localizations.
 
 $sql = "DROP TEMPORARY TABLE IF EXISTS results CASCADE";
-$result = mysql_query($sql) or die(mysql_error());
+mysql_query($sql) or die(mysql_error());
 $sql = "DROP TEMPORARY TABLE IF EXISTS allresults CASCADE";
-$result = mysql_query($sql) or die(mysql_error());
+mysql_query($sql) or die(mysql_error());
+$sql = "DROP TEMPORARY TABLE IF EXISTS temp_allresults CASCADE";
+mysql_query($sql) or die(mysql_error());
 
 //============================================================ALL results=====================================================================
 //////////////////////////////////////////////////////////////////
