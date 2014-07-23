@@ -23,7 +23,114 @@ $result = mysql_query($sql) or die(mysql_error());
 $sql = "DROP TEMPORARY TABLE IF EXISTS allresults CASCADE";
 $result = mysql_query($sql) or die(mysql_error());
 
+//============================================================ALL results=====================================================================
+//////////////////////////////////////////////////////////////////
+// Code to download all results, not just max priority number
+// It is important to use DISTINCT here, especially for GOonly, as the QuickGO_tmp.tsv has many duplicates (UNION probably makes DISTINCT redundant in the UniprotAndGO query)
 
+$start = microtime(true);
+
+switch ($Source_Loc_Term) {                 // Depending on selection on dropdown menu
+     case "GOonly":
+	  // To map using only the Gene Ontology (works 240214)
+	  $sql = "
+		    CREATE TEMPORARY TABLE allresults AS SELECT DISTINCT a.QueryID, a.ACC, a.Symbol, a.Localization, map_" . "$Flavour" . "_flavour.UniquePriorityNumber, COALESCE(NULLIF(map_" . "$Flavour" . "_flavour.OurLocalization, ''), 'Unknown') AS OurLocalization
+		    FROM (
+			     SELECT y.QueryID, y.ACC, quickgotmp.Symbol, quickgotmp.Localization
+			     FROM (
+				   SELECT query_ids.QueryID, listofids.ACC
+				   FROM query_ids
+					LEFT JOIN listofids ON listofids.QueryID = query_ids.QueryID
+			     ) AS y
+				     LEFT JOIN quickgotmp ON quickgotmp.ID = y.ACC
+		    ) AS a
+			    LEFT JOIN map_" . "$Flavour" . "_flavour ON map_" . "$Flavour" . "_flavour.GO_id_or_uniprot_term = a.Localization
+		    ORDER BY a.QueryID ASC
+		 ";
+	  break;
+     case "UniprotAndGO":  
+	  // To map using both Uniprot and the Gene Ontology (works 240214)
+	  $sql = "
+		    CREATE TEMPORARY TABLE allresults AS SELECT DISTINCT a.QueryID, a.ACC, a.UniprotID, a.Localization, map_" . "$Flavour" . "_flavour.UniquePriorityNumber, COALESCE(NULLIF(map_" . "$Flavour" . "_flavour.OurLocalization, ''), 'Unknown') AS OurLocalization
+		    FROM (
+			   SELECT z.QueryID, z.ACC, map_acc_to_uniprot_loc.UniprotID, map_acc_to_uniprot_loc.Localization
+			   FROM (
+				 SELECT query_ids.QueryID, listofids.ACC
+				 FROM query_ids
+				      LEFT JOIN listofids ON listofids.QueryID = query_ids.QueryID
+			   ) AS z
+				   LEFT JOIN map_acc_to_uniprot_loc ON map_acc_to_uniprot_loc.UniprotACC = z.ACC
+			   UNION
+			   SELECT y.QueryID, y.ACC, quickgotmp.Symbol, quickgotmp.Localization
+			   FROM (
+				 SELECT query_ids2.QueryID, listofids2.ACC
+				 FROM query_ids2
+				      LEFT JOIN listofids2 ON listofids2.QueryID = query_ids2.QueryID
+			   ) AS y
+				   LEFT JOIN quickgotmp ON quickgotmp.ID = y.ACC	
+		    ) AS a
+			    LEFT JOIN map_" . "$Flavour" . "_flavour ON map_" . "$Flavour" . "_flavour.GO_id_or_uniprot_term = a.Localization
+		    ORDER BY a.QueryID ASC
+		 ";
+	  break;
+/*     case "UniprotOnly":  		 
+	  // To map using only Uniprot (works 240214)
+	  $sql = "
+		    CREATE TEMPORARY TABLE allresults AS SELECT DISTINCT a.QueryID, a.ACC, a.UniprotID, a.Localization, map_" . "$Flavour" . "_flavour.UniquePriorityNumber, COALESCE(NULLIF(map_" . "$Flavour" . "_flavour.OurLocalization, ''), 'Unknown') AS OurLocalization
+		    FROM (
+			    SELECT z.QueryID, z.ACC, map_acc_to_uniprot_loc.UniprotID, map_acc_to_uniprot_loc.Localization
+			    FROM (
+				  SELECT query_ids.QueryID, listofids.ACC
+				  FROM query_ids
+				       LEFT JOIN listofids ON listofids.QueryID = query_ids.QueryID
+			    ) AS z
+				    LEFT JOIN map_acc_to_uniprot_loc ON map_acc_to_uniprot_loc.UniprotACC = z.ACC
+		    ) AS a
+			    LEFT JOIN map_" . "$Flavour" . "_flavour ON map_" . "$Flavour" . "_flavour.GO_id_or_uniprot_term = a.Localization
+		    ORDER BY a.QueryID ASC
+		 ";
+	  break;
+*/
+     case "UniprotOnly":  		 
+	  // To map using only Uniprot (works 240214)
+	  $sql = "
+		    CREATE TEMPORARY TABLE temp_allresults AS
+                    SELECT DISTINCT a.QueryID, a.ACC, a.UniprotID, a.Localization, map_" . "$Flavour" . "_flavour.UniquePriorityNumber, COALESCE(NULLIF(map_" . "$Flavour" . "_flavour.OurLocalization, ''), 'Unknown') AS OurLocalization
+                    FROM (
+			    SELECT z.QueryID, z.ACC, map_acc_to_uniprot_loc.UniprotID, map_acc_to_uniprot_loc.Localization
+			    FROM (
+				  SELECT query_ids.QueryID, listofids.ACC
+				  FROM query_ids
+				       LEFT JOIN listofids ON listofids.QueryID = query_ids.QueryID
+			    ) AS z
+				    LEFT JOIN map_acc_to_uniprot_loc ON map_acc_to_uniprot_loc.UniprotACC = z.ACC
+                    ) AS a
+			    LEFT JOIN map_" . "$Flavour" . "_flavour ON map_" . "$Flavour" . "_flavour.GO_id_or_uniprot_term = a.Localization
+		 ";
+                 
+            mysql_query($sql) or die(mysql_error());
+                 
+           $sql = "
+		    CREATE TEMPORARY TABLE allresults AS
+                    
+                    SELECT DISTINCT *
+                    FROM temp_allresults
+                    ORDER BY QueryID ASC
+		 ";
+
+	  break;
+
+}		  
+$result = mysql_query($sql) or die(mysql_error());				// Puts results of joins into a new temporary table called results
+$end = microtime(true);
+$time= $end - $start;
+$time = round($time, 2);      // Round to 2 decimal places
+echo "<br />--------result took:$time seconds.</br>";
+//==========================================================================================================================================
+
+
+
+//=======================================================prioritized results================================================================
 $start = microtime(true);
 	
 switch ($Source_Loc_Term) {                 // Depending on selection on dropdown menu
@@ -80,7 +187,8 @@ switch ($Source_Loc_Term) {                 // Depending on selection on dropdow
 		    ORDER BY b.UniquePriorityNumber DESC
 		 ";
 	  break;
-     case "UniprotOnly":  		 
+/*
+ *     case "UniprotOnly":  		 
 	  // To map using only Uniprot (works 240214)
 	  $sql3 = "
 		  CREATE TEMPORARY TABLE results AS SELECT b.QueryID, b.ACC, b.UniprotID, b.Localization, MAX(b.UniquePriorityNumber) AS UniquePriorityNumber, COALESCE(NULLIF(b.OurLocalization, ''), 'Unknown') AS OurLocalization
@@ -102,6 +210,23 @@ switch ($Source_Loc_Term) {                 // Depending on selection on dropdow
 		  ORDER BY b.UniquePriorityNumber DESC
 		 ";
 	  break;
+     */
+    case "UniprotOnly":  		 
+	  // To map using only Uniprot (works 240214)
+	  $sql3 = "
+		  CREATE TEMPORARY TABLE results AS
+                  
+                  SELECT b.QueryID, b.ACC, b.UniprotID, b.Localization, MAX(b.UniquePriorityNumber) AS UniquePriorityNumber, COALESCE(NULLIF(b.OurLocalization, ''), 'Unknown') AS OurLocalization
+		  FROM (
+                        SELECT *
+                        FROM temp_allresults
+                        ORDER BY UniquePriorityNumber DESC
+		  ) AS b
+		  GROUP BY b.QueryID
+		  ORDER BY b.UniquePriorityNumber DESC
+		 ";
+	  break;
+     
 }
 $result3 = mysql_query($sql3) or die(mysql_error());				// Puts results of joins into a new temporary table called results
 
@@ -109,79 +234,7 @@ $end = microtime(true);
 $time= $end - $start;
 $time = round($time, 2);      // Round to 2 decimal places
 echo "<br />--------result3 took:$time seconds.</br>";
-	
-//////////////////////////////////////////////////////////////////
-// Code to download all results, not just max priority number
-// It is important to use DISTINCT here, especially for GOonly, as the QuickGO_tmp.tsv has many duplicates (UNION probably makes DISTINCT redundant in the UniprotAndGO query)
-
-$start = microtime(true);
-
-switch ($Source_Loc_Term) {                 // Depending on selection on dropdown menu
-     case "GOonly":
-	  // To map using only the Gene Ontology (works 240214)
-	  $sql = "
-		    CREATE TEMPORARY TABLE allresults AS SELECT DISTINCT a.QueryID, a.ACC, a.Symbol, a.Localization, map_" . "$Flavour" . "_flavour.UniquePriorityNumber, COALESCE(NULLIF(map_" . "$Flavour" . "_flavour.OurLocalization, ''), 'Unknown') AS OurLocalization
-		    FROM (
-			     SELECT y.QueryID, y.ACC, quickgotmp.Symbol, quickgotmp.Localization
-			     FROM (
-				   SELECT query_ids.QueryID, listofids.ACC
-				   FROM query_ids
-					LEFT JOIN listofids ON listofids.QueryID = query_ids.QueryID
-			     ) AS y
-				     LEFT JOIN quickgotmp ON quickgotmp.ID = y.ACC
-		    ) AS a
-			    LEFT JOIN map_" . "$Flavour" . "_flavour ON map_" . "$Flavour" . "_flavour.GO_id_or_uniprot_term = a.Localization
-		    ORDER BY a.QueryID ASC
-		 ";
-	  break;
-     case "UniprotAndGO":  
-	  // To map using both Uniprot and the Gene Ontology (works 240214)
-	  $sql = "
-		    CREATE TEMPORARY TABLE allresults AS SELECT DISTINCT a.QueryID, a.ACC, a.UniprotID, a.Localization, map_" . "$Flavour" . "_flavour.UniquePriorityNumber, COALESCE(NULLIF(map_" . "$Flavour" . "_flavour.OurLocalization, ''), 'Unknown') AS OurLocalization
-		    FROM (
-			   SELECT z.QueryID, z.ACC, map_acc_to_uniprot_loc.UniprotID, map_acc_to_uniprot_loc.Localization
-			   FROM (
-				 SELECT query_ids.QueryID, listofids.ACC
-				 FROM query_ids
-				      LEFT JOIN listofids ON listofids.QueryID = query_ids.QueryID
-			   ) AS z
-				   LEFT JOIN map_acc_to_uniprot_loc ON map_acc_to_uniprot_loc.UniprotACC = z.ACC
-			   UNION
-			   SELECT y.QueryID, y.ACC, quickgotmp.Symbol, quickgotmp.Localization
-			   FROM (
-				 SELECT query_ids2.QueryID, listofids2.ACC
-				 FROM query_ids2
-				      LEFT JOIN listofids2 ON listofids2.QueryID = query_ids2.QueryID
-			   ) AS y
-				   LEFT JOIN quickgotmp ON quickgotmp.ID = y.ACC	
-		    ) AS a
-			    LEFT JOIN map_" . "$Flavour" . "_flavour ON map_" . "$Flavour" . "_flavour.GO_id_or_uniprot_term = a.Localization
-		    ORDER BY a.QueryID ASC
-		 ";
-	  break;
-     case "UniprotOnly":  		 
-	  // To map using only Uniprot (works 240214)
-	  $sql = "
-		    CREATE TEMPORARY TABLE allresults AS SELECT DISTINCT a.QueryID, a.ACC, a.UniprotID, a.Localization, map_" . "$Flavour" . "_flavour.UniquePriorityNumber, COALESCE(NULLIF(map_" . "$Flavour" . "_flavour.OurLocalization, ''), 'Unknown') AS OurLocalization
-		    FROM (
-			    SELECT z.QueryID, z.ACC, map_acc_to_uniprot_loc.UniprotID, map_acc_to_uniprot_loc.Localization
-			    FROM (
-				  SELECT query_ids.QueryID, listofids.ACC
-				  FROM query_ids
-				       LEFT JOIN listofids ON listofids.QueryID = query_ids.QueryID
-			    ) AS z
-				    LEFT JOIN map_acc_to_uniprot_loc ON map_acc_to_uniprot_loc.UniprotACC = z.ACC
-		    ) AS a
-			    LEFT JOIN map_" . "$Flavour" . "_flavour ON map_" . "$Flavour" . "_flavour.GO_id_or_uniprot_term = a.Localization
-		    ORDER BY a.QueryID ASC
-		 ";
-	  break;
-}		  
-$result = mysql_query($sql) or die(mysql_error());				// Puts results of joins into a new temporary table called results
-$end = microtime(true);
-$time= $end - $start;
-$time = round($time, 2);      // Round to 2 decimal places
-echo "<br />--------result took:$time seconds.</br>";
+//================================================================================================================================================	
 
 /////////////////////////////////////////////////////////////////////
 $start = microtime(true);
