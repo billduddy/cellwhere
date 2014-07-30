@@ -260,21 +260,18 @@ if(!$ID_array){
 	    //require 'UploadIDToUniprotACC.php';             // Converts uploaded $ID_array into Uniprot IDs
 	    UploadIDToUniprotACC($ID_type,$ID_array,$HumMouseFlag);
 	    //require 'QueriesAndUniprotToTempTable.php';     // Puts query IDs and Uniprot IDs into temporary MySQL table called listofids
-	    QueriesAndUniprotToTempTable();
-	    $ACC_GN=array();
-/*	    if($show_name=="Gene_name"){
-		require "UniprotACCtoGeneSymbol.php";
-		$ACC_GN = ACCtoGS($prot_all);
-	    }*/
+	    QueriesAndUniprotToTempTable($ID_array);;
+
 	    require 'ACCtoGO.php';			    // Queries QuickGO with IDs, downloads a tsv file with GO terms
 	    require 'JOINSandOutput.php';                   // Puts contents of TSV file into MySQL table, queries it against mapping file, and prints out the results
 	    require 'add_location_xml.php';
-	    $xml =  add_location_to_xml($QueryID,$att_ID_type,$xml_file_name,$OurLocalization);
-	    $org_nodes=NULL;
-      	    $ACCs_1=NULL;
+	    $xml =  add_location_to_xml($ID_array,$att_ID_type,$xml_file_name,$OurLocalization);
+	    $QueryID_1=NULL;
+	    $ACCs_1=NULL;
 	    require 'visualization.php';
 	    $xml_file_name=basename($xml_file_name);
 	    require "create_package.php";  
+    
     }
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////   
 /*    //if a gene list generated in local according to a uploaded gene list 
