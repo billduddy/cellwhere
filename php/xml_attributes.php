@@ -112,23 +112,27 @@
                     <option value="Blank">Type not listed? We recommend www.uniprot.org/mapping</option>
                     </select>';
                     
-                    echo '<br /><font color="#1F88A7">Restrict Gene Symbol searches species:</font><br />
-                    <select name="HumMouseBox">
-                    <option value="HumMouseOverlap">Humman Mouse Overlap</option>
-                    <option value="HumanOnly">Human Only</option>
-                    <option value="MouseOnly">Mouse Only</option>
-                    </select><br />';
-                    
                     //ID type attribute
                     echo '<b><font color="#1F88A7"><br />Select the attribute of query ID type:</font> </b><br />
                     <select name="att_ID_type">
                     <option value=""></option>';
-                    
                     foreach($xml->node[0]->att as $att){ 
                         echo '<option value="'.$att['name'].'">'.$att['name'].'</option>';
                     }
                     echo '</select>';
                     
+		    echo '<br /><font color="#1F88A7">Restrict Gene Symbol searches species:</font><br />
+			<select name="HumMouseBox">
+			  <option value="9606">Homo sapiens</option>
+			  <option value="10090">Mus musculus</option>
+			  <option value="3702">Arabidopsis thaliana</option>
+			  <option value="6239">Caenorhabditis elegans</option>
+			  <option value="83333">Escherichia coli K12</option>
+			  <option value="7227">Drosophila melanogaster</option>
+			  <option value="10116">Rattus norvegicus</option>
+			  <option value="559292">Saccharomyces cerevisiae</option>
+			</select>';
+		    
                     //Dropdown menu for Location term retrieval
                     echo '<br /><b><font color="#1F88A7"><br /><br />Select sources from which to retrieve Location terms:</font> </b><br />
                         <select name="Source_Loc_Term">
@@ -190,21 +194,25 @@
                         <select name="att_FC">
                         <option value=""></option>
                         <option value="NoFC">No Fold Change Attribute</option>';
-                    foreach($xml->node[0]->att as $att){
-                        echo '<option value="'.$att['name'].'">'.$att['name'].'</option>';
-                    }
+			foreach($xml->node[0]->att as $att){
+			    echo '<option value="'.$att['name'].'">'.$att['name'].'</option>';
+			}
                     echo '</select>';
                     
                     //file name
                     echo '<input id="uploadedxmlfile" name="uploadedxmlfile" value ="'.$target_path.'" type="hidden" />';
                     
                     echo '<!--Dropdown menu for node name display-->
-                        <b><font color="#1F88A7"><br /><br />Select the name type of gene you want show at network:</font> </b><br />
+                        <b><font color="#1F88A7"><br /><br />Select the ID type you want show at network:</font> </b><br />
                         <select name="show_name">
-                        <option value="Gene_name">Gene Symbol</option>
-                        <option value="UniprotACC">Uniprot Accession</option>
-                        <!--<option value="type_upload">The same type as upload ID</option>-->
-                        </select>';  
+			    <option value="">---CellWhere---</option>
+			    <option value="Gene_name">Gene Symbol</option>
+			    <option value="UniprotACC">Uniprot Accession</option>
+			    <option value="">---User---</option>';
+			    foreach($xml->node[0]->att as $att){
+				echo '<option value="'.$att['name'].'">'.$att['name'].'</option>';
+			    }
+			echo '</select>';
                                         
                     //<!--Next and reset buttons -->
                     echo '<br /><br /><input id="butt" name="next" type="submit" value="Submit" /><input type="reset" value="Reset" />';

@@ -21,7 +21,6 @@
 //                        echo $OurLocalization[$i]."<br\>";
                         $att->addAttribute('type','string');
                     }
-                
             }
         }
         return $xml;

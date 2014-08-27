@@ -1,21 +1,19 @@
 <?php
 /*
- *CellWhere Project
- *Description:
-    This script is capable to
-        - analyze the localization and their relationship in spatial position in cell by reading a localization table.
-        - read an original xml file in order to put out a relocalized xml file with different compounds.
-        - the out xml file can be visualizd by Cytoscape js.
-
-    Author : ZHU Lu , Master 2 Bioinformatics, Universite Paris Diderot
-    Contact: zhu.lu@hotmail.com
-*/
+ * Project: CellWhere
+ * Description:
+ * This script is capable to
+ *  - analyze the localization and their relationship in spatial position in cell by reading a localization table.
+ *  - read an original xml file in order to put out a relocalized xml file with different compounds.
+ *  - the out xml file can be visualizd by Cytoscape js.
+ *
+ *  Author : ZHU Lu , Master 2 Bioinformatics, Universite Paris Diderot
+ *  Contact: zhu.lu@hotmail.com
+ */
  
 /*--------------------------------------------------------Main-------------------------------------------------------*/
-    /*-read the original xml file ------------------------------------------------*/
-   /* $file_xml = $argv[1];
-    $xml=simplexml_load_file($file_xml.".xml");*/
-    $file_xml=$xml_file_name;
+    /*----------read the original xml file ------------------------------------------------*/
+    $file_xml=$xml_file_name;   // gxxml file that user upload OR the one created by CellWhere-Mentha process
     
     /*-analyze the relation table file--------------------------------------------*/
     list($loca_table,$list_comp) = localizations($xml);
@@ -23,81 +21,36 @@
     /*----------------------------------------------------------------------------*/  
     //total compound number in relation table
     $compd_num=total_compd($loca_table);
-    //echo "* There are ".$compd_num." compounds in total. \n";
+    echo "* There are ".$compd_num." compounds in total. \n";
     
     
     // total node number
     $node_num=total_node($xml);
-    //echo "* There are ".$node_num." nodes in total.\n";
+    echo "* There are ".$node_num." nodes in total.\n";
     /*----------------------------------------------------------------------------*/
 
     //global variables
-    $base=array( 'Extracellular','Membrane','Cytoplasm','Nucleus membrane','Nucleus');
-    $colors=array("compound"=>"#FAAC58","membrane"=>"#FF8000","transparent"=>"#FFFFFF","gray"=>"#A4A4A4");
-   // $state_memb=array("Nucleus"=>"Nucleus membrane","Sarcoplasmic reticulum"=>"Sarcoplasmic reticulum membrane","Mitochondrion"=>"Mitochondrial membrane","Vacuole"=>"Vacuole membrane","Lysosome"=>"Lysosomal membrane","Vesicle"=>"Vesicle membrane","Golgi"=>"Golgi membrane","Endosome"=>"Endosomal membrane","Endoplasmic reticulum"=>"Endoplasmic reticulum membrane","Peroxisome"=>"Peroxisomal membrane");
+    $base=array( 'Extracellular','Membrane','Cytoplasm','Nucleus membrane','Nucleus');  // basic subcellular localization elements
+    $colors=array("compound"=>"#FAAC58","membrane"=>"#FF8000","transparent"=>"#FFFFFF","gray"=>"#A4A4A4");  // the default colors
+    
     /*----------------------------------------------------------------------------*/
-    //unlink($xml_file_name);
-    /*$file=explode("/",$file_xml)[1];
-    $path="downloads/".basename($file,".xml");
-    if(!is_dir($path)){
-        mkdir($path);
-    }
-    $file_xml=$path."/".$file;
-    $xml_file_name=$file_xml;
-    */
     layout($xml,$loca_table,$list_comp);
-   //cytoscape js
-    include("xml_to_json_with_compd.php");
-    xml_to_json($file_xml,"_web.xml",$list_comp,$QueryID_1);
-
-    unlink($file_xml."_web.xml");
-    //if(file_exists($file_xml."_cy.xml")){echo $file_xml."_cy.xml"; }
+    //cytoscape js
+    include("xml_to_json.php");
+    //echo "$upload_xml<br/>";
+    xml_to_json($file_xml,"_web.xml",$list_comp,$QueryID_1,$Symbol_added);
+    // $file_xml: the name of xml file which is re-organized according to the subcellular localization
+    // list_comp: the list of subcellular localization apparent in the network
+    // $QueryID_1:the protein IDs of only uploaded by user
+    // $Symbol_added: the gene symbol of each protein 
     
    /*----------------------------------------------------End main----------------------------------------------------------*/ 
    
    
    
-/*-------------------------------------functions-----------------------------------*/
+/*------------------------------------------------------Functions---------------------------------------------------------*/
 
-    /*---------------------------------location analysis--------------------------*/ 
-    function add_location(&$ExtraC,&$Membr,&$Cytopl,&$NucM,&$Nucle,$my,$rele){ 
-        /*add new location in the location table by the spatial relation*/
-        switch($rele){
-            case "UNDER Membrane":
-                //echo "here UNDER Membrane";
-               // $NucM[$my] = 0;
-                $Cytopl[$my] = 0;
-                break;
-            case "ACROSS Membrane":
-                $Membr[$my] = 0;
-                break;
-            case "IN Cytoplasm":
-                $NucM[$my] = 0;
-                break;
-            case "IN Extracellular":
-                $Membr[$my] = 0;
-                break;
-            case "SURFACE Membrane"://difference from Cell surface
-                $Membr[$my] = 0;
-                break;
-            case "IN Membrane":
-                $Cytopl[$my] = 0;
-                break;
-        }
-    }
-
-    /*------------------------------------------------------*/
-    function show_location($head){
-        foreach($head as $elem=>$next){
-            echo $elem."\n";
-            if($next!=0){            
-                show_location($next);
-            }          
-            echo "END_".$elem."\n";
-        }
-    }
-    
-    /*------------------------------------------------------*/
+    /*---------------------------------Localization analysis--------------------------*/ 
     function localizations($fxml){
         // creat a 2 dimension table to represent the level of construction of the compounds
         $Nucle["Nucleus"]=0;
@@ -142,6 +95,7 @@
                 }                
             }
             $list_comp[$myloc]=$rele;
+            
             //add new location in the location table by the spatial relation
             add_location($ExtraC,$Membr,$Cytopl,$NucM,$Nucle,$myloc,$rele);  
         }
@@ -155,8 +109,47 @@
         return array($ExtraC,$list_comp,$membre_elem);
     }
     
-    /*-------------------------rewrite xgmml file--------------------------------------*/
+    /*------------------------------------------------------*/   
+    function add_location(&$ExtraC,&$Membr,&$Cytopl,&$NucM,&$Nucle,$my,$rele){ 
+        /*add new location in the location table by the spatial relation*/
+        switch($rele){
+            case "UNDER Membrane":
+                //echo "here UNDER Membrane";
+               // $NucM[$my] = 0;
+                $Cytopl[$my] = 0;
+                break;
+            case "ACROSS Membrane":
+                $Membr[$my] = 0;
+                break;
+            case "IN Cytoplasm":
+                $NucM[$my] = 0;
+                break;
+            case "IN Extracellular":
+                $Membr[$my] = 0;
+                break;
+            case "SURFACE Membrane"://difference from Cell surface
+                $Membr[$my] = 0;
+                break;
+            case "IN Membrane":
+                $Cytopl[$my] = 0;
+                break;
+        }
+    }
 
+    /*------------------------------------------------------*/
+    function show_location($head){
+        foreach($head as $elem=>$next){
+            echo $elem."\n";
+            if($next!=0){            
+                show_location($next);
+            }          
+            echo "END_".$elem."\n";
+        }
+    }
+    /*---------------------------------END Localization analysis---------------------------------*/ 
+
+
+    
     function total_node($xml){
         $node_num=0;
         foreach ($xml->node as $nodes){
@@ -176,56 +169,58 @@
         }        
         return $t;
     }
-    
-    /*--------------------------------------------------*/
-    //size and color ~ fold change value
-    function getProperColor($var){
-        if ($var <= -3){
-            return '#0070FF';//blue
+
+    /*-------------------------------- Re-organize xgmml --------------------------------------*/
+    function layout($xml,$head,$list_comp){   
+        $range_xy=array();
+        //analyse the node distribution 
+        node_position($xml,$head,$range_xy);
+        //max x,max y,min x,min y
+        $control_xy =array("all"=>array(0,0,0,0),"under_xy"=>null,"surface_xy"=>null,"across_xy"=>null,"in_cyto_xy"=>null,"memb_xy"=>null,"extra_xy"=>null,"nucleus_xy"=>null,"nucleus_xy"=>null);
+        //move compound nodes + nodes inside
+        $cyto_line=array("k"=>0,"left"=>0,"bottom"=>0);
+        $diff_ini_x=0;$first_y=0;
+        $memb_size=array();
+        
+        xml_modify_1($xml,$head,$range_xy,$list_comp);// add innominate nodes & control membrane and size ...
+        xml_modify_2($xml,$head,$range_xy,$list_comp,$control_xy,$cyto_line);// position in cell
+        xml_modify_3($xml,$head,$range_xy,$list_comp,$control_xy);//compounds for under membrane node
+        xml_modify_4($xml,$head,$range_xy,$list_comp,$control_xy);//compounds for under membrane node
+        
+        $for_draw_bg=array();
+        if($control_xy["under_xy"][0]!=null){
+            $for_draw_bg["cytoplasm"]["up"][1]=$control_xy["under_xy"][3]+70;
+        }else{
+            $for_draw_bg["cytoplasm"]["up"][1]=$range_xy["Nucleus"][2]-300;
         }
-        else if ($var > -3 && $var < 0){
-            $var=(3+$var)*256/3;
-            if($var<=16){
-                $var = '0'.dechex($var);
-            }else{
-                $var = dechex($var);
-            }
-            return "#".$var."70ff";
-        }
-        else if ($var == 0){
-            return '#A4A4A4';
-        }
-        else if ($var >= 0 && $var < 3){
-            $var=(3-$var)*256/3;
-            if($var<=16){
-                $var = '0'.dechex($var);
-            }else{
-                $var = dechex($var);
-            }
-            return "#ff".$var.$var;
-        }
-        else if ($var >= 3){
-            return '#FF0000';
-        }
+        
+        $for_draw_bg["cytoplasm"]["up"][0]=$control_xy["all"][2]-300;
+        $for_draw_bg["cytoplasm"]["down"][0]=max($control_xy["all"][0]+300,$range_xy["Nucleus"][1]+300);
+        $for_draw_bg["cytoplasm"]["down"][1]=max($control_xy["all"][1]+300,$range_xy["Nucleus"][3]+300);
+        
+        $for_draw_bg["membrane"]["up"][0]=$for_draw_bg["cytoplasm"]["up"][0]-300;
+        $for_draw_bg["membrane"]["up"][1]=$for_draw_bg["cytoplasm"]["up"][1]-300;
+        $for_draw_bg["membrane"]["down"][0]=$for_draw_bg["cytoplasm"]["down"][0]+300;
+        $for_draw_bg["membrane"]["down"][1]=$for_draw_bg["cytoplasm"]["down"][1]+300;
+                        
+        $for_draw_bg["extracellular"]["up"][0]=$for_draw_bg["membrane"]["up"][0]-300;
+        $for_draw_bg["extracellular"]["up"][1]=$control_xy["all"][3]-50;
+        //$for_draw_bg["extracellular"]["up"][1]=$for_draw_bg["membrane"]["up"][1]-300;
+        $for_draw_bg["extracellular"]["down"][0]=$for_draw_bg["membrane"]["down"][0]+300;
+        $for_draw_bg["extracellular"]["down"][1]=$for_draw_bg["membrane"]["down"][1]+300;
+        
+        //write_xml with compound
+        with_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg);
+        //write xml without compound node
+        without_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg);
+        
+        $e=3;//reduce the size of image
+        draw_background($for_draw_bg,$e);
     }
     
-    function getProperSize($var){
-        $var=abs($var);
-        if ($var == 0){
-            return 80;
-        }
-        else if ($var >= 0 && $var < 3){
-            $var=$var*50/3+80;
-            return round($var);
-        }
-        else if ($var >= 3){
-            return 150;
-        }
-    }
-   
     /*------------------------------------------------------*/
-    //analyze the position of nodes in one location
-    //record the max min and average coordiante values of the nodes in the range_xy is
+    //analyze the position of nodes in one subcellular localization
+    //record the max min and average coordiante values of the nodes into the variable the range_xy
     function node_position($xml,$head,&$range_xy){
         global $base;
         foreach($head as $elem=>$next){
@@ -238,7 +233,7 @@
     
     function xy_nodes($fxml,$flabel,&$range_xy){
         $r_xy=null;
-        $cout=0;
+        $cout=0;    //controlor,  the node number in one localization
         foreach ($fxml->node as $nodes){
             foreach ($nodes->att as $atts){
                 if($atts['name']=="CellWhere localization" && $atts['value']==$flabel){
@@ -273,76 +268,8 @@
         }
         $range_xy[$flabel]=$r_xy;
     }
-    /*------------------------------------------------------*/   
-
-    function node_number($fxml,$flabel){
-        $n=0;
-        foreach ($fxml->node as $nodes){
-            foreach ($nodes->att as $atts){
-                if($atts['name']=="CellWhere localization" && $atts['value']==$flabel){
-                    $n++;
-                }
-            }
-        }
-        return $n;
-    }
-    
-    /*---------------------------------------------------------xml_modify_1------------------------------*/
-        /*------------------------------------------------------*/
-    function Membrane($fxml,$flabel,&$range_xy,&$control_xy){
-        global $colors, $att_FC;
-        $size = 80;
-        $col=$colors["gray"];
-        $diff=array( 0,0);
-        $fc=0;
-        foreach ($fxml->node as $nodes){
-            $diff[0] = $control_xy["memb_xy"][0];
-            if($control_xy["under_xy"][0]==null){
-                $diff[1] =$range_xy["Nucleus"][2]-600+rand(-10,10);
-            }else{
-                $diff[1] =$control_xy["under_xy"][3]-200+rand(-10,10);
-            } 
-            foreach ($nodes->att as $atts){
-                if($atts['name']=="gene name" ||$atts['name']=="Gene Name"){
-                    $nodes['label']=$atts['value'];    
-                }
-                    if($att_FC!="NoFC" && $atts['name']==$att_FC ){
-                        $fc=(float)$atts['value'];
-                        $size = getProperSize($fc);
-                        $col=getProperColor($fc);
-                    }
-            }   
-            foreach ($nodes->att as $atts){
-                if($atts['name']=="CellWhere localization" && $atts['value']==$flabel){
-                    //delete the graphics attributes for each node
-                    foreach($nodes->graphics as $grap){
-                    // $xy=x_y_creater($flabel,$limit_xy,$coordinates);
-                        $grap['x']=$grap['x']+$diff[0];
-                        $grap['y']=$diff[1];
-                        $grap->addAttribute("cy:nodeLabelFont", "Arial-0-40");
-                        $grap->addAttribute("cy:nodeTransparency", "1");
-                        $grap["outline"]=$col;
-                        $grap["fill"] = $col;
-                        $grap["h"] = $size;
-                        $grap["w"] = $size;
-                        //delete the graphics                             
-                        $tail=count($grap);
-                        if($tail>1){
-                        for($i=0;$i<$tail;$i++){
-                            $at = $grap->att[0];
-                            $dom=dom_import_simplexml($at);
-                            $dom->parentNode->removeChild($dom); 
-                        }
-                        }
-                    }
-                //write the correspondent node to the output file
-                $control_xy["memb_xy"][0] = $grap['x']+300;
-                }
-            }
-        }
-
-    }
-
+    /*------------------------------------------------------*/
+    /*---------------------------------------------------------xml_modify_1------------------------------------*/
     /*add invisible nodes in order to control the compound node size*/
     function xml_modify_1(&$xml,$head,&$range_xy,$list_comp){
         global $base,$colors;
@@ -359,22 +286,17 @@
     
     function change_node_1(&$fxml,$flabel,&$range_xy){
         global $colors, $att_FC;
-        $fc =0;
+        $fc =0; //fold change value equals 0 as default
         $j=0; //pointer the position array
         $max_size=0;
-        $points=array();
+        $points=array();    // array of number of postion given in circle or in recangle
         $n=node_number($fxml,$flabel);
         $size = 80; //node size
-        $col=$colors["gray"]; // default  color for no "change" node
+        $col=$colors["gray"]; // default  color for 'FC'=0 nodes
         if($n>0){
-            $points = x_y_creater_circle($range_xy[$flabel][4],$range_xy[$flabel][5],50*$n,$n);                        
+            $points = x_y_creater_circle($range_xy[$flabel][4],$range_xy[$flabel][5],50*$n,$n);// for the nodes in one localization but not in the membrane of this localization
             foreach ($fxml->node as $nodes){            
                 foreach ($nodes->att as $atts){
-                    if($atts['name']=="gene name"||$atts['name']=="Gene Name"){
-                        $nodes['label']=$atts['value'];    
-                    }
-                    //if($atts['name']=="Fold-Change(HMZ * 80 vs. WT * 80)" ){
-                    //if($atts['name']=="Fold change" ){
                     if($att_FC!="NoFC" && $atts['name']==$att_FC ){
                         $fc=(float)$atts['value'];
                         $size = getProperSize($fc);
@@ -422,11 +344,11 @@
         }elseif($n==0&&in_array($flabel,array("Nucleus","Cytoplasm","Membrane","Extracellular"))){        
             $ps = x_y_creater_circle(0,0,40,4);
             add_4_nodes($fxml,$ps,$flabel);
-            $range_xy[$flabel] = max_min($ps);
+            $range_xy[$flabel] = max_min($ps); //the max and min positions of nodes in the localization 
         }
     }
     
-    /*--Distribute a number of node in circle position or in rectangle position--*/
+    /*--Distribute a number of position in circle or in rectangle position--*/
     //circle
    function x_y_creater_circle($center_x,$center_y,$radius,$n){
         $alpha = M_PI * 2 / $n;
@@ -439,7 +361,6 @@
             $points[ $i ] = $pointOnCircle;
         }
         return $points;
-    
     }
 
     //rectangle
@@ -473,9 +394,69 @@
         return $points;
     }
     /*-----------------------------------------------------------------*/
+    /*------------------------------------------------------*/
+    //size and color ~ fold change value
+    function getProperColor($var){
+        if ($var <= -3){
+            return '#0000ff';//blue
+        }
+        else if ($var > -3 && $var < 0){
+            $var=(3+$var)*256/3;
+            if($var<=16){
+                $var = '0'.dechex($var);
+            }else{
+                $var = dechex($var);
+            }
+            return "#".$var.$var."ff";
+        }
+        else if ($var == 0){
+            return '#A4A4A4';
+        }
+        else if ($var >= 0 && $var < 3){
+            $var=(3-$var)*256/3;
+            if($var<=16){
+                $var = '0'.dechex($var);
+            }else{
+                $var = dechex($var);
+            }
+            return "#ff".$var.$var;
+        }
+        else if ($var >= 3){
+            return '#FF0000';
+        }
+    }
+    
+    function getProperSize($var){
+        $var=abs($var);
+        if ($var == 0){
+            return 80;
+        }
+        else if ($var >= 0 && $var < 3){
+            $var=$var*50/3+80;
+            return round($var);
+        }
+        else if ($var >= 3){
+            return 150;
+        }
+    }
+   
+     
+
+    function node_number($fxml,$flabel){
+        $n=0;
+        foreach ($fxml->node as $nodes){
+            foreach ($nodes->att as $atts){
+                if($atts['name']=="CellWhere localization" && $atts['value']==$flabel){
+                    $n++;
+                }
+            }
+        }
+        return $n;
+    }
     
     function add_4_nodes(&$fxml,$ps,$elem){
-        /* for each compound node spacially for the compound nodes which contain only one node inside
+        /*
+         * for each compound node spacially for the compound nodes which contain only one node inside
          * we add 4 nodes to control the compound size.
          * (we can also add only 2 nodes in diagonal do it later)
          */
@@ -508,12 +489,71 @@
         return array(min($x),max($x),min($y),max($y),array_sum($x)/count($x),array_sum($y)/count($y));
     }
     
+    /*--------------------------------------------------------------------------------------------*/
+    function Membrane($fxml,$flabel,&$range_xy,&$control_xy){
+        /*
+         * the layout of the localization - membrane is different from the others,
+         * all the proteins in membrane ,even the sub-localization in membrane are
+         * positioned 'almost' in line on upside of membrane.
+        */
+        global $colors, $att_FC;
+        $size = 80;
+        $col=$colors["gray"];
+        $diff=array( 0,0);
+        $fc=0;
+        foreach ($fxml->node as $nodes){
+            $diff[0] = $control_xy["memb_xy"][0];
+            if($control_xy["under_xy"][0]==null){
+                $diff[1] =$range_xy["Nucleus"][2]-600+rand(-10,10); // give the random value for 'y' to make the proteins are not in a strict line 
+            }else{
+                $diff[1] =$control_xy["under_xy"][3]-200+rand(-10,10);
+            } 
+            foreach ($nodes->att as $atts){
+                if($att_FC!="NoFC" && $atts['name']==$att_FC ){
+                    $fc=(float)$atts['value'];
+                    $size = getProperSize($fc);
+                    $col=getProperColor($fc);
+                }
+            }   
+            foreach ($nodes->att as $atts){
+                if($atts['name']=="CellWhere localization" && $atts['value']==$flabel){
+                    foreach($nodes->graphics as $grap){
+                        $grap['x']=$grap['x']+$diff[0];
+                        $grap['y']=$diff[1];
+                        $grap->addAttribute("cy:nodeLabelFont", "Arial-0-40");
+                        $grap->addAttribute("cy:nodeTransparency", "1");
+                        $grap["outline"]=$col;
+                        $grap["fill"] = $col;
+                        $grap["h"] = $size;
+                        $grap["w"] = $size;
+                        //delete the graphics                             
+                        $tail=count($grap);
+                        if($tail>1){
+                            for($i=0;$i<$tail;$i++){
+                                $at = $grap->att[0];
+                                $dom=dom_import_simplexml($at);
+                                $dom->parentNode->removeChild($dom); 
+                            }
+                        }
+                    }
+                    //write the correspondent node to the output file
+                    $control_xy["memb_xy"][0] = $grap['x']+300;// "300": the distance between each protein or sub-localization in membrane
+                }
+            }
+        }
+    }
     /*------------------------------------------  end xml_modify_1  ------------------------------*/
+    
+
+    
+
+    
+    
     /*------------------------------------------- xml_modify_2 -----------------------------------*/
     function xml_modify_2($xml,$head,&$range_xy,$list_comp,&$control_xy,&$cyto_line){
-        /* move the compound nodes(in cytoplasm and under membrane) to the right place*/
+        /* move the subcellular localization IN cytoplasm and UNDER membrane to the right place*/
         global $base;
-        $k=0;
+        $k=0; // controlor, to count the localization number IN Cytoplasm in one 'line'
         $diff=array(0,0);
         foreach($head as $elem=>$next){
             if($next!=0){
@@ -527,9 +567,10 @@
                         $control_xy["in_cyto_xy"][1] = 0;
                          $cyto_line["left"]=$control_xy["in_cyto_xy"][0];
                     }
-                    if($cyto_line["k"]<4){
+                    // limit the number of localizations of one 'line' is 4 or less
+                    if($cyto_line["k"]<4){ 
                         $diff[0] = $control_xy["in_cyto_xy"][0]-$range_xy[$elem][0]+300;
-                        $diff[1] = $control_xy["in_cyto_xy"][1]-$range_xy[$elem][2]+rand(0, 400);
+                        $diff[1] = $control_xy["in_cyto_xy"][1]-$range_xy[$elem][2]+rand(0, 400); // to make the localizations are not in strict linaire positions
                         $cyto_line["k"]++;
                     }elseif($cyto_line["k"]==4){
                         $diff[0] = $cyto_line["left"]-$range_xy[$elem][0]+200;
@@ -563,6 +604,9 @@
     }
     
     function change_node(&$fxml,$flabel,&$range_xy,&$control_xy,$diff){
+        /*
+         *move all the nodes in one localization together to the right place
+        */
         $n=node_number($fxml,$flabel);
         foreach ($fxml->node as $nodes){
             foreach ($nodes->att as $atts){
@@ -574,18 +618,19 @@
                 }
             }
         }
-       // if($n>0){
-            $range_xy[$flabel][0]=$range_xy[$flabel][0]+$diff[0];
-            $range_xy[$flabel][1]=$range_xy[$flabel][1]+$diff[0];
-            $range_xy[$flabel][2]=$range_xy[$flabel][2]+$diff[1];
-            $range_xy[$flabel][3]=$range_xy[$flabel][3]+$diff[1];
-            $range_xy[$flabel][4]=$range_xy[$flabel][4]+$diff[0];
-            $range_xy[$flabel][5]=$range_xy[$flabel][5]+$diff[1];
-       // }
+        $range_xy[$flabel][0]=$range_xy[$flabel][0]+$diff[0];
+        $range_xy[$flabel][1]=$range_xy[$flabel][1]+$diff[0];
+        $range_xy[$flabel][2]=$range_xy[$flabel][2]+$diff[1];
+        $range_xy[$flabel][3]=$range_xy[$flabel][3]+$diff[1];
+        $range_xy[$flabel][4]=$range_xy[$flabel][4]+$diff[0];
+        $range_xy[$flabel][5]=$range_xy[$flabel][5]+$diff[1];
     }
-    /*-----------------------------------------------------------------------------*/  
+    /*------------------------------------------  end xml_modify_2  ------------------------------*/
+    
+    
+    /*------------------------------------------- xml_modify_3 -----------------------------------*/  
     function xml_modify_3($xml,$head,&$range_xy,$list_comp,&$control_xy){
-        /* move the compound nodes to the right place*/
+        /* move the other localizations (Nucleus,Cytoplasm,UNDER Membrane,Membrane,SURFACE Membrane)to the right place*/
         global $base;
         $diff=array(0,0);
         foreach($head as $elem=>$next){
@@ -648,8 +693,11 @@
             }
         }
     }
+    
+    /*-------------------------------------------------------*/
+    
     function xml_modify_4($xml,$head,&$range_xy,$list_comp,&$control_xy){
-        /* move the compound nodes to the right place*/
+        /* move the other localizations (ACROSS Membrane, Extracellular)to the right place*/
         global $base;
         $diff=array(0,0);
         foreach($head as $elem=>$next){
@@ -702,7 +750,7 @@
         foreach ($fxml->node as $nodes){
             foreach ($nodes->att as $atts){
                 if($atts['name']=="CellWhere localization" &&$atts['value']==$flabel){
-                    //only compounds
+                    //only compound nodes
                     /*
                     $nodes["label"]="";
                     $nodes->graphics["h"]="1";
@@ -717,7 +765,7 @@
     
     /*----------------------------------------------------------------------------*/   
     function write_xml($xml,$out,$head,$level,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg,$compound){
-        global $local_id,$base,$colors,$state_memb;
+        global $local_id,$base,$colors;
         $h=$w=0.1;
         $transpar=0.7;
         $width=0;
@@ -793,15 +841,75 @@
         }
     }    
 
-    /*------------------------------------------------------------------------------*/
+    
+    /*------------------------------ write the output xml file--------------------------------------------------*/
+    function with_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg){
+        global $file_xml;
+        $out = fopen($file_xml."_web.xml", "w+"); 
+        fwrite($out,'<graph xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cy="http://www.cytoscape.org" xmlns="http://www.cs.rpi.edu/XGMML">'."\n");
+        $local_id=0;
+        //write_xml with compound
+        write_xml($xml,$out,$head,0,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg,1);
+        //write edges
+        write_edge($xml,$out);
+    
+        fwrite($out,"</graph>");
+        fclose($out);
+     
+        //read the entire string 
+        $str=file_get_contents($file_xml."_web.xml"); 
+        $str=str_replace("      \n","",$str);
+        $str=str_replace(" nodeLabelFont="," cy:nodeLabelFont=",$str);
+        $str=str_replace(" nodeTransparency="," cy:nodeTransparency=",$str);
+        file_put_contents($file_xml."_web.xml", $str);
+        //if(file_exists($file_xml."_web.xml")){echo  $file_xml."_web.xml exist<br/>";}
+    }
+    
+    function without_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg){
+        global $file_xml;        
+        $fout = fopen($file_xml."_cy3.xml", "w+"); 
+        fwrite($fout,'<graph xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cy="http://www.cytoscape.org" xmlns="http://www.cs.rpi.edu/XGMML">'."\n");
+        //write_xml without compound
+        write_xml($xml,$fout,$head,0,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg,0);
+        //write edges
+        write_edge($xml,$fout);
+        fwrite($fout,"</graph>");
+        fclose($fout);
+     
+        //read the entire string 
+        $str=file_get_contents($file_xml."_cy3.xml"); 
+        $str=str_replace("      \n","",$str);
+        $str=str_replace(" nodeLabelFont="," cy:nodeLabelFont=",$str);
+        $str=str_replace(" nodeTransparency="," cy:nodeTransparency=",$str);
+        file_put_contents($file_xml."_cy3.xml", $str);
+        //if(file_exists($file_xml."_cy3.xml")){echo  $file_xml."_cy3.xml exist<br/>";}
+    }
+        
+    /*------------------------------------------------------*/
+    function write_edge($fxml,$fout){
+        /*write edges*/
+        foreach ($fxml->edge as $edges){
+            fwrite($fout, $edges->asXML()."\n");
+        }
+    }
+    /*------------------------------ END write the output xml file--------------------------------------------------*/
+    
+    
+    /*------------------------------------ Draw background --------------------------------------------*/
+    /*
+     * Draw a lipid bilayer membrane as background of display
+     * the size and the position of the this background is strictly according to
+     * the positions of node of localization 'cytoplasm','membrane' and 'extracellular'
+     */
+    
     function convertColor($color){
         #convert hexadecimal to RGB
         if(!is_array($color) && preg_match("/^[#]([0-9a-fA-F]{6})$/",$color)){
-        $hex_R = substr($color,1,2);
-        $hex_G = substr($color,3,2);
-        $hex_B = substr($color,5,2);
-        $RGB = array(hexdec($hex_R),hexdec($hex_G),hexdec($hex_B));
-        return $RGB;
+            $hex_R = substr($color,1,2);
+            $hex_G = substr($color,3,2);
+            $hex_B = substr($color,5,2);
+            $RGB = array(hexdec($hex_R),hexdec($hex_G),hexdec($hex_B));
+            return $RGB;
         }
     }
 
@@ -855,104 +963,8 @@
         imagedestroy($dest);  
         imagedestroy($src);
     }
-    /*------------------------------------------------------*/
+    /*-------------------------------END Draw background-----------------------*/
     
-    function layout($xml,$head,$list_comp){   
-        $range_xy=array();
-        //analyse the node distribution 
-        node_position($xml,$head,$range_xy);
-        //max x,max y,min x,min y
-        $control_xy =array("all"=>array(0,0,0,0),"under_xy"=>null,"surface_xy"=>null,"across_xy"=>null,"in_cyto_xy"=>null,"memb_xy"=>null,"extra_xy"=>null,"nucleus_xy"=>null,"nucleus_xy"=>null);
-        //move compound nodes + nodes inside
-        $cyto_line=array("k"=>0,"left"=>0,"bottom"=>0);
-        $diff_ini_x=0;$first_y=0;
-        $memb_size=array();
-        
-        xml_modify_1($xml,$head,$range_xy,$list_comp);// add innominate nodes & control membrane and size ...
-        xml_modify_2($xml,$head,$range_xy,$list_comp,$control_xy,$cyto_line);// position in cell
-        xml_modify_3($xml,$head,$range_xy,$list_comp,$control_xy);//compounds for under membrane node
-        xml_modify_4($xml,$head,$range_xy,$list_comp,$control_xy);//compounds for under membrane node
-        
-        $for_draw_bg=array();
-        if($control_xy["under_xy"][0]!=null){
-            $for_draw_bg["cytoplasm"]["up"][1]=$control_xy["under_xy"][3]+70;
-        }else{
-            $for_draw_bg["cytoplasm"]["up"][1]=$range_xy["Nucleus"][2]-300;
-        }
-        
-        $for_draw_bg["cytoplasm"]["up"][0]=$control_xy["all"][2]-300;
-        $for_draw_bg["cytoplasm"]["down"][0]=max($control_xy["all"][0]+300,$range_xy["Nucleus"][1]+300);
-        $for_draw_bg["cytoplasm"]["down"][1]=max($control_xy["all"][1]+300,$range_xy["Nucleus"][3]+300);
-        
-        $for_draw_bg["membrane"]["up"][0]=$for_draw_bg["cytoplasm"]["up"][0]-300;
-        $for_draw_bg["membrane"]["up"][1]=$for_draw_bg["cytoplasm"]["up"][1]-300;
-        $for_draw_bg["membrane"]["down"][0]=$for_draw_bg["cytoplasm"]["down"][0]+300;
-        $for_draw_bg["membrane"]["down"][1]=$for_draw_bg["cytoplasm"]["down"][1]+300;
-                        
-        $for_draw_bg["extracellular"]["up"][0]=$for_draw_bg["membrane"]["up"][0]-300;
-        $for_draw_bg["extracellular"]["up"][1]=$control_xy["all"][3]-50;
-        //$for_draw_bg["extracellular"]["up"][1]=$for_draw_bg["membrane"]["up"][1]-300;
-        $for_draw_bg["extracellular"]["down"][0]=$for_draw_bg["membrane"]["down"][0]+300;
-        $for_draw_bg["extracellular"]["down"][1]=$for_draw_bg["membrane"]["down"][1]+300;
-        
-        //write_xml with compound
-        with_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg);
-        //write xml without compound node
-        without_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg);
-        
-        $e=3;//reduce the size of image
-        draw_background($for_draw_bg,$e);
-    }
-    
-    /* write the output xml file--------------------------------------------------*/
-    function with_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg){
-        global $file_xml;
-        $out = fopen($file_xml."_web.xml", "w+"); 
-        fwrite($out,'<graph xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cy="http://www.cytoscape.org" xmlns="http://www.cs.rpi.edu/XGMML">'."\n");
-        $local_id=0;
-        //write_xml with compound
-        write_xml($xml,$out,$head,0,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg,1);
-        //write edges
-        write_edge($xml,$out);
-    
-        fwrite($out,"</graph>");
-        fclose($out);
-     
-        //read the entire string 
-        $str=file_get_contents($file_xml."_web.xml"); 
-        $str=str_replace("      \n","",$str);
-        $str=str_replace(" nodeLabelFont="," cy:nodeLabelFont=",$str);
-        $str=str_replace(" nodeTransparency="," cy:nodeTransparency=",$str);
-        file_put_contents($file_xml."_web.xml", $str);
-    }
-    
-    function without_compound($xml,$head,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg){
-        global $file_xml;        
-        $fout = fopen($file_xml."_cy3.xml", "w+"); 
-        fwrite($fout,'<graph xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cy="http://www.cytoscape.org" xmlns="http://www.cs.rpi.edu/XGMML">'."\n");
-        //write_xml without compound
-        write_xml($xml,$fout,$head,0,$list_comp,$range_xy,$control_xy,$cyto_line,$for_draw_bg,0);
-        //write edges
-        write_edge($xml,$fout);
-        fwrite($fout,"</graph>");
-        fclose($fout);
-     
-        //read the entire string 
-        $str=file_get_contents($file_xml."_cy3.xml"); 
-        $str=str_replace("      \n","",$str);
-        $str=str_replace(" nodeLabelFont="," cy:nodeLabelFont=",$str);
-        $str=str_replace(" nodeTransparency="," cy:nodeTransparency=",$str);
-        file_put_contents($file_xml."_cy3.xml", $str);
-    }
-    
-    /*------------------------------------------------------*/
-    function write_edge($fxml,$fout){
-        /*write edges*/
-        foreach ($fxml->edge as $edges){
-            fwrite($fout, $edges->asXML()."\n");
-        }
-    }
-
 /*----------------------------------------------------End function---------------------------------------------------*/
 
 ?>

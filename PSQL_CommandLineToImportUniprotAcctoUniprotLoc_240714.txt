@@ -1,0 +1,47 @@
+CREATE TABLE map_acc_to_uniprot_loc
+(
+UniprotACC varchar(255),
+UniprotID varchar(255),
+Species varchar(255),
+Localization varchar(255)
+); 
+
+
+
+LOAD DATA LOCAL INFILE 'C:/Users/Lu Zhu/Desktop/cellwherepsql/UniprotAccToUniprotLoc_240214.txt' 
+INTO TABLE cellwhere.map_acc_to_uniprot_loc 
+FIELDS TERMINATED BY '\t' 
+ENCLOSED BY '' 
+LINES TERMINATED BY '\r\n' 
+(UniprotACC, UniprotID, Species, Localization);
+
+
+
+
+COPY map_acc_to_uniprot_loc 
+FROM 'https://www.dropbox.com/s/9jwd7akrnefu9er/UniprotAccToUniprotLoc_240214.txt' (DELIMITER('\t'));
+
+
+
+
+CREATE TABLE map_generic_flavour
+(
+GO_id_or_uniprot_term varchar(255),
+Description varchar(255),
+OurLocalization varchar(255),
+UniquePriorityNumber varchar(255),
+SpatialRelation varchar(255)
+); 
+
+
+CREATE TABLE map_muscle_flavour
+(
+GO_id_or_uniprot_term varchar(255),
+Description varchar(255),
+OurLocalization varchar(255),
+UniquePriorityNumber varchar(255),
+SpatialRelation varchar(255)
+); 
+
+
+SELECT `GO_id_or_uniprot_term`, `Description`, `OurLocalization`, `UniquePriorityNumber`, `SpatialRelation` FROM `map_muscle_flavour` WHERE 1

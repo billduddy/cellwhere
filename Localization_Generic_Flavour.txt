@@ -1,4 +1,3 @@
-GO_id_or_uniprot_term	Description	OurLocalization	UniquePriorityNumber	SpatialRelation
 GO:0030014	CCR4-NOT complex	Proteasome	8100	IN Cytoplasm
 GO:0019005	SCF ubiquitin ligase complex	Proteasome	8100	IN Cytoplasm
 GO:0032797	SMN complex	Proteasome	8100	IN Cytoplasm

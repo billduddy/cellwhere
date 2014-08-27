@@ -1,4 +1,3 @@
-GO_id_or_uniprot_term	Description	OurLocalization	UniquePriorityNumber	SpatialRelation
 GO:0016014	dystrobrevin complex	Dystrophin-associated complex	8000	UNDER Membrane
 GO:0016011	dystroglycan complex	Dystrophin-associated complex	8000	UNDER Membrane
 GO:0016010	dystrophin-associated glycoprotein complex	Dystrophin-associated complex	8000	UNDER Membrane

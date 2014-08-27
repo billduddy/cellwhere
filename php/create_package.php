@@ -11,7 +11,7 @@
         } else {
             echo 'html file compress failed';
         }
-    }else{echo "no found ".$xml_file_name."_web.html";}
+    }else{echo "no found ".getcwd().$xml_file_name."_web.html<br/>";}
     
     
     // network xml + background
@@ -25,6 +25,5 @@
         } else {
             echo 'cy3 xml file compress failed';
         }
-        //unlink($xml_file_name.'_cy3.xml');
-    }else{echo "no found ".$xml_file_name."_cy3.xml";}
+    }else{echo "no found ".getcwd().$xml_file_name."_cy3.xml<br/>";}
 ?>
