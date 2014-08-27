@@ -1,3 +1,4 @@
+
 PostgreSQL 9.2 database added.  Please make note of these credentials:
 
    Root User: adminedeefnw
@@ -19,12 +20,12 @@ psql -h $OPENSHIFT_POSTGRESQL_DB_HOST -p $OPENSHIFT_POSTGRESQL_DB_PORT -U admine
   SHOW data_directory;
 
 
-
+//------------------------------------------------------------------------------------
 //copy the csv files to postgresDB data directory;  shell console under PuTTY
 
 cp ./app-deployments/2014-07-24_09-26-56.690/repo/*.csv /var/lib/openshift/53a180cde0b8cd726e000444/postgresql/data
 
 //2014-07-24_09-26-56.690 need to up to date;
 
-//or use 
+//recommande to use 
 cp ./app-deployments/201*/repo/*.csv /var/lib/openshift/53a180cde0b8cd726e000444/postgresql/data
