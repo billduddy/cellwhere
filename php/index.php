@@ -85,7 +85,7 @@
    </head>
 
    <body>
-      <h2><font color="#1F88A7">CellWhere BETA PostgreSQL</font> </h2>
+      <h2><font color="#1F88A7">CellWhere BETA</font> </h2>
       <!-- count the access number of the page -->
       <?php
 	 $filename = "hits.txt";

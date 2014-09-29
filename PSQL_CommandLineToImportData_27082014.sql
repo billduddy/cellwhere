@@ -1,16 +1,20 @@
-//sh command
+//1.download and install PuTTY 
+
+https://www.openshift.com/developers/install-and-setup-putty-ssh-client-for-windows
+
+//2.sh command
 
 //copy the csv files to postgresDB data directory;  shell console under PuTTY
 
-cp ./app-deployments/201*/repo/*.txt /var/lib/openshift/53d0cb78e0b8cd6cf5000187/postgresql/data
+cp ./app-deployments/201*/repo/*.txt /var/lib/openshift/53a180cde0b8cd726e000444/postgresql/data
 
 
 
-//Connect to postgres sql using PuTTy:
+//3.Connect to postgres sql using PuTTy:
 psql -h $OPENSHIFT_POSTGRESQL_DB_HOST -p $OPENSHIFT_POSTGRESQL_DB_PORT -U adminfw7v28h cellwherepsql
 
 
-
+//4.psql commandes
 #----------------------------------------------
 DROP TABLE IF EXISTS map_acc_to_uniprot_loc CASCADE;
 CREATE TABLE map_acc_to_uniprot_loc
@@ -22,7 +26,7 @@ Localization varchar(255)
 ); 
 
 COPY map_acc_to_uniprot_loc FROM 'UniprotAccToUniprotLoc_240214.txt';
-#select count(UniprotACC) from map_acc_to_uniprot_loc;
+select count(UniprotACC) from map_acc_to_uniprot_loc;
 
 #-------------------------------------------
 DROP TABLE IF EXISTS map_generic_flavour CASCADE;
@@ -36,7 +40,7 @@ SpatialRelation varchar(255)
 ); 
 
 COPY map_generic_flavour FROM 'Localization_Generic_Flavour.txt';
-#select count(GO_id_or_uniprot_term) from map_generic_flavour;
+select count(GO_id_or_uniprot_term) from map_generic_flavour;
 
 
 #-------------------------------------------
@@ -50,6 +54,6 @@ UniquePriorityNumber integer,
 SpatialRelation varchar(255)
 ); 
 
-#COPY map_muscle_flavour FROM 'Localization_Muscle_Flavour.txt';
+COPY map_muscle_flavour FROM 'Localization_Muscle_Flavour.txt';
 select count(GO_id_or_uniprot_term) from map_muscle_flavour;
 
