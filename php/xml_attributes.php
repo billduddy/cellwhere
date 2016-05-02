@@ -52,6 +52,12 @@
                     }
             } 
         </script>
+
+        <script>
+            function setFlavourRadio(input) {
+                document.getElementById(input.value).checked = true;  
+            }
+        </script>
 </head>
 <body>
     <h2><font color="#1F88A7">CellWhere BETA</font> </h2>
